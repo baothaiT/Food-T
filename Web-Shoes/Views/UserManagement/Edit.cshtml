@@ -1,9 +1,8 @@
 ﻿@model Web_Shoes.Entity.AppUser
 
 @{
-    ViewData["Title"] = "Edit";
-    //Layout = "~/Views/Shared/_LayoutAdmin2.cshtml";
-    Layout = null;
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin/_LayoutAdmin.cshtml";
 }
 
 <h1>Edit</h1>
@@ -56,6 +55,7 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+*@
