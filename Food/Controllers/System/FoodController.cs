@@ -8,18 +8,18 @@ using Food.Models;
 
 namespace Food.Controllers.System
 {
-    public class MenController : Controller
+    public class FoodController : Controller
     {
 
         private readonly ApplicationDbContext _context;
 
-        public MenController(ApplicationDbContext context)
+        public FoodController(ApplicationDbContext context)
         {
             _context = context;
         }
 
 
-        [Route("/men")]
+        [Route("/food")]
         [HttpGet("{id}")]
         public IActionResult Index()
         {
