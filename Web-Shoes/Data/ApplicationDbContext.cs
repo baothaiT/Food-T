@@ -69,11 +69,6 @@ namespace Web_Shoes.Data
             builder.ApplyConfiguration(new SubReviewInReviewConfigurations());
             builder.ApplyConfiguration(new SubReviewConfigurations());
 
-
-
-
-
-
             //builder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
             //builder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRole").HasKey(x => new { x.UserId, x.RoleId });
             //builder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
@@ -95,7 +90,6 @@ namespace Web_Shoes.Data
         public DbSet<ContactSystem> ContactSystem { set; get; }
         public DbSet<ContactUsers> ContactUsers { set; get; }
         public DbSet<Products> Products { set; get; }
-      
         public DbSet<Reviews> Reviews { set; get; }
         public DbSet<Wishlists> Wishlists { set; get; }
         public DbSet<ReviewInproduct> ReviewInproduct { set; get; }
@@ -107,13 +101,9 @@ namespace Web_Shoes.Data
         public DbSet<Device> Devices { set; get; }
         public DbSet<CartsDevice> CartsDevice { set; get; }
         public DbSet<ProductInCartDevices> ProductInCartDevices { set; get; }
-
         public DbSet<Shipping> Shipping { set; get; }
-
         public DbSet<SubReview> SubReview { set; get; }
-
         public DbSet<SubReviewInReview> SubReviewInReview { set; get; }
-
         public DbSet<Web_Shoes.Models.UserInRoleModel> UserInRoleModel { get; set; }
         //public DbSet<AppUserRole> AppUserRole { set; get; }
 
