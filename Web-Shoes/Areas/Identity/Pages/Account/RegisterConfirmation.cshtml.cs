@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
-using Web_Shoes.Entity;
+using Food.Entity;
 
-namespace Web_Shoes.Areas.Identity.Pages.Account
+namespace Food.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class RegisterConfirmationModel : PageModel

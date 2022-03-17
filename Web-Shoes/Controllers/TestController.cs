@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Web_Shoes.Data;
+using Food.Data;
 
-namespace Web_Shoes.Controllers
+namespace Food.Controllers
 {
     public class TestController : Controller
     {

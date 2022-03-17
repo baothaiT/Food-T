@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web-Shoes", "Web-Shoes\Web-Shoes.csproj", "{FB0EF3DE-C418-40E8-BF2A-BC4BC27E181F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Food", "Web-Shoes\Food.csproj", "{FB0EF3DE-C418-40E8-BF2A-BC4BC27E181F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,28 +26,24 @@ Global
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
-		$0.TextStylePolicy = $2
+		$0.TextStylePolicy = $10
 		$2.inheritsSet = null
 		$2.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $3
 		$3.scope = text/x-csharp
-		$0.TextStylePolicy = $4
 		$4.FileWidth = 80
 		$4.TabsToSpaces = True
 		$4.scope = text/plain
-		$0.TextStylePolicy = $5
 		$5.inheritsSet = null
 		$5.scope = text/x-vs
-		$0.TextStylePolicy = $6
 		$6.inheritsSet = null
 		$6.scope = text/x-css
-		$0.CSSFormattingPolicy = $7
+		$0.CSSFormattingPolicy = $11
 		$7.AutomaticFormatting = True
 		$7.BracePositions = SemiExpanded
 		$7.FormatOnPaste = True
 		$7.HierarchicalIndentation = True
 		$7.scope = text/x-css
-		$0.TextStylePolicy = $8
 		$8.inheritsSet = null
 		$8.scope = text/x-json
 		$0.JSONFormattingPolicy = $9
@@ -55,10 +51,8 @@ Global
 		$9.BracePositions = SemiExpanded
 		$9.FormatOnPaste = True
 		$9.scope = text/x-json
-		$0.TextStylePolicy = $10
 		$10.inheritsSet = null
 		$10.scope = text/x-scss-web
-		$0.CSSFormattingPolicy = $11
 		$11.inheritsSet = null
 		$11.scope = text/x-scss-web
 		$0.VersionControlPolicy = $12

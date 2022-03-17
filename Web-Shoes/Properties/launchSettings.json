@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Web_Shoes": {
+    "Food": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

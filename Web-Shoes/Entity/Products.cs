@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Shoes.Entity
+namespace Food.Entity
 {
     public class Products
     {

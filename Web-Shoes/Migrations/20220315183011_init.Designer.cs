@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Web_Shoes.Data;
+using Food.Data;
 
-namespace Web_Shoes.Migrations
+namespace Food.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20220315183011_init")]
@@ -245,7 +245,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("UserTokens");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.About", b =>
+            modelBuilder.Entity("Food.Entity.About", b =>
                 {
                     b.Property<int>("about_id")
                         .ValueGeneratedOnAdd()
@@ -275,7 +275,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Bills", b =>
+            modelBuilder.Entity("Food.Entity.Bills", b =>
                 {
                     b.Property<string>("bill_Id")
                         .HasColumnType("nvarchar(450)");
@@ -397,7 +397,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Food.Entity.Cart", b =>
                 {
                     b.Property<string>("cart_Id")
                         .HasColumnType("nvarchar(450)");
@@ -424,7 +424,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Food.Entity.CartsDevice", b =>
                 {
                     b.Property<string>("cartd_Id")
                         .HasColumnType("nvarchar(450)");
@@ -439,7 +439,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("CartsDevice");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Categories", b =>
+            modelBuilder.Entity("Food.Entity.Categories", b =>
                 {
                     b.Property<int>("cg_Id")
                         .ValueGeneratedOnAdd()
@@ -476,7 +476,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ContactSystem", b =>
+            modelBuilder.Entity("Food.Entity.ContactSystem", b =>
                 {
                     b.Property<int>("Contact_Id")
                         .ValueGeneratedOnAdd()
@@ -510,7 +510,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ContactUsers", b =>
+            modelBuilder.Entity("Food.Entity.ContactUsers", b =>
                 {
                     b.Property<int>("cu_Id")
                         .ValueGeneratedOnAdd()
@@ -548,7 +548,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Coupons", b =>
+            modelBuilder.Entity("Food.Entity.Coupons", b =>
                 {
                     b.Property<string>("couponId")
                         .HasColumnType("nvarchar(450)");
@@ -578,7 +578,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Device", b =>
+            modelBuilder.Entity("Food.Entity.Device", b =>
                 {
                     b.Property<string>("deviceId")
                         .HasColumnType("nvarchar(450)");
@@ -615,7 +615,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("Device");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCart", b =>
+            modelBuilder.Entity("Food.Entity.ProductInCart", b =>
                 {
                     b.Property<string>("pic_CartId")
                         .HasColumnType("nvarchar(450)");
@@ -665,7 +665,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCartDevices", b =>
+            modelBuilder.Entity("Food.Entity.ProductInCartDevices", b =>
                 {
                     b.Property<string>("picd_CartId")
                         .HasColumnType("nvarchar(450)");
@@ -689,7 +689,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("ProductInCartDevices");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInWishlist", b =>
+            modelBuilder.Entity("Food.Entity.ProductInWishlist", b =>
                 {
                     b.Property<int>("piw_WishlistId")
                         .HasColumnType("int");
@@ -715,7 +715,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Products", b =>
+            modelBuilder.Entity("Food.Entity.Products", b =>
                 {
                     b.Property<int>("pd_Id")
                         .ValueGeneratedOnAdd()
@@ -1515,7 +1515,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductsInCategories", b =>
+            modelBuilder.Entity("Food.Entity.ProductsInCategories", b =>
                 {
                     b.Property<int>("pic_productId")
                         .HasColumnType("int");
@@ -1547,7 +1547,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ReviewInproduct", b =>
+            modelBuilder.Entity("Food.Entity.ReviewInproduct", b =>
                 {
                     b.Property<int>("rip_ProductId")
                         .HasColumnType("int");
@@ -1579,7 +1579,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Food.Entity.Reviews", b =>
                 {
                     b.Property<string>("review_id")
                         .HasColumnType("nvarchar(450)");
@@ -1635,7 +1635,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Shipping", b =>
+            modelBuilder.Entity("Food.Entity.Shipping", b =>
                 {
                     b.Property<string>("ship_Id")
                         .HasColumnType("nvarchar(450)");
@@ -1659,7 +1659,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Food.Entity.SubReview", b =>
                 {
                     b.Property<string>("subReview_Id")
                         .HasColumnType("nvarchar(450)");
@@ -1715,7 +1715,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReviewInReview", b =>
+            modelBuilder.Entity("Food.Entity.SubReviewInReview", b =>
                 {
                     b.Property<string>("SRiR_ReviewId")
                         .HasColumnType("nvarchar(450)");
@@ -1747,7 +1747,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Food.Entity.Wishlists", b =>
                 {
                     b.Property<int>("wl_Id")
                         .ValueGeneratedOnAdd()
@@ -1771,7 +1771,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Models.UserInRoleModel", b =>
+            modelBuilder.Entity("Food.Models.UserInRoleModel", b =>
                 {
                     b.Property<string>("id")
                         .HasColumnType("nvarchar(450)");
@@ -1796,7 +1796,7 @@ namespace Web_Shoes.Migrations
                     b.ToTable("UserInRoleModel");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppRole", b =>
+            modelBuilder.Entity("Food.Entity.AppRole", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
 
@@ -1822,7 +1822,7 @@ namespace Web_Shoes.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppUser", b =>
+            modelBuilder.Entity("Food.Entity.AppUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -1953,42 +1953,42 @@ namespace Web_Shoes.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Bills", b =>
+            modelBuilder.Entity("Food.Entity.Bills", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserB")
+                    b.HasOne("Food.Entity.AppUser", "AppUserB")
                         .WithMany("BillsAU")
                         .HasForeignKey("bill_UserId");
 
                     b.Navigation("AppUserB");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Food.Entity.Cart", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserC")
+                    b.HasOne("Food.Entity.AppUser", "AppUserC")
                         .WithMany("CartU")
                         .HasForeignKey("cart_UserID");
 
                     b.Navigation("AppUserC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Food.Entity.CartsDevice", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Device", "DeviceCD")
+                    b.HasOne("Food.Entity.Device", "DeviceCD")
                         .WithMany("CartsDeviceD")
                         .HasForeignKey("cartd_DeviceId");
 
                     b.Navigation("DeviceCD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCart", b =>
+            modelBuilder.Entity("Food.Entity.ProductInCart", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Cart", "CartPICart")
+                    b.HasOne("Food.Entity.Cart", "CartPICart")
                         .WithMany("ProductInCartC")
                         .HasForeignKey("pic_CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPICart")
+                    b.HasOne("Food.Entity.Products", "ProductsPICart")
                         .WithMany("ProductInCartP")
                         .HasForeignKey("pic_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1999,15 +1999,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPICart");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInCartDevices", b =>
+            modelBuilder.Entity("Food.Entity.ProductInCartDevices", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.CartsDevice", "CartsDevicePICD")
+                    b.HasOne("Food.Entity.CartsDevice", "CartsDevicePICD")
                         .WithMany("ProductInCartDevicesCD")
                         .HasForeignKey("picd_CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPICD")
+                    b.HasOne("Food.Entity.Products", "ProductsPICD")
                         .WithMany("ProductInCartDevicesP")
                         .HasForeignKey("picd_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2018,15 +2018,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPICD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductInWishlist", b =>
+            modelBuilder.Entity("Food.Entity.ProductInWishlist", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPIW")
+                    b.HasOne("Food.Entity.Products", "ProductsPIW")
                         .WithMany("ProductInWishlistP")
                         .HasForeignKey("piw_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Wishlists", "WishlistsPIW")
+                    b.HasOne("Food.Entity.Wishlists", "WishlistsPIW")
                         .WithMany("ProductInWishlistW")
                         .HasForeignKey("piw_WishlistId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2037,15 +2037,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("WishlistsPIW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ProductsInCategories", b =>
+            modelBuilder.Entity("Food.Entity.ProductsInCategories", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Categories", "CategoriesPIC")
+                    b.HasOne("Food.Entity.Categories", "CategoriesPIC")
                         .WithMany("ProductsInCategoriesC")
                         .HasForeignKey("pic_CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsPIC")
+                    b.HasOne("Food.Entity.Products", "ProductsPIC")
                         .WithMany("ProductsInCategoriesP")
                         .HasForeignKey("pic_productId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2056,15 +2056,15 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ProductsPIC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.ReviewInproduct", b =>
+            modelBuilder.Entity("Food.Entity.ReviewInproduct", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Products", "ProductsRIP")
+                    b.HasOne("Food.Entity.Products", "ProductsRIP")
                         .WithMany("ReviewInproductP")
                         .HasForeignKey("rip_ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.Reviews", "ReviewsRIP")
+                    b.HasOne("Food.Entity.Reviews", "ReviewsRIP")
                         .WithMany("ReviewInproductR")
                         .HasForeignKey("rip_ReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2075,33 +2075,33 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ReviewsRIP");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Food.Entity.Reviews", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserR")
+                    b.HasOne("Food.Entity.AppUser", "AppUserR")
                         .WithMany("ReviewsU")
                         .HasForeignKey("review_UserId");
 
                     b.Navigation("AppUserR");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Food.Entity.SubReview", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "AppUserSR")
+                    b.HasOne("Food.Entity.AppUser", "AppUserSR")
                         .WithMany("SubReviewSR")
                         .HasForeignKey("subReview_UserId");
 
                     b.Navigation("AppUserSR");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReviewInReview", b =>
+            modelBuilder.Entity("Food.Entity.SubReviewInReview", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.Reviews", "Reviews")
+                    b.HasOne("Food.Entity.Reviews", "Reviews")
                         .WithMany("SubReviewInReview")
                         .HasForeignKey("SRiR_ReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web_Shoes.Entity.SubReview", "SubReview")
+                    b.HasOne("Food.Entity.SubReview", "SubReview")
                         .WithMany("SubReviewInReview")
                         .HasForeignKey("SRiR_SubReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2112,36 +2112,36 @@ namespace Web_Shoes.Migrations
                     b.Navigation("SubReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Food.Entity.Wishlists", b =>
                 {
-                    b.HasOne("Web_Shoes.Entity.AppUser", "UserW")
+                    b.HasOne("Food.Entity.AppUser", "UserW")
                         .WithMany("WishlistsU")
                         .HasForeignKey("wl_UserId");
 
                     b.Navigation("UserW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Cart", b =>
+            modelBuilder.Entity("Food.Entity.Cart", b =>
                 {
                     b.Navigation("ProductInCartC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.CartsDevice", b =>
+            modelBuilder.Entity("Food.Entity.CartsDevice", b =>
                 {
                     b.Navigation("ProductInCartDevicesCD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Categories", b =>
+            modelBuilder.Entity("Food.Entity.Categories", b =>
                 {
                     b.Navigation("ProductsInCategoriesC");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Device", b =>
+            modelBuilder.Entity("Food.Entity.Device", b =>
                 {
                     b.Navigation("CartsDeviceD");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Products", b =>
+            modelBuilder.Entity("Food.Entity.Products", b =>
                 {
                     b.Navigation("ProductInCartDevicesP");
 
@@ -2154,24 +2154,24 @@ namespace Web_Shoes.Migrations
                     b.Navigation("ReviewInproductP");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Reviews", b =>
+            modelBuilder.Entity("Food.Entity.Reviews", b =>
                 {
                     b.Navigation("ReviewInproductR");
 
                     b.Navigation("SubReviewInReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.SubReview", b =>
+            modelBuilder.Entity("Food.Entity.SubReview", b =>
                 {
                     b.Navigation("SubReviewInReview");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.Wishlists", b =>
+            modelBuilder.Entity("Food.Entity.Wishlists", b =>
                 {
                     b.Navigation("ProductInWishlistW");
                 });
 
-            modelBuilder.Entity("Web_Shoes.Entity.AppUser", b =>
+            modelBuilder.Entity("Food.Entity.AppUser", b =>
                 {
                     b.Navigation("BillsAU");
 
