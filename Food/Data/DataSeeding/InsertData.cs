@@ -23,8 +23,8 @@ namespace Food.Data.DataSeeding
                 new Products()
                 {
                     pd_Id = 1,
-                    pd_Name = "Nike Air Force 1 07",
-                    pd_Description = "The radiance lives on in the Nike Air Force 1 '07, the b-ball OG that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+                    pd_Name = "Fish",
+                    pd_Description = "",
                     pd_Price = 10000,
                     pd_ReducePrice = 500,
                     pd_Img1 = "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI",
@@ -33,7 +33,7 @@ namespace Food.Data.DataSeeding
                     pd_Img4 = "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a",
                     pd_Rate = 5,
                     pd_MenuFacturer = "1",
-                    pd_ShortDescription = "The radiance lives on in the Nike Air Force 1 '07, the b-ball OG that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+                    pd_ShortDescription = "",
                     pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
                     pd_Brand = "Nike",
                     pd_Style = "CW2288-111",
@@ -66,8 +66,8 @@ namespace Food.Data.DataSeeding
                 new Products()
                 {
                     pd_Id = 2,
-                    pd_Name = "Nike Air Force 1",
-                    pd_Description = "The radiance lives on in the Nike Air Force 1 GORE-TEX, the b-ball OG that puts a fresh spin on what you know best: crisp leather, bold colours and the perfect amount of flash to make you shine.This time it's clad in GORE-TEX technology.",
+                    pd_Name = "Cream",
+                    pd_Description = "Cream1",
                     pd_Price = 10000,
                     pd_ReducePrice = 500,
                     pd_Img1 = "https://drive.google.com/uc?id=1aaIG6S0bGnm5uhxHVBXy_BkEDb867O0-",
@@ -76,7 +76,7 @@ namespace Food.Data.DataSeeding
                     pd_Img4 = "https://drive.google.com/uc?export=download&id=1WT_vD4nC_szHPH9LVbl_UztqvXlmqs2e",
                     pd_Rate = 5,
                     pd_MenuFacturer = "2",
-                    pd_ShortDescription = "The radiance lives on in the Nike Air Force 1 GORE-TEX, the b-ball OG that puts a fresh spin on what you know best: crisp leather, bold colours and the perfect amount of flash to make you shine.This time it's clad in GORE-TEX technology.",
+                    pd_ShortDescription = "Cream1",
                     pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
                     pd_Brand = "Nike",
                     pd_Style = "DM6435-222",
@@ -108,8 +108,8 @@ namespace Food.Data.DataSeeding
                 new Products()
                 {
                     pd_Id = 3,
-                    pd_Name = "Nike Waffle One Crater",
-                    pd_Description = "Bringing the classic BRS athletics style into a modern realm with at least 20% recycled materials by weight, the Nike Waffle One Crater is eye-candy for your feet.The playful speckled look on the midsole is created from Crater Foam, a cushiony material made from Nike Grind rubber and Nike foam materials.And for added depth, the sport-inspired upper includes transparent mesh made from recycled polyester.",
+                    pd_Name = "Cream",
+                    pd_Description = "Cream2",
                     pd_Price = 10000,
                     pd_ReducePrice = 500,
                     pd_Img1 = "https://drive.google.com/uc?id=1raFVtP42IkQ1t-lPPRFi_E5X4iJ0NW4-",
@@ -118,7 +118,7 @@ namespace Food.Data.DataSeeding
                     pd_Img4 = "https://drive.google.com/uc?export=download&id=10oXph87Rn43M13WNaxJWpL0XS_Mf_JFt",
                     pd_Rate = 4,
                     pd_MenuFacturer = "3",
-                    pd_ShortDescription = "Bringing the classic BRS athletics style into a modern realm with at least 20% recycled materials by weight, the Nike Waffle One Crater is eye-candy for your feet.The playful speckled look on the midsole is created from Crater Foam, a cushiony material made from Nike Grind rubber and Nike foam materials.And for added depth, the sport-inspired upper includes transparent mesh made from recycled polyester.",
+                    pd_ShortDescription = "Cream2",
                     pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
                     pd_Brand = "Nike",
                     pd_Style = "DC2650-200",
@@ -150,8 +150,8 @@ namespace Food.Data.DataSeeding
                 new Products()
                 {
                     pd_Id = 4,
-                    pd_Name = "Nike Air Max 90 Premium",
-                    pd_Description = "Nothing as fly, nothing as comfortable, nothing as proven—the Nike Air Max 90 Premium stays true to its roots, with the iconic Waffle outsole, stitched overlays and classic TPU accents. Fresh colours give a modern look while Max Air cushioning adds comfort to your journey.",
+                    pd_Name = "Missu",
+                    pd_Description = "",
                     pd_Price = 10000,
                     pd_ReducePrice = 500,
                     pd_Img1 = "https://drive.google.com/uc?id=1M0_A-sZfffj7gncHmbj88dHvvqXM1eEa",
@@ -160,7 +160,7 @@ namespace Food.Data.DataSeeding
                     pd_Img4 = "https://drive.google.com/uc?export=download&id=1LSQUzknGNiwOIVtHFNmPhGSh8ZE0CFJx",
                     pd_Rate = 4,
                     pd_MenuFacturer = "3",
-                    pd_ShortDescription = "Nothing as fly, nothing as comfortable, nothing as proven—the Nike Air Max 90 Premium stays true to its roots, with the iconic Waffle outsole, stitched overlays and classic TPU accents. Fresh colours give a modern look while Max Air cushioning adds comfort to your journey.",
+                    pd_ShortDescription = "hile Max Air cushioning adds comfort to your journey.",
                     pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
                     pd_Brand = "Nike",
                     pd_Style = "DA1641-201",
