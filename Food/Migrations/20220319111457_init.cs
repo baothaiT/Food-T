@@ -657,8 +657,8 @@ namespace Food.Migrations
                 columns: new[] { "couponId", "couponCode", "couponPrice" },
                 values: new object[,]
                 {
-                    { "ab13d638-cf19-437a-a7c6-b75133287c83", "code10", 10 },
-                    { "a588e297-4a14-4f83-9b04-510e3dcf8fbf", "code50", 50 }
+                    { "49a1020c-1c72-4c9c-8df2-d8b11038cfa9", "code10", 10 },
+                    { "fa84ca0b-b109-4e5c-939d-c00c761162a0", "code50", 50 }
                 });
 
             migrationBuilder.InsertData(
@@ -687,7 +687,7 @@ namespace Food.Migrations
                     { 17, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/6-trung-ga-ta.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
                     { 13, "Nike", "Beach/Topaz Gold/Bright Crimson/Black", "", "https://drive.google.com/uc?id=1dzvmQMDzkUdh79Sw2Z0itgm1I12xwkA2", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Nike SB Nyjah Free 2", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "BV2078-200", "3", false },
                     { 15, "Nike", "Pollen/Pink Blast/Black", "", "https://drive.google.com/uc?id=170Vm7Py5XUTDhFLn2tLt0CCBftOKbdFd", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Nike SB Nyjah Free 2", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 1, "Nike", "White/White", "", "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI", "https://drive.google.com/uc?export=download&id=1YBpU6fwcCzV18ho__mhCCO0yD8ES-ef7", "https://drive.google.com/uc?export=download&id=1sBANC4Og5eumFJBTVLYGIp2qTBKfwSzh", "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a", "1", "1", "Fish", "1", "2", "3", "4", 1, 5, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CW2288-111", "1", false },
+                    { 1, "Nike", "White/White", "Description", "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI", "https://drive.google.com/uc?export=download&id=1YBpU6fwcCzV18ho__mhCCO0yD8ES-ef7", "https://drive.google.com/uc?export=download&id=1sBANC4Og5eumFJBTVLYGIp2qTBKfwSzh", "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a", "1", "1", "Fish", "1", "2", "3", "4", 1, 5, 0, "Short Description", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CW2288-111", "1", false },
                     { 2, "Nike", "Medium Olive/Carbon Green/Sail/Black", "Cream1", "https://drive.google.com/uc?id=1aaIG6S0bGnm5uhxHVBXy_BkEDb867O0-", "https://drive.google.com/uc?export=download&id=1Y4gS9zvfZdshJc4YySjz13ZGlMIft4kv", "https://drive.google.com/uc?export=download&id=1AyILI7QsTzqBPE6OvDMZpY7OAtxjkuH8", "https://drive.google.com/uc?export=download&id=1WT_vD4nC_szHPH9LVbl_UztqvXlmqs2e", "2", "2", "Cream", "1", "2", "3", "4", 1, 5, 0, "Cream1", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DM6435-222", "2", false },
                     { 3, "Nike", "Cream II/Orange/Black/White", "Cream2", "https://drive.google.com/uc?id=1raFVtP42IkQ1t-lPPRFi_E5X4iJ0NW4-", "https://drive.google.com/uc?export=download&id=1kFLigFwBNPiqYhIOs2QRL39nRo0IJYWS", "https://drive.google.com/uc?export=download&id=1KZJQR5jt9rzVOBxfUZRx-tjKoO3dKNDJ", "https://drive.google.com/uc?export=download&id=10oXph87Rn43M13WNaxJWpL0XS_Mf_JFt", "3", "3", "Cream", "1", "2", "3", "4", 1, 4, 0, "Cream2", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DC2650-200", "3", false },
                     { 4, "Nike", "Hemp/Sand Drift/Light Orewood Brown/Summit White", "", "https://drive.google.com/uc?id=1M0_A-sZfffj7gncHmbj88dHvvqXM1eEa", "https://drive.google.com/uc?export=download&id=1K85ItvCTycDSRX9p1Jbzm7Egg5l6OdRa", "https://drive.google.com/uc?export=download&id=1b5FDJjrsLKAlj7zBVGLoxdp_gaVTFkVE", "https://drive.google.com/uc?export=download&id=1LSQUzknGNiwOIVtHFNmPhGSh8ZE0CFJx", "3", "3", "Missu", "1", "2", "3", "4", 1, 4, 0, "hile Max Air cushioning adds comfort to your journey.", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DA1641-201", "3", false },
@@ -713,8 +713,8 @@ namespace Food.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Discriminator", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "360E601E-92F2-4F08-832B-604A21293258", "0a1354ff-9bd3-4c02-8c12-1cd5c7dd2f2d", "admin", "AppRole", "admin", null },
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "4df9302e-79bf-43b4-9623-c03eb88f8d60", "Staff", "AppRole", "staff", null }
+                    { "360E601E-92F2-4F08-832B-604A21293258", "24d53486-4d19-4795-93e9-c42bc1f8612b", "admin", "AppRole", "admin", null },
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "bdaf9b2f-11eb-4814-b141-2090e626acb2", "Staff", "AppRole", "staff", null }
                 });
 
             migrationBuilder.InsertData(
@@ -727,8 +727,8 @@ namespace Food.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "DoB", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "bill_Address1", "bill_Address2", "bill_City", "bill_CompanyName", "bill_Country", "bill_PhoneNumber", "bill_PostalCode", "bill_State" },
                 values: new object[,]
                 {
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "abc16afe-efdf-4f11-8da4-bd0e0fdeda1d", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEO8YyuJTgUzHpIFoSuSP0wGfDURlf7JtnNsMiRH83eZfcDrFa/Y6rP7wRg58MRECbw==", null, false, "2540a1ad-ab3a-423a-8302-c84008ea3d68", false, "Staff", null, null, null, null, null, null, null, null },
-                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "6c6cd965-c336-480f-8008-f040246dafcf", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAELE4Q+z8KOYkN7a31uvT8cETRZDTyGpQYz0UyorGIN/Q9SVJU7IimVRWxF03HFPClw==", null, false, "88a05a5f-120a-4db7-88ac-1f81275d2a9b", false, "Admin", null, null, null, null, null, null, null, null }
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "e7ae2dae-5f7f-48c6-b5bf-d9cddc546eb0", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEF63WwQtmAQqpzAvELHedNE0UGcmOOd2Gx8Y9FUun/YyXsF4F/LSLQWs1ZhUXrYlXA==", null, false, "3bcf1aef-ee10-4851-889d-59c8ddd60bea", false, "Staff", null, null, null, null, null, null, null, null },
+                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "7b834731-a31b-4e78-a386-c21156c40248", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEI08wUTcCpRsJ5YaCAebJnVSKr3tLFOQAiEo4QmGz4d0gZK/7uOZ7TImiRWRDW58XA==", null, false, "a4715831-6eee-423a-8d6d-e51e6da07a6d", false, "Admin", null, null, null, null, null, null, null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -736,8 +736,8 @@ namespace Food.Migrations
                 columns: new[] { "bill_Id", "bill_Cancelled", "bill_Confirmation", "bill_DatetimeOrder", "bill_Delivered", "bill_Delivering", "bill_Discount", "bill_HideStatus", "bill_Note", "bill_PaidTotal", "bill_PaymentMethod", "bill_ProductColorlist", "bill_ProductIdlist", "bill_ProductNamelist", "bill_ProductPricelist", "bill_ProductSizelist", "bill_Quantity", "bill_Shipping", "bill_UserId", "bill_WaitForConfirmation", "bill_WaitPickup" },
                 values: new object[,]
                 {
-                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2022, 3, 19, 17, 26, 31, 671, DateTimeKind.Local).AddTicks(9340), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
-                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2022, 3, 19, 17, 26, 31, 673, DateTimeKind.Local).AddTicks(1715), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
+                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2022, 3, 19, 18, 14, 56, 95, DateTimeKind.Local).AddTicks(1757), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
+                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2022, 3, 19, 18, 14, 56, 96, DateTimeKind.Local).AddTicks(2432), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
                 });
 
             migrationBuilder.InsertData(
@@ -774,9 +774,9 @@ namespace Food.Migrations
                 columns: new[] { "subReview_Id", "subReview_Commnet", "subReview_DateCommnet", "subReview_HideStatus", "subReview_UserId", "subreview_SubReviewType" },
                 values: new object[,]
                 {
-                    { "4ef16e52-fe41-4bfc-8c96-cd717d0209a3", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
-                    { "0903d95a-abcd-47b5-8be3-b4c752477ca0", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
-                    { "2330b0ab-5d32-434c-80aa-fa36f1894c04", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" }
+                    { "f2563a6a-9e02-4e72-965d-b1e38e6b56e6", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
+                    { "d86cb986-0719-448d-9ca0-e1eda5c9c046", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
+                    { "92c3061f-0fbf-40db-ad6e-9c4f184fecae", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" }
                 });
 
             migrationBuilder.InsertData(
@@ -823,9 +823,9 @@ namespace Food.Migrations
                 columns: new[] { "SRiR_ReviewId", "SRiR_SubReviewId" },
                 values: new object[,]
                 {
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "4ef16e52-fe41-4bfc-8c96-cd717d0209a3" },
-                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "0903d95a-abcd-47b5-8be3-b4c752477ca0" },
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "2330b0ab-5d32-434c-80aa-fa36f1894c04" }
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "f2563a6a-9e02-4e72-965d-b1e38e6b56e6" },
+                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "d86cb986-0719-448d-9ca0-e1eda5c9c046" },
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "92c3061f-0fbf-40db-ad6e-9c4f184fecae" }
                 });
 
             migrationBuilder.CreateIndex(

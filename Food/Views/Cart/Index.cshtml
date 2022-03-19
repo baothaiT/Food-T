@@ -10,7 +10,7 @@
 
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="images/fashion/fashion-header-bg-8.jpg" alt="fashion img">
+   <img src="~/images/banner/foodservice-mfg-hero-1920x300.jpg" alt="fashion img">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
@@ -46,41 +46,35 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="images/man/polo-shirt-1.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>$250</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$250</td>
-                      </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="images/man/polo-shirt-2.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>$150</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$150</td>
-                      </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="images/man/polo-shirt-3.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>$50</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$50</td>
-                      </tr>
+                        @{
+                            foreach(var item in Model)
+                            {
+                                int totalPriceInProduct = item.Quantity + item.ProductPrice;
+                                <tr>
+                                    <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
+                                    <td><a href="#"><img src="@item.ProductImg1" alt="img"></a></td>
+                                    <td><a class="aa-cart-title" href="/productdetail?id=@item.ProductId">@item.ProductName</a></td>
+                                    <td>$@item.ProductPrice</td>
+                                    <td><span>@item.Quantity</span></td>
+                                    <td>$@totalPriceInProduct</td>
+                                </tr>           
+                            }
+                        }
+                     
+                      
                       <tr>
                         <td colspan="6" class="aa-cart-view-bottom">
-                          <div class="aa-cart-coupon">
-                            <input class="aa-coupon-code" type="text" placeholder="Coupon">
-                            <input class="aa-cart-view-btn" type="submit" value="Apply Coupon">
-                          </div>
-                          <input class="aa-cart-view-btn" type="submit" value="Update Cart">
+                          
                         </td>
                       </tr>
                       </tbody>
                   </table>
+                </div>
+             </form>
+             <form asp-action="addCoupon" method="post">
+                 <div >
+                    <input class="aa-coupon-code" type="text" name="coupon" placeholder="Coupon">
+                    <input class="aa-cart-view-btn" type="submit" value="Apply Coupon">
                 </div>
              </form>
              <!-- Cart Total view -->
