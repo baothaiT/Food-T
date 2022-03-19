@@ -1,5 +1,6 @@
 # Food
 
+#update-database
 
 ## Item Food (250x300) (150x150)
 ## Adds (1170x170)
