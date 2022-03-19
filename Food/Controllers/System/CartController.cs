@@ -77,6 +77,8 @@ namespace Food.Controllers.System
 
                 query = query.Where(x => x.d.deviceName == namePc);
 
+                ViewBag.CouponPrice = 0; 
+
                 var productInCartModelQuery = query
                     .Select(x => new ProductInCartModel()
                     {
@@ -145,10 +147,6 @@ namespace Food.Controllers.System
                 {
                     ReducePrice = couponQuery.couponPrice;
                 }
-
-
-
-
                 return Redirect("/checkout?reduceprice="+ ReducePrice);
             }
             catch 
@@ -157,6 +155,32 @@ namespace Food.Controllers.System
                 return RedirectToAction(nameof(Index));
             }
             
+        }
+
+        [Route("/cart/addCoupon")]
+        [HttpGet("{coupon}&{quantity}")]
+        public IActionResult addCoupon(string coupon, int quantity)
+        {
+
+            try
+            {
+                int ReducePrice = 0;
+
+                var couponQuery = _context.Coupons.FirstOrDefault(a => a.couponCode == coupon);
+
+                if (couponQuery != null)
+                {
+                    ReducePrice = couponQuery.couponPrice;
+                    ViewBag.CouponPrice = ReducePrice;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+
+                return RedirectToAction(nameof(Index));
+            }
+
         }
     }
 }
