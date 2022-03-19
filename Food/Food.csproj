@@ -498,7 +498,6 @@
     <Content Remove="wwwroot\images\User\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\images\banner\" />
     <Folder Include="wwwroot\images\Categories-home\" />
     <Folder Include="wwwroot\images\item150x150\" />
     <Folder Include="wwwroot\images\Users\" />
