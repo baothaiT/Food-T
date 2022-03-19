@@ -24,7 +24,7 @@ namespace Food.Data.DataSeeding
                 {
                     pd_Id = 1,
                     pd_Name = "Fish",
-                    pd_Description = "",
+                    pd_Description = "Description",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
                     pd_Img1 = "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI",
@@ -33,7 +33,7 @@ namespace Food.Data.DataSeeding
                     pd_Img4 = "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a",
                     pd_Rate = 5,
                     pd_MenuFacturer = "1",
-                    pd_ShortDescription = "",
+                    pd_ShortDescription = "Short Description",
                     pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
                     pd_Brand = "Nike",
                     pd_Style = "CW2288-111",
