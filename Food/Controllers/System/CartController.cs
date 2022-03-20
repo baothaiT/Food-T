@@ -9,7 +9,7 @@ using Food.Data;
 using Food.Entity;
 using Food.Models;
 using Microsoft.AspNetCore.Http;
-
+using Food.StatisFile;
 
 namespace Food.Controllers.System
 {
@@ -29,7 +29,7 @@ namespace Food.Controllers.System
             _SignInManager = SignInManager;
         }
 
-
+        
         [Route("/cart")]
         [HttpGet("{productid}&{quantity}")]
         public IActionResult Index(int productid, int quantity)
@@ -40,8 +40,7 @@ namespace Food.Controllers.System
 
             string namePc = Environment.MachineName;
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
-            HttpContext.Session.SetString("mysession", "mySessionValue");
-            string test = HttpContext.Session.GetString("mysession");
+            
             if (checkLogin)
             {
                 //login
@@ -80,7 +79,18 @@ namespace Food.Controllers.System
 
                 query = query.Where(x => x.d.deviceName == namePc);
 
-                ViewBag.CouponPrice = 0; 
+                if ((HttpContext.Session.GetString(KeySession.sessionCouponPrice) == null)||(HttpContext.Session.GetString(KeySession.sessionCouponPrice) == ""))
+                {
+                    //HttpContext.Session.SetString("mysession", "mySessionValue");
+                    //string test = HttpContext.Session.GetString("mysession");
+                    ViewBag.CouponPrice = 0;
+                    
+                }
+                else
+                {
+                    ViewBag.CouponPrice = HttpContext.Session.GetString(KeySession.sessionCouponPrice);
+                }
+                
 
                 var productInCartModelQuery = query
                     .Select(x => new ProductInCartModel()
@@ -93,6 +103,7 @@ namespace Food.Controllers.System
                         UserId = x.d.deviceId,
                         Color = x.b.picd_color,
                         Size = x.b.picd_size
+
 
                     });
 
@@ -167,14 +178,12 @@ namespace Food.Controllers.System
 
             try
             {
-                int ReducePrice = 0;
 
                 var couponQuery = _context.Coupons.FirstOrDefault(a => a.couponCode == coupon);
 
                 if (couponQuery != null)
                 {
-                    ReducePrice = couponQuery.couponPrice;
-                    ViewBag.CouponPrice = ReducePrice;
+                    HttpContext.Session.SetString(KeySession.sessionCouponPrice, couponQuery.couponPrice.ToString());
                 }
                 return RedirectToAction(nameof(Index));
             }
