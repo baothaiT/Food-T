@@ -79,10 +79,9 @@ namespace Food.Controllers.System
 
                 query = query.Where(x => x.d.deviceName == namePc);
 
+                //Get CouponPrice In Session
                 if ((HttpContext.Session.GetString(KeySession.sessionCouponPrice) == null)||(HttpContext.Session.GetString(KeySession.sessionCouponPrice) == ""))
                 {
-                    //HttpContext.Session.SetString("mysession", "mySessionValue");
-                    //string test = HttpContext.Session.GetString("mysession");
                     ViewBag.CouponPrice = 0;
                     
                 }
@@ -181,9 +180,14 @@ namespace Food.Controllers.System
 
                 var couponQuery = _context.Coupons.FirstOrDefault(a => a.couponCode == coupon);
 
+                // Set Coupon price in session
                 if (couponQuery != null)
                 {
                     HttpContext.Session.SetString(KeySession.sessionCouponPrice, couponQuery.couponPrice.ToString());
+                }
+                else
+                {
+                    HttpContext.Session.SetString(KeySession.sessionCouponPrice, "0");
                 }
                 return RedirectToAction(nameof(Index));
             }
