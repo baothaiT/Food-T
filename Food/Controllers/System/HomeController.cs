@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Food.Data;
 using Food.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Food.Controllers.System
 {
@@ -21,6 +22,11 @@ namespace Food.Controllers.System
 
         public IActionResult Index()
         {
+            //Count product in cart page
+            var queryCart = _context.CartsDevice;
+            ViewBag.CountProductInCart =  queryCart.Count();
+
+
             // Print list product in Home Page
             var HomeProductQuery = from a in _context.Products select a;
             return View(HomeProductQuery);

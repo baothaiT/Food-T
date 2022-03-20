@@ -33,7 +33,11 @@ namespace Food.Controllers
         [HttpGet("{id}")]
         public IActionResult Index(int id)
         {
+            //Count product in cart page
+            var queryCart = _context.CartsDevice;
+            ViewBag.CountProductInCart = queryCart.Count();
 
+            //Query product
 
             var productDetailQuery = _context.Products.FirstOrDefault(a => a.pd_Id == id);
 

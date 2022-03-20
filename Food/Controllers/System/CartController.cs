@@ -71,6 +71,12 @@ namespace Food.Controllers.System
             else
             {
                 //No login
+
+                //Count product in cart page
+                var queryCart = _context.CartsDevice;
+                ViewBag.CountProductInCart = queryCart.Count();
+
+                //Query produdct in Cart
                 var query = from a in _context.Products
                             join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
                             join c in _context.CartsDevice on b.picd_CartId equals c.cartd_Id

@@ -29,6 +29,10 @@ namespace Food.Controllers.System
         [HttpGet("{reduceprice}")]
         public IActionResult Index(string reduceprice)
         {
+            //Count product in cart page
+            var queryCart = _context.CartsDevice;
+            ViewBag.CountProductInCart = queryCart.Count();
+
             //try
             //{
 

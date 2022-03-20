@@ -23,6 +23,11 @@ namespace Food.Controllers.System
         [HttpGet("{id}")]
         public IActionResult Index()
         {
+            //Count product in cart page
+            var queryCart = _context.CartsDevice;
+            ViewBag.CountProductInCart = queryCart.Count();
+
+            //Food
             var query = from a in _context.Products
                         join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
                         join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id

@@ -22,6 +22,10 @@ namespace Food.Controllers.System
         [HttpGet]
         public IActionResult Index()
         {
+            //Count product in cart page
+            var queryCart = _context.CartsDevice;
+            ViewBag.CountProductInCart = queryCart.Count();
+
             //var contact = _context.ContactSystem.FirstOrDefault(a => a.Contact_Id ==1);
 
             return View();
