@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Food.Data;
 using Food.Entity;
 using Food.Models;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Food.Controllers.System
 {
@@ -38,7 +40,8 @@ namespace Food.Controllers.System
 
             string namePc = Environment.MachineName;
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
-
+            HttpContext.Session.SetString("mysession", "mySessionValue");
+            string test = HttpContext.Session.GetString("mysession");
             if (checkLogin)
             {
                 //login
