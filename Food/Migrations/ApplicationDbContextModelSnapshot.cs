@@ -126,7 +126,7 @@ namespace Food.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2022, 3, 19, 18, 14, 56, 95, DateTimeKind.Local).AddTicks(1757),
+                            bill_DatetimeOrder = new DateTime(2022, 3, 20, 14, 49, 23, 793, DateTimeKind.Local).AddTicks(5742),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -150,7 +150,7 @@ namespace Food.Migrations
                             bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2022, 3, 19, 18, 14, 56, 96, DateTimeKind.Local).AddTicks(2432),
+                            bill_DatetimeOrder = new DateTime(2022, 3, 20, 14, 49, 23, 794, DateTimeKind.Local).AddTicks(4349),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -340,13 +340,13 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "49a1020c-1c72-4c9c-8df2-d8b11038cfa9",
+                            couponId = "89cd9cf5-6da6-403a-b761-4c3e8ad8cfe7",
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "fa84ca0b-b109-4e5c-939d-c00c761162a0",
+                            couponId = "f3a883fc-a299-48e5-8d15-0b9490d310f1",
                             couponCode = "code50",
                             couponPrice = 50
                         });
@@ -2302,7 +2302,7 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "f2563a6a-9e02-4e72-965d-b1e38e6b56e6",
+                            subReview_Id = "d5a14ed1-780a-4293-9ec3-7ea893dc8d63",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2311,7 +2311,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            subReview_Id = "92c3061f-0fbf-40db-ad6e-9c4f184fecae",
+                            subReview_Id = "529a41e1-eb6d-40c1-897e-b402f5021fe2",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2320,7 +2320,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            subReview_Id = "d86cb986-0719-448d-9ca0-e1eda5c9c046",
+                            subReview_Id = "c9722386-695f-47b1-ac3f-04ed2955b9c2",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2347,17 +2347,17 @@ namespace Food.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "f2563a6a-9e02-4e72-965d-b1e38e6b56e6"
+                            SRiR_SubReviewId = "d5a14ed1-780a-4293-9ec3-7ea893dc8d63"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "92c3061f-0fbf-40db-ad6e-9c4f184fecae"
+                            SRiR_SubReviewId = "529a41e1-eb6d-40c1-897e-b402f5021fe2"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "d86cb986-0719-448d-9ca0-e1eda5c9c046"
+                            SRiR_SubReviewId = "c9722386-695f-47b1-ac3f-04ed2955b9c2"
                         });
                 });
 
@@ -2649,14 +2649,14 @@ namespace Food.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "bdaf9b2f-11eb-4814-b141-2090e626acb2",
+                            ConcurrencyStamp = "fead2ee5-317c-4634-b20b-70bdd025afa9",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "24d53486-4d19-4795-93e9-c42bc1f8612b",
+                            ConcurrencyStamp = "c3037dd5-8c4a-48cc-bec3-d4317b0b2aa9",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -2708,15 +2708,15 @@ namespace Food.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7b834731-a31b-4e78-a386-c21156c40248",
+                            ConcurrencyStamp = "b8941c76-bc12-4877-9a71-00e982a51c51",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI08wUTcCpRsJ5YaCAebJnVSKr3tLFOQAiEo4QmGz4d0gZK/7uOZ7TImiRWRDW58XA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJQcmPhJLO+Mqz3PPvfTtBaZQQVdPr819FncmEzcn8EPyUE0vuZuM1MIudSpXMjZZg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a4715831-6eee-423a-8d6d-e51e6da07a6d",
+                            SecurityStamp = "670ec06d-8d28-4fc9-8f14-d59bdd0b5517",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -2727,15 +2727,15 @@ namespace Food.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e7ae2dae-5f7f-48c6-b5bf-d9cddc546eb0",
+                            ConcurrencyStamp = "a6b2641a-9fd6-479e-b965-a746679b3f9f",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEF63WwQtmAQqpzAvELHedNE0UGcmOOd2Gx8Y9FUun/YyXsF4F/LSLQWs1ZhUXrYlXA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENakxCDR6yABDgrPpIRvsG0Pe9E9SmppHUZwjKx14c6r/IPJoPcczaPfuqE5bVAO5w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3bcf1aef-ee10-4851-889d-59c8ddd60bea",
+                            SecurityStamp = "fe1cf86e-6b09-4701-aa48-30a29fb4809d",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
