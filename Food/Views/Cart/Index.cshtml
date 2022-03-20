@@ -51,7 +51,7 @@
                             {
                                 int totalPriceInProduct = item.Quantity + item.ProductPrice;
                                 <tr>
-                                    <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
+                                    <td><a class="remove" href="/cart/remove?id=@item.ProductId"><fa class="fa fa-close"></fa></a></td>
                                     <td><a href="#"><img src="@item.ProductImg1" alt="img"></a></td>
                                     <td><a class="aa-cart-title" href="/productdetail?id=@item.ProductId">@item.ProductName</a></td>
                                     <td>$@item.ProductPrice</td>
@@ -60,8 +60,6 @@
                                 </tr>           
                             }
                         }
-                     
-                      
                       <tr>
                         <td colspan="6" class="aa-cart-view-bottom">
                           
@@ -96,7 +94,7 @@
                    </tr>
                  </tbody>
                </table>
-               <a href="#" class="aa-cart-view-btn">Proced to Checkout</a>
+               <a href="/checkout" class="aa-cart-view-btn">Proced to Checkout</a>
              </div>
            </div>
          </div>

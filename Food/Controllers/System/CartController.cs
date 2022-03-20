@@ -71,7 +71,6 @@ namespace Food.Controllers.System
             else
             {
                 //No login
-
                 //Count product in cart page
                 var queryCart = _context.CartsDevice;
                 ViewBag.CountProductInCart = queryCart.Count();
@@ -89,7 +88,6 @@ namespace Food.Controllers.System
                 if ((HttpContext.Session.GetString(KeySession.sessionCouponPrice) == null)||(HttpContext.Session.GetString(KeySession.sessionCouponPrice) == ""))
                 {
                     ViewBag.CouponPrice = 0;
-                    
                 }
                 else
                 {
@@ -108,37 +106,36 @@ namespace Food.Controllers.System
                         UserId = x.d.deviceId,
                         Color = x.b.picd_color,
                         Size = x.b.picd_size
-
-
                     });
 
                 return View(productInCartModelQuery);
-
             }
-            
-
-
-
-
-            
         }
 
 
 
         [Route("/cart/remove")]
-        [HttpGet("{productid}&{quantity}")]
-        public IActionResult RemoveProduct(int productid, int quantity)
+        [HttpGet("id")]
+        public IActionResult RemoveProduct(int id)
         {
-
-            int aa = productid;
-
             try
             {
-                var productQuery = _context.ProductInCart.FirstOrDefault(a => a.pic_ProductId == productid);
-                _context.ProductInCart.Remove(productQuery);
-                _context.SaveChanges();
+                bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
 
+                if (checkLogin)
+                {
+                    //Logined
 
+                }
+                else
+                {
+                    // No login
+                    // Query product in cart device and remove 
+                    var productQuery = _context.ProductInCartDevices.FirstOrDefault(a => a.picd_ProductId == id);
+                    _context.ProductInCartDevices.Remove(productQuery);
+                    _context.SaveChanges();
+                }
+                    
 
                 return RedirectToAction(nameof(Index));
             }
@@ -147,34 +144,8 @@ namespace Food.Controllers.System
                 return RedirectToAction(nameof(Index));
             }
 
-            ////
-
         }
 
-        [Route("/cart/paid")]
-        [HttpGet("{coupon}&{quantity}")]
-        public IActionResult addpaid(string coupon, int quantity)
-        {
-
-            try
-            {
-                int ReducePrice = 0;
-
-                var couponQuery = _context.Coupons.FirstOrDefault(a => a.couponCode == coupon);
-
-                if (couponQuery != null)
-                {
-                    ReducePrice = couponQuery.couponPrice;
-                }
-                return Redirect("/checkout?reduceprice="+ ReducePrice);
-            }
-            catch 
-            {
-
-                return RedirectToAction(nameof(Index));
-            }
-            
-        }
 
         [Route("/cart/addCoupon")]
         [HttpGet("{coupon}&{quantity}")]
@@ -183,7 +154,6 @@ namespace Food.Controllers.System
 
             try
             {
-
                 var couponQuery = _context.Coupons.FirstOrDefault(a => a.couponCode == coupon);
 
                 // Set Coupon price in session
