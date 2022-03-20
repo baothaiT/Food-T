@@ -47,13 +47,11 @@ namespace Food.Controllers
             ViewBag.Img2 = productDetailQuery.pd_Img2;
             ViewBag.Img3 = productDetailQuery.pd_Img3;
             ViewBag.Img4 = productDetailQuery.pd_Img4;
-
             ViewBag.NameProduct = productDetailQuery.pd_Name;
             ViewBag.Price = productDetailQuery.pd_Price;
             ViewBag.Rate = productDetailQuery.pd_Rate;
             ViewBag.ShortDescription = productDetailQuery.pd_ShortDescription;
             ViewBag.Description = productDetailQuery.pd_Description;
-
             ViewBag.Size7 = productDetailQuery.pd_Size7;
             ViewBag.Size7_5 = productDetailQuery.pd_Size7_5;
             ViewBag.Size8 = productDetailQuery.pd_Size8;
@@ -139,19 +137,14 @@ namespace Food.Controllers
                         //subreviewAdd.subReview_SubUploadTime = itemSubReview.subReview_SubUploadTime;
                         //subreviewAdd.subReview_SubUserId = itemSubReview.subReview_Subid;
                         //subreviewAdd.subReview_UserName = itemSubReview.subReview_UserName;
-
                         subreviewAddList.Add(itemSubReview);
                     }
                 }
-
                 itemReview.review_SubreviewModelList = subreviewAddList;
                 itemReview.review_CountSubReview = subreviewAddList.Count();
                 reviewAdd.Add(itemReview);
             }
             var reviewQuery1 = reviewAdd.Cast<ReviewModel>().ToArray();
-
-
-
             return View(reviewQuery1);
         }
 
@@ -164,33 +157,38 @@ namespace Food.Controllers
             {
                 string namePc = Environment.MachineName;
                 bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
-
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var userName = User.FindFirstValue(ClaimTypes.Name);
 
                 int quantityProduct = Int16.Parse(quantity);
-
                 string cartId = Guid.NewGuid().ToString();
                 
 
                 if (checkLogin)
                 {
-                    
-
-                    
 
                     // Logined
-                    //Create cart
-                    var cartCreate = new Cart()
+
+                    // Query cart
+                    var queryCart = _context.Cart.FirstOrDefault(a => a.cart_UserID == userId.ToString());
+
+                    if (queryCart == null)
                     {
-                        cart_Id = cartId,
-                        cart_UserID = userId
-                    };
+                        //Create cart 
+                        var cartCreate = new Cart()
+                        {
+                            cart_Id = cartId,
+                            cart_UserID = userId
+                        };
+                        _context.Cart.Add(cartCreate);
+                    }
+                    else
+                    {
+                        cartId = queryCart.cart_Id;
+                    }
+                    
 
-                    _context.Cart.Add(cartCreate);
-
-                    //Create ProductInCart
-
+                     //Create ProductInCart
                     var ProductInCartCreate = new ProductInCart()
                     {
                         pic_CartId = cartId,
@@ -199,9 +197,7 @@ namespace Food.Controllers
                         pic_size = size,
                         pic_color = color
                     };
-
                     _context.ProductInCart.Add(ProductInCartCreate);
-
                     await _context.SaveChangesAsync();
                 }else
                 {
@@ -212,7 +208,6 @@ namespace Food.Controllers
                     if (deviceQuery == null)
                     {
                         string DeviceId = Guid.NewGuid().ToString();
-
                         var AddDevice = new Device()
                         {
                             deviceId = DeviceId,
@@ -220,13 +215,9 @@ namespace Food.Controllers
                         };
 
                         _context.Devices.Add(AddDevice);
-
                         await _context.SaveChangesAsync();
                     }
                     /// Create Device in DB
-                    /// 
-
-
                     var deviceQueryre = _context.Devices.FirstOrDefault(a => a.deviceName == namePc);
 
                     //Create cart
@@ -237,7 +228,6 @@ namespace Food.Controllers
                     };
 
                     _context.CartsDevice.Add(CartsDevice);
-
                     var ProductInCartDevices = new ProductInCartDevices()
                     {
                         picd_CartId = cartId,
@@ -248,23 +238,13 @@ namespace Food.Controllers
                     };
 
                     _context.ProductInCartDevices.Add(ProductInCartDevices);
-
                     await _context.SaveChangesAsync();
                 }
-
-                
-
-
                 return Redirect("/cart");
             }
             catch
             {
-
-
                 var productDetailQuery = _context.Products.FirstOrDefault(a => a.pd_Id == productid);
-
-
-
                 return View(productDetailQuery);
             }
 
@@ -279,9 +259,7 @@ namespace Food.Controllers
             {
 
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
                 var userName = User.FindFirstValue(ClaimTypes.Name);
-
                 string reviewId = Guid.NewGuid().ToString();
 
                 string idproduct = Request.Form["idproduct"];
@@ -297,27 +275,16 @@ namespace Food.Controllers
                         review_ReviewType = "Review"
                     };
 
-
-
-                    
-
                     int idProductInt = Int32.Parse(idproduct);
-
                     _context.Reviews.Add(reviews);
-
                     var reviewInProduct = new ReviewInproduct()
                     {
                         rip_ProductId = idProductInt,
                         rip_ReviewId = reviewId
                     };
                     _context.ReviewInproduct.Add(reviewInProduct);
-
-
                     await _context.SaveChangesAsync();
                 }
-
-                
-
                 return Redirect("/productdetail?id=" + idproduct);
             }
             catch
@@ -337,9 +304,7 @@ namespace Food.Controllers
             {
 
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
                 var userName = User.FindFirstValue(ClaimTypes.Name);
-
                 string SubReviewId = Guid.NewGuid().ToString();
 
                 string idproduct = Request.Form["idproduct"];
@@ -355,13 +320,8 @@ namespace Food.Controllers
                         subreview_SubReviewType = "SubReview"
                     };
 
-
-
-                    
                     string idCommentMain = Request.Form["idcommentmain"];
-
                     int idProductInt = Int32.Parse(idproduct);
-
                     _context.SubReview.Add(SubReviews);
 
                     var SubReviewInReview = new SubReviewInReview()
@@ -369,13 +329,10 @@ namespace Food.Controllers
                         SRiR_ReviewId = idCommentMain,
                         SRiR_SubReviewId = SubReviewId
                     };
+
                     _context.SubReviewInReview.Add(SubReviewInReview);
-
-
                     await _context.SaveChangesAsync();
                 }
-               
-
                 return Redirect("/productdetail?id=" + idproduct);
             }
             catch

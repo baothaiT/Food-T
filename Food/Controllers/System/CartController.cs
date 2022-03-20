@@ -31,13 +31,12 @@ namespace Food.Controllers.System
 
         
         [Route("/cart")]
-        [HttpGet("{productid}&{quantity}")]
-        public IActionResult Index(int productid, int quantity)
+        [HttpGet]
+        public IActionResult Index()
         {
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userName = User.FindFirstValue(ClaimTypes.Name);
-
             string namePc = Environment.MachineName;
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
             
@@ -81,7 +80,6 @@ namespace Food.Controllers.System
                             join c in _context.CartsDevice on b.picd_CartId equals c.cartd_Id
                             join d in _context.Devices on c.cartd_DeviceId equals d.deviceId
                             select new { a, b, c, d };
-
                 query = query.Where(x => x.d.deviceName == namePc);
 
                 //Get CouponPrice In Session
