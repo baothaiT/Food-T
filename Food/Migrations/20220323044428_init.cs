@@ -483,25 +483,6 @@ namespace Food.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Wishlists",
-                columns: table => new
-                {
-                    wl_Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    wl_UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Wishlists", x => x.wl_Id);
-                    table.ForeignKey(
-                        name: "FK_Wishlists_Users_wl_UserId",
-                        column: x => x.wl_UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ProductInCartDevices",
                 columns: table => new
                 {
@@ -603,31 +584,6 @@ namespace Food.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "ProductInWishlist",
-                columns: table => new
-                {
-                    piw_WishlistId = table.Column<int>(type: "int", nullable: false),
-                    piw_ProductId = table.Column<int>(type: "int", nullable: false),
-                    piw_amount = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductInWishlist", x => new { x.piw_WishlistId, x.piw_ProductId });
-                    table.ForeignKey(
-                        name: "FK_ProductInWishlist_Products_piw_ProductId",
-                        column: x => x.piw_ProductId,
-                        principalTable: "Products",
-                        principalColumn: "pd_Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProductInWishlist_Wishlists_piw_WishlistId",
-                        column: x => x.piw_WishlistId,
-                        principalTable: "Wishlists",
-                        principalColumn: "wl_Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.InsertData(
                 table: "About",
                 columns: new[] { "about_id", "about_Description", "about_Title", "about_Url" },
@@ -657,64 +613,22 @@ namespace Food.Migrations
                 columns: new[] { "couponId", "couponCode", "couponPrice" },
                 values: new object[,]
                 {
-                    { "89cd9cf5-6da6-403a-b761-4c3e8ad8cfe7", "code10", 10 },
-                    { "f3a883fc-a299-48e5-8d15-0b9490d310f1", "code50", 50 }
+                    { "65f27155-ff9c-4a70-9ac6-f7f2e95d453e", "code10", 10 },
+                    { "77f173b7-87b6-4682-9f5f-e7102d0dc7de", "code50", 50 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "pd_Id", "pd_Brand", "pd_Color", "pd_Description", "pd_Img1", "pd_Img2", "pd_Img3", "pd_Img4", "pd_Material", "pd_MenuFacturer", "pd_Name", "pd_NameImg1", "pd_NameImg2", "pd_NameImg3", "pd_NameImg4", "pd_Price", "pd_Rate", "pd_ReducePrice", "pd_ShortDescription", "pd_Size", "pd_Size10", "pd_Size10_5", "pd_Size11", "pd_Size11_5", "pd_Size12", "pd_Size12_5", "pd_Size13", "pd_Size13_5", "pd_Size14", "pd_Size14_5", "pd_Size7", "pd_Size7_5", "pd_Size8", "pd_Size8_5", "pd_Size9", "pd_Size9_5", "pd_Style", "pd_Technologies", "pd_WaitForConfirmation" },
-                values: new object[,]
-                {
-                    { 19, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/ca-hoi-cat-khuc.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Fish", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 20, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/ca-huong.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Fish", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 21, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/ca-ngu.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Fish", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 22, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/ca-song-dong-lanh.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 23, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/ca-thu-cat-khuc.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 24, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/dalat-milk.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 25, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/gia-vi-nau-bun.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 26, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/gia-vi-nau-bun-rieu.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 30, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/Hop-12-trung-ga.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 28, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/gia-vi-sup-ga.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 29, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/gia-vi-tom.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 18, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/ca-cam.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Fish", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 31, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/Hop-12-trung-vit.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 32, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/hop-4-trung-vit-bach-thao.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 33, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/Hop-5-trung-vit-bach-thao.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 34, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/Hop-6-trung-bach-thao.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 35, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/th-true-milk.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 27, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/gia-vi-pho.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 17, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/6-trung-ga-ta.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 13, "Nike", "Beach/Topaz Gold/Bright Crimson/Black", "", "https://drive.google.com/uc?id=1dzvmQMDzkUdh79Sw2Z0itgm1I12xwkA2", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Nike SB Nyjah Free 2", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "BV2078-200", "3", false },
-                    { 15, "Nike", "Pollen/Pink Blast/Black", "", "https://drive.google.com/uc?id=170Vm7Py5XUTDhFLn2tLt0CCBftOKbdFd", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Nike SB Nyjah Free 2", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 1, "Nike", "White/White", "Description", "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI", "https://drive.google.com/uc?export=download&id=1YBpU6fwcCzV18ho__mhCCO0yD8ES-ef7", "https://drive.google.com/uc?export=download&id=1sBANC4Og5eumFJBTVLYGIp2qTBKfwSzh", "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a", "1", "1", "Fish", "1", "2", "3", "4", 1, 5, 0, "Short Description", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CW2288-111", "1", false },
-                    { 2, "Nike", "Medium Olive/Carbon Green/Sail/Black", "Cream1", "https://drive.google.com/uc?id=1aaIG6S0bGnm5uhxHVBXy_BkEDb867O0-", "https://drive.google.com/uc?export=download&id=1Y4gS9zvfZdshJc4YySjz13ZGlMIft4kv", "https://drive.google.com/uc?export=download&id=1AyILI7QsTzqBPE6OvDMZpY7OAtxjkuH8", "https://drive.google.com/uc?export=download&id=1WT_vD4nC_szHPH9LVbl_UztqvXlmqs2e", "2", "2", "Cream", "1", "2", "3", "4", 1, 5, 0, "Cream1", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DM6435-222", "2", false },
-                    { 3, "Nike", "Cream II/Orange/Black/White", "Cream2", "https://drive.google.com/uc?id=1raFVtP42IkQ1t-lPPRFi_E5X4iJ0NW4-", "https://drive.google.com/uc?export=download&id=1kFLigFwBNPiqYhIOs2QRL39nRo0IJYWS", "https://drive.google.com/uc?export=download&id=1KZJQR5jt9rzVOBxfUZRx-tjKoO3dKNDJ", "https://drive.google.com/uc?export=download&id=10oXph87Rn43M13WNaxJWpL0XS_Mf_JFt", "3", "3", "Cream", "1", "2", "3", "4", 1, 4, 0, "Cream2", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DC2650-200", "3", false },
-                    { 4, "Nike", "Hemp/Sand Drift/Light Orewood Brown/Summit White", "", "https://drive.google.com/uc?id=1M0_A-sZfffj7gncHmbj88dHvvqXM1eEa", "https://drive.google.com/uc?export=download&id=1K85ItvCTycDSRX9p1Jbzm7Egg5l6OdRa", "https://drive.google.com/uc?export=download&id=1b5FDJjrsLKAlj7zBVGLoxdp_gaVTFkVE", "https://drive.google.com/uc?export=download&id=1LSQUzknGNiwOIVtHFNmPhGSh8ZE0CFJx", "3", "3", "Missu", "1", "2", "3", "4", 1, 4, 0, "hile Max Air cushioning adds comfort to your journey.", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DA1641-201", "3", false },
-                    { 16, "Nike", "Pollen/Pink Blast/Black", "", "https://drive.google.com/uc?id=1WlG6_0L1Hz6pXP50zUsaz2IPxZg6kjEi", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Nike SB Nyjah Free 2", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 6, "Nike", "Moon Fossil/Black", "", "https://drive.google.com/uc?id=1q5roIlNeK4nQtTmqAqz4wWAC6kI0aGQq", "https://drive.google.com/uc?export=download&id=1ezOB26pX2VmYZC1uVja89pZ4QJty7hXe", "https://drive.google.com/uc?export=download&id=1IiK2AM0M9bKRhSBofRlNSR8ZhseQsUmG", "https://drive.google.com/uc?export=download&id=1rctQk2u8mHcN41-GdWdCfHSeSRvDr1dr", "3", "3", "Nike ACG Air Deschutz +", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DC9092-001", "3", false },
-                    { 7, "Nike", "Hasta/Thunder Blue/Bucktan/Obsidian", "", "https://drive.google.com/uc?id=1BYoyjK2a0qyq6zPdr1enQBluAkifs_4d", "https://drive.google.com/uc?export=download&id=1cITDpeROBtZfWCsBYRj-obyMYR4SZQYX", "https://drive.google.com/uc?export=download&id=1Suli5ByGxovAPGmd_kM6GIenMTy32JPe", "https://drive.google.com/uc?export=download&id=1SkQjussYGb4HIrIIk0URRFY-L0rZjEpI", "3", "3", "Nike Air Max 97 SE", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DC3986-300", "3", false },
-                    { 5, "Nike", "Dark Driftwood/Sail/Light Chocolate/Black", "", "https://drive.google.com/uc?id=1ov844eV9xL19atvdLqYtsG6oLz1XPT0g", "https://drive.google.com/uc?export=download&id=1kxFSmfxV3eYg_2ikz2fF0G4UoXPedRJG", "https://drive.google.com/uc?export=download&id=1DxgC1AAKFgDxKSOtBnp_kytP3TlZ-kqr", "https://drive.google.com/uc?export=download&id=1dmp8HCRjPGXUyT3TkkHLZNiP9utabt_S", "3", "3", "Nike Air Max 90", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DB0625-200", "3", false },
-                    { 9, "Nike", "Grey Fog/Melon Tint/Metallic Silver", " ", "https://drive.google.com/uc?id=1lbsJAVJkbf-_V6pKzm1CZcAJfIsjjv0o", "https://drive.google.com/uc?export=download&id=1kRRsPNYRT0V5f7LKVRmJp82QMWJVYxeQ", "https://drive.google.com/uc?export=download&id=15wsxpi791SMVlR2Cn7k6FAbCOgUt3I2U", "https://drive.google.com/uc?export=download&id=1XdL62dPC4dpqNdc-BhHnrkm2Hl6morgo", "3", "3", "Nike ACG Air Nasu 2", "1", "2", "3", "4", 1, 4, 0, " ", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DC8296-001", "3", false },
-                    { 10, "Nike", "Light Mulberry/Flash Crimson", "", "https://drive.google.com/uc?id=1Dc-PtwoLK8v4YbJ6YWfuhKJ8KgqTs8tI", "https://drive.google.com/uc?export=download&id=1nm4RlNHYo8JP3KtJvT_bvFqOQ5vEGY2m", "https://drive.google.com/uc?export=download&id=1DcJqtgAnjTxw_zZyvTEsktIcR5pljTk6", "https://drive.google.com/uc?export=download&id=1bjUxZvzpqdlFxn5GrukZilFWpwx5UyvX", "3", "3", "Nike ACG Mountain Fly Low", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DC9045-0", "3", false },
-                    { 11, "Nike", "Black/Wolf Grey/Cool Grey/White", "", "https://drive.google.com/uc?id=1vSAQa_8Evmm1tkOzODtMz4GgWTHH5jq-", "https://drive.google.com/uc?export=download&id=1EERkVDnTn-m3dfv2eUCxIGIKZuENwZIu", "https://drive.google.com/uc?export=download&id=1B6Ae6KBW8vwsPz9K1btBZuSC9OZPn5Hu", "https://drive.google.com/uc?export=download&id=1WS6keGw5BUnYs04Ji-yuVf8_CFdh-mRz", "3", "3", "Nike SB Zoom Blazer Mid Premium", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DA8854-001", "3", false },
-                    { 12, "Nike", "Ghost/Ashen Slate/Obsidian Mist/Obsidian", "", "https://drive.google.com/uc?id=1UZX6cca2sF8sj5pO70ub8Gf23i1Zp6jO", "https://drive.google.com/uc?export=download&id=184n1JhhW9eVPiPU01g2LsrQaga75xZoT", "https://drive.google.com/uc?export=download&id=1vQa7rOZejxU29875pv8ne4fyrxt8WEdH", "https://drive.google.com/uc?export=download&id=1shZnWARtq5SwsibFewT6Km0duAMAkpoZ", "3", "3", "Nike Air Max 2021", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DA1925-002", "3", false },
-                    { 36, "Nike", "Pollen/Pink Blast/Black", "", "/images/item250x300/trung-vit-bach-thao.png", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "EGG", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CU9224-700", "3", false },
-                    { 14, "Nike", "Beach/Topaz Gold/Bright Crimson/Black", "", "https://drive.google.com/uc?id=1sKbuA1SGLb7l947dvLYBnV2Nzj9thvFB", "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh", "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf", "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya", "3", "3", "Nike SB Nyjah Free 2", "1", "2", "3", "4", 1, 4, 0, "", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "BV2078-200", "3", false }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Products",
-                columns: new[] { "pd_Id", "pd_Brand", "pd_Color", "pd_Description", "pd_Img1", "pd_Img2", "pd_Img3", "pd_Img4", "pd_Material", "pd_MenuFacturer", "pd_Name", "pd_NameImg1", "pd_NameImg2", "pd_NameImg3", "pd_NameImg4", "pd_Price", "pd_Rate", "pd_ReducePrice", "pd_ShortDescription", "pd_Size", "pd_Size10", "pd_Size10_5", "pd_Size11", "pd_Size11_5", "pd_Size12", "pd_Size12_5", "pd_Size13", "pd_Size13_5", "pd_Size14", "pd_Size14_5", "pd_Size7", "pd_Size7_5", "pd_Size8", "pd_Size8_5", "pd_Size9", "pd_Size9_5", "pd_Style", "pd_Technologies", "pd_WaitForConfirmation" },
-                values: new object[] { 8, "Nike", "Metallic Silver/Black/White/Persian Violet", " ", "https://drive.google.com/uc?id=1TOlxRiO2y8v05O7ZPDBaPO2OnFPrjIY7", "https://drive.google.com/uc?export=download&id=1-zJ4GbHm0iys-PO3XwWHTOB1LLlMQhaR", "https://drive.google.com/uc?export=download&id=1UUI3tV4jyTpPvv8akrL0jcJXDuIWzjM1", "https://drive.google.com/uc?export=download&id=1AXIRrKM96HazbtzcSxhKY59wFjEm1zVe", "3", "3", "Nike Air Max 97", "1", "2", "3", "4", 1, 4, 0, " ", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "DJ0717-001", "3", false });
+                values: new object[] { 1, "Nike", "White/White", "Description", "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI", "https://drive.google.com/uc?export=download&id=1YBpU6fwcCzV18ho__mhCCO0yD8ES-ef7", "https://drive.google.com/uc?export=download&id=1sBANC4Og5eumFJBTVLYGIp2qTBKfwSzh", "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a", "1", "1", "Fish", "1", "2", "3", "4", 1, 5, 0, "Short Description", "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48", true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true, "CW2288-111", "1", false });
 
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Discriminator", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "360E601E-92F2-4F08-832B-604A21293258", "c3037dd5-8c4a-48cc-bec3-d4317b0b2aa9", "admin", "AppRole", "admin", null },
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "fead2ee5-317c-4634-b20b-70bdd025afa9", "Staff", "AppRole", "staff", null }
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "29b3d575-9a48-4f2d-be14-866ec1d72799", "Staff", "AppRole", "staff", null },
+                    { "360E601E-92F2-4F08-832B-604A21293258", "0242665d-7d72-4a49-99d4-9829175747c3", "admin", "AppRole", "admin", null }
                 });
 
             migrationBuilder.InsertData(
@@ -727,18 +641,14 @@ namespace Food.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "DoB", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "bill_Address1", "bill_Address2", "bill_City", "bill_CompanyName", "bill_Country", "bill_PhoneNumber", "bill_PostalCode", "bill_State" },
                 values: new object[,]
                 {
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "a6b2641a-9fd6-479e-b965-a746679b3f9f", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAENakxCDR6yABDgrPpIRvsG0Pe9E9SmppHUZwjKx14c6r/IPJoPcczaPfuqE5bVAO5w==", null, false, "fe1cf86e-6b09-4701-aa48-30a29fb4809d", false, "Staff", null, null, null, null, null, null, null, null },
-                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "b8941c76-bc12-4877-9a71-00e982a51c51", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEJQcmPhJLO+Mqz3PPvfTtBaZQQVdPr819FncmEzcn8EPyUE0vuZuM1MIudSpXMjZZg==", null, false, "670ec06d-8d28-4fc9-8f14-d59bdd0b5517", false, "Admin", null, null, null, null, null, null, null, null }
+                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "94a9d498-4e34-43d0-96f3-7199e95a4eb0", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEPEnFQk08OTTM1NymgTW8dGFud0jcbqICMq+sXeHL2rpf1Mp5zeXHill3h27hhNxLg==", null, false, "bfefdc5a-bc1f-41c5-bfbf-4d8c691041d7", false, "Admin", null, null, null, null, null, null, null, null },
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "41d5adc6-3145-4215-8039-68f794743c33", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEEXhVQHa12BXldA4xtGAIdQ3J8lZDt6+OJumqU9C8Y6dcmKcNe8N5IS76RfjvxV2/g==", null, false, "1de6aba2-a729-4e43-bfe2-a1a29a724c49", false, "Staff", null, null, null, null, null, null, null, null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Bills",
                 columns: new[] { "bill_Id", "bill_Cancelled", "bill_Confirmation", "bill_DatetimeOrder", "bill_Delivered", "bill_Delivering", "bill_Discount", "bill_HideStatus", "bill_Note", "bill_PaidTotal", "bill_PaymentMethod", "bill_ProductColorlist", "bill_ProductIdlist", "bill_ProductNamelist", "bill_ProductPricelist", "bill_ProductSizelist", "bill_Quantity", "bill_Shipping", "bill_UserId", "bill_WaitForConfirmation", "bill_WaitPickup" },
-                values: new object[,]
-                {
-                    { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2022, 3, 20, 14, 49, 23, 793, DateTimeKind.Local).AddTicks(5742), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false },
-                    { "AFD66490-12F5-4EA7-BFF6-425624290D6D", false, true, new DateTime(2022, 3, 20, 14, 49, 23, 794, DateTimeKind.Local).AddTicks(4349), false, false, 0, false, "", 2100, "Check Payment", "Blue|Red|Black|Green", "5|6|7|8", "product 5|product 6| product 7| product 8", "550|450|350|640", "7|8|9|14", "1|1|2|2", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false }
-                });
+                values: new object[] { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2022, 3, 23, 11, 44, 27, 345, DateTimeKind.Local).AddTicks(8032), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green", "1|2|3|4", "product 1|product 2| product 3| product 4", "550|450|350|640", "7|8|9|14", "1|1|2|1", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false });
 
             migrationBuilder.InsertData(
                 table: "Carts",
@@ -752,12 +662,7 @@ namespace Food.Migrations
             migrationBuilder.InsertData(
                 table: "ProductsInCategories",
                 columns: new[] { "pic_CategoriesId", "pic_productId" },
-                values: new object[,]
-                {
-                    { 1, 1 },
-                    { 1, 2 },
-                    { 2, 3 }
-                });
+                values: new object[] { 1, 1 });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
@@ -774,9 +679,9 @@ namespace Food.Migrations
                 columns: new[] { "subReview_Id", "subReview_Commnet", "subReview_DateCommnet", "subReview_HideStatus", "subReview_UserId", "subreview_SubReviewType" },
                 values: new object[,]
                 {
-                    { "d5a14ed1-780a-4293-9ec3-7ea893dc8d63", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
-                    { "c9722386-695f-47b1-ac3f-04ed2955b9c2", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
-                    { "529a41e1-eb6d-40c1-897e-b402f5021fe2", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" }
+                    { "bd3a64d9-4bdd-4a7b-8a71-29674667e4ca", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
+                    { "c572ca51-603a-4610-a19d-a6dcf60e89ef", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
+                    { "eab80989-6ad6-4e8e-9970-0fff27a1ff4e", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" }
                 });
 
             migrationBuilder.InsertData(
@@ -789,24 +694,9 @@ namespace Food.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Wishlists",
-                columns: new[] { "wl_Id", "wl_UserId" },
-                values: new object[] { 1, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff" });
-
-            migrationBuilder.InsertData(
                 table: "ProductInCart",
                 columns: new[] { "pic_CartId", "pic_ProductId", "pic_amount", "pic_color", "pic_size" },
-                values: new object[,]
-                {
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", 1, 2, "blue", "7" },
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", 2, 3, "blue", "7.5" },
-                    { "D355458F-1DD3-4834-AA28-6DA34B6357FF", 3, 1, "blue", "8" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "ProductInWishlist",
-                columns: new[] { "piw_ProductId", "piw_WishlistId", "piw_amount" },
-                values: new object[] { 1, 1, 0 });
+                values: new object[] { "D355458F-1DD3-4834-AA28-6DA34B6357FF", 1, 2, "blue", "7" });
 
             migrationBuilder.InsertData(
                 table: "ReviewInproduct",
@@ -823,9 +713,9 @@ namespace Food.Migrations
                 columns: new[] { "SRiR_ReviewId", "SRiR_SubReviewId" },
                 values: new object[,]
                 {
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "d5a14ed1-780a-4293-9ec3-7ea893dc8d63" },
-                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "c9722386-695f-47b1-ac3f-04ed2955b9c2" },
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "529a41e1-eb6d-40c1-897e-b402f5021fe2" }
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "bd3a64d9-4bdd-4a7b-8a71-29674667e4ca" },
+                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "c572ca51-603a-4610-a19d-a6dcf60e89ef" },
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "eab80989-6ad6-4e8e-9970-0fff27a1ff4e" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -852,11 +742,6 @@ namespace Food.Migrations
                 name: "IX_ProductInCartDevices_picd_ProductId",
                 table: "ProductInCartDevices",
                 column: "picd_ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductInWishlist_piw_ProductId",
-                table: "ProductInWishlist",
-                column: "piw_ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductsInCategories_pic_CategoriesId",
@@ -921,11 +806,6 @@ namespace Food.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Wishlists_wl_UserId",
-                table: "Wishlists",
-                column: "wl_UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -950,9 +830,6 @@ namespace Food.Migrations
 
             migrationBuilder.DropTable(
                 name: "ProductInCartDevices");
-
-            migrationBuilder.DropTable(
-                name: "ProductInWishlist");
 
             migrationBuilder.DropTable(
                 name: "ProductsInCategories");
@@ -989,9 +866,6 @@ namespace Food.Migrations
 
             migrationBuilder.DropTable(
                 name: "CartsDevice");
-
-            migrationBuilder.DropTable(
-                name: "Wishlists");
 
             migrationBuilder.DropTable(
                 name: "Categories");

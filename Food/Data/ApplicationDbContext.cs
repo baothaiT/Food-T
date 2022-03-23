@@ -55,11 +55,9 @@ namespace Food.Data
             builder.ApplyConfiguration(new ContactUsersConfigurations());
             builder.ApplyConfiguration(new ProductInCartConfigurations());
             builder.ApplyConfiguration(new ProductInCategoriesConfigurations());
-            builder.ApplyConfiguration(new ProductInWishlistConfigurations());
             builder.ApplyConfiguration(new ProductsConfigurations());
             builder.ApplyConfiguration(new ReviewsConfigurations());
             builder.ApplyConfiguration(new ReviewInproductConfigurations());
-            builder.ApplyConfiguration(new WishlistsConfigurations());
             builder.ApplyConfiguration(new CouponsConfigurations());
             builder.ApplyConfiguration(new DeviceConfigurations());
             builder.ApplyConfiguration(new DeviceConfigurations());
@@ -91,11 +89,9 @@ namespace Food.Data
         public DbSet<ContactUsers> ContactUsers { set; get; }
         public DbSet<Products> Products { set; get; }
         public DbSet<Reviews> Reviews { set; get; }
-        public DbSet<Wishlists> Wishlists { set; get; }
         public DbSet<ReviewInproduct> ReviewInproduct { set; get; }
         public DbSet<ProductInCart> ProductInCart { set; get; }
         public DbSet<ProductsInCategories> ProductsInCategories { set; get; }
-        public DbSet<ProductInWishlist> ProductInWishlist { set; get; }
         public DbSet<Cart> Cart { set; get; }
         public DbSet<Coupons> Coupons { set; get; }
         public DbSet<Device> Devices { set; get; }
