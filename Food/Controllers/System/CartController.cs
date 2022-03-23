@@ -114,7 +114,7 @@ namespace Food.Controllers.System
 
         [Route("/cart/remove")]
         [HttpGet("id")]
-        public IActionResult RemoveProduct(int id)
+        public IActionResult RemoveProduct(string id)
         {
             try
             {

@@ -49,8 +49,8 @@ namespace Food.Controllers.Staff
 
 
         // GET: ProductManagementController/Details/5
-        [HttpGet("/productmanagement/details/{id:int?}/")]
-        public ActionResult Details(int id)
+        [HttpGet("/productmanagement/details/{id:guid?}/")]
+        public ActionResult Details(string id)
         {
             var productQuery = _context.Products.FirstOrDefault(x => x.pd_Id == id);
             return View(productQuery);
@@ -85,14 +85,7 @@ namespace Food.Controllers.Staff
                     pd_Img3 = productModel.pd_Img3,
                     pd_Img4 = productModel.pd_Img4,
                     pd_Rate = productModel.pd_Rate,
-                    pd_MenuFacturer = productModel.pd_MenuFacturer,
-                    pd_ShortDescription = productModel.pd_ShortDescription,
-                    pd_Size = productModel.pd_Size,
-                    pd_Brand = productModel.pd_Brand,
-                    pd_Style = productModel.pd_Style,
-                    pd_Color = productModel.pd_Color,
-                    pd_Material = productModel.pd_Material,
-                    pd_Technologies = productModel.pd_Technologies
+                    pd_ShortDescription = productModel.pd_ShortDescription
                 };
 
 
@@ -108,15 +101,13 @@ namespace Food.Controllers.Staff
             }
         }
 
-        [HttpGet("/productmanagement/edit/{id:int?}/")]
+        [HttpGet("/productmanagement/edit/{id:guid?}/")]
         // GET: ProductManagementController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
             try
             {
-
                 var productQuery = _context.Products.FirstOrDefault(x => x.pd_Id == id);
-
                 return View(productQuery);
             }
             catch (Exception)
@@ -129,9 +120,9 @@ namespace Food.Controllers.Staff
         }
 
         // POST: ProductManagementController/Edit/5
-        [HttpPost("/productmanagement/edit/{id:int?}/")]
+        [HttpPost("/productmanagement/edit/{id:guid?}/")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ProductModel productModel)
+        public ActionResult Edit(string id, ProductModel productModel)
         {
             try
             {
@@ -147,17 +138,6 @@ namespace Food.Controllers.Staff
                 productQuery.pd_Img3 = productModel.pd_Img3;
                 productQuery.pd_Img4 = productModel.pd_Img4;
                 productQuery.pd_Rate = productModel.pd_Rate;
-                productQuery.pd_MenuFacturer = productModel.pd_MenuFacturer;
-                productQuery.pd_ShortDescription = productModel.pd_ShortDescription;
-                productQuery.pd_Size = productModel.pd_Size;
-                productQuery.pd_Brand = productModel.pd_Brand;
-                productQuery.pd_Style = productModel.pd_Style;
-                productQuery.pd_Color = productModel.pd_Color;
-                productQuery.pd_Material = productModel.pd_Material;
-                productQuery.pd_Technologies = productModel.pd_Technologies;
-
-
-
                 _context.SaveChanges();
 
                 return RedirectToAction(nameof(Index));
@@ -175,8 +155,8 @@ namespace Food.Controllers.Staff
 
 
         // GET: ProductManagementController/Delete/5
-        [HttpGet("/productmanagement/delete/{id:int?}/")]
-        public ActionResult Delete(int id)
+        [HttpGet("/productmanagement/delete/{id:guid?}/")]
+        public ActionResult Delete(string id)
         {
             var productQuery = _context.Products.FirstOrDefault(x => x.pd_Id == id);
 
@@ -184,9 +164,9 @@ namespace Food.Controllers.Staff
         }
 
         // POST: ProductManagementController/Delete/5
-        [HttpPost("/productmanagement/delete/{id:int?}/")]
+        [HttpPost("/productmanagement/delete/{id:guid?}/")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(string id, IFormCollection collection)
         {
             try
             {

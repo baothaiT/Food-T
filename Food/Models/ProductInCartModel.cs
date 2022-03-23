@@ -7,7 +7,7 @@ namespace Food.Models
 {
     public class ProductInCartModel
     {
-        public int ProductId { set; get; }
+        public string ProductId { set; get; }
 
         public string ProductName { set; get; }
 

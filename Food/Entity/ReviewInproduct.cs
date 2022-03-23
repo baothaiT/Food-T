@@ -10,7 +10,7 @@ namespace Food.Entity
         public Reviews ReviewsRIP { get; set; }
         public string rip_ReviewId { get; set; }
         public Products ProductsRIP { get; set; }
-        public int rip_ProductId { get; set; }
+        public string rip_ProductId { get; set; }
 
 
     }

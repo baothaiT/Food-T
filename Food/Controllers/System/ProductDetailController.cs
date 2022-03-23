@@ -150,7 +150,7 @@ namespace Food.Controllers
 
         [Route("/productdetailadd")]
         [HttpGet("{productid}&{quantity}&{color}&{size}")]
-        public async Task<IActionResult> Index(int productid, string quantity,string color,string size)
+        public async Task<IActionResult> Index(string productid, string quantity,string color,string size)
         {
 
             try

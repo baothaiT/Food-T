@@ -14,53 +14,543 @@ namespace Food.Data.DataSeeding
         {
 
 
-            //var hasher = new PasswordHasher<AppUsers>();
-
+            //Id for product id
+            var product1 = Guid.NewGuid().ToString();
+            var product2 = Guid.NewGuid().ToString();
+            var product3 = Guid.NewGuid().ToString();
+            var product4 = Guid.NewGuid().ToString();
+            var product5 = Guid.NewGuid().ToString();
+            var product6 = Guid.NewGuid().ToString();
+            var product7 = Guid.NewGuid().ToString();
+            var product8 = Guid.NewGuid().ToString();
+            var product9 = Guid.NewGuid().ToString();
+            var product10 = Guid.NewGuid().ToString();
+            var product11 = Guid.NewGuid().ToString();
+            var product12 = Guid.NewGuid().ToString();
+            var product13 = Guid.NewGuid().ToString();
+            var product14 = Guid.NewGuid().ToString();
+            var product15 = Guid.NewGuid().ToString();
+            var product16 = Guid.NewGuid().ToString();
+            var product17 = Guid.NewGuid().ToString();
+            var product18 = Guid.NewGuid().ToString();
+            var product19 = Guid.NewGuid().ToString();
+            var product20 = Guid.NewGuid().ToString();
+            var product21 = Guid.NewGuid().ToString();
+            var product22 = Guid.NewGuid().ToString();
+            var product23 = Guid.NewGuid().ToString();
+            var product24 = Guid.NewGuid().ToString();
+            var product25 = Guid.NewGuid().ToString();
+            var product26 = Guid.NewGuid().ToString();
+            var product27 = Guid.NewGuid().ToString();
+            var product28 = Guid.NewGuid().ToString();
 
 
             //Table Products
             builder.Entity<Products>().HasData(
                 new Products()
                 {
-                    pd_Id = 1,
-                    pd_Name = "Fish",
-                    pd_Description = "Description",
+                    pd_Id = product1,
+                    pd_Name = "BanhCanhCua",
+                    pd_Description = "BanhCanhCua",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1YBpU6fwcCzV18ho__mhCCO0yD8ES-ef7",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1sBANC4Og5eumFJBTVLYGIp2qTBKfwSzh",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a",
+                    pd_Img1 = "/images/item250x300/BanhCanhCua.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
                     pd_Rate = 5,
-                    pd_MenuFacturer = "1",
                     pd_ShortDescription = "Short Description",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CW2288-111",
-                    pd_Color = "White/White",
-                    pd_Material = "1",
-                    pd_Technologies = "1",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 =true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 =true,
-                    pd_Size12 =true,
-                    pd_Size12_5= true,
-                    pd_Size13_5=true,
-                    pd_Size14 = true,
-                    pd_Size14_5 =true,
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
-
+                },
+                new Products()
+                {
+                    pd_Id = product2,
+                    pd_Name = "BanhMi",
+                    pd_Description = "BanhMi",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/BanhMi.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                }
+                ,
+                new Products()
+                {
+                    pd_Id = product3,
+                    pd_Name = "banhtrangtron",
+                    pd_Description = "banhtrangtron",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/banhtrangtron.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product4,
+                    pd_Name = "banhuotlongdalat",
+                    pd_Description = "banhuotlongdalat",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/banhuotlongdalat.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product5,
+                    pd_Name = "BoKho",
+                    pd_Description = "BoKho",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/BoKho.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product6,
+                    pd_Name = "bunbo",
+                    pd_Description = "bunbo",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/bunbo.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product7,
+                    pd_Name = "bundaumamtom",
+                    pd_Description = "bundaumamtom",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/bundaumamtom.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product8,
+                    pd_Name = "Bunxaochay",
+                    pd_Description = "Bunxaochay",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/Bunxaochay.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product9,
+                    pd_Name = "cocosummer",
+                    pd_Description = "cocosummer",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/cocosummer.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product10,
+                    pd_Name = "comboxao",
+                    pd_Description = "comboxao",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/comboxao.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product11,
+                    pd_Name = "comga",
+                    pd_Description = "comga",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/comga.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product12,
+                    pd_Name = "comgadenhat",
+                    pd_Description = "comgadenhat",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/comgadenhat.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product13,
+                    pd_Name = "denhatthitnuong",
+                    pd_Description = "denhatthitnuong",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/denhatthitnuong.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product14,
+                    pd_Name = "goicuon",
+                    pd_Description = "goicuon",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/goicuon.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product15,
+                    pd_Name = "kfc",
+                    pd_Description = "kfc",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/kfc.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product16,
+                    pd_Name = "KimBap",
+                    pd_Description = "KimBap",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/KimBap.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product17,
+                    pd_Name = "loteria",
+                    pd_Description = "loteria",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/loteria.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product18,
+                    pd_Name = "mitronanvat",
+                    pd_Description = "mitronanvat",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/mitronanvat.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product19,
+                    pd_Name = "monngontrangbang",
+                    pd_Description = "monngontrangbang",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/monngontrangbang.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product20,
+                    pd_Name = "ParisBaguete",
+                    pd_Description = "ParisBaguete",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/ParisBaguete.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product21,
+                    pd_Name = "pizza",
+                    pd_Description = "pizza",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/pizza.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product22,
+                    pd_Name = "quanngontrangbang",
+                    pd_Description = "quanngontrangbang",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/quanngontrangbang.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product23,
+                    pd_Name = "RauMaMix",
+                    pd_Description = "RauMaMix",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/RauMaMix.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product24,
+                    pd_Name = "Royaltea",
+                    pd_Description = "Royaltea",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/Royaltea.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product25,
+                    pd_Name = "Sanfulou",
+                    pd_Description = "Sanfulou",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/Sanfulou.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product26,
+                    pd_Name = "stacbuk-cf",
+                    pd_Description = "stacbuk-cf",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/stacbuk-cf.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product27,
+                    pd_Name = "trasuanhalam",
+                    pd_Description = "trasuanhalam",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/trasuanhalam.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product28,
+                    pd_Name = "Xoixeoba3beo",
+                    pd_Description = "Xoixeoba3beo",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/Xoixeoba3beo.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
                 }
                 );
 
@@ -178,17 +668,6 @@ namespace Food.Data.DataSeeding
 
 
             //Table Product In Cart
-
-            builder.Entity<ProductInCart>().HasData(
-                new ProductInCart()
-                {
-                     pic_CartId = IdCart2,
-                     pic_ProductId =1,
-                     pic_amount = 2,
-                     pic_size = "7",
-                     pic_color = "blue"
-
-                });
 
 
             //Table Categories
@@ -369,17 +848,17 @@ namespace Food.Data.DataSeeding
             builder.Entity<ReviewInproduct>().HasData(
                 new ReviewInproduct()
                 {
-                    rip_ProductId = 1,
+                    rip_ProductId = product1,
                     rip_ReviewId = ReviewId1,
                 },
                 new ReviewInproduct()
                 {
-                    rip_ProductId = 1,
+                    rip_ProductId = product1,
                     rip_ReviewId = ReviewId2,
                 },
                 new ReviewInproduct()
                 {
-                    rip_ProductId = 1,
+                    rip_ProductId = product1,
                     rip_ReviewId = ReviewId3,
                 });
 

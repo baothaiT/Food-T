@@ -10,7 +10,7 @@ namespace Food.Entity
     {
 
         [DisplayName("Id")]
-        public int pd_Id { set; get; }
+        public string pd_Id { set; get; }
 
 
         [DisplayName("Name Product")]
@@ -45,38 +45,8 @@ namespace Food.Entity
         public int pd_Rate { set; get; }
 
 
-        public string pd_MenuFacturer { set; get; }
-
         public string pd_ShortDescription { set; get; }
 
-        public string pd_Size { set; get; }
-        public bool pd_Size7 { set; get; }
-        public bool pd_Size7_5 { set; get; }
-        public bool pd_Size8 { set; get; }
-        public bool pd_Size8_5 { set; get; }
-        public bool pd_Size9 { set; get; }
-        public bool pd_Size9_5 { set; get; }
-        public bool pd_Size10 { set; get; }
-        public bool pd_Size10_5 { set; get; }
-        public bool pd_Size11 { set; get; }
-        public bool pd_Size11_5 { set; get; }
-        public bool pd_Size12 { set; get; }
-        public bool pd_Size12_5 { set; get; }
-        public bool pd_Size13 { set; get; }
-        public bool pd_Size13_5 { set; get; }
-        public bool pd_Size14 { set; get; }
-        public bool pd_Size14_5 { set; get; }
-
-
-        public string pd_Brand { set; get; }
-
-        public string pd_Style { set; get; }
-
-        public string pd_Color { set; get; }
-
-        public string pd_Material { set; get; }
-
-        public string pd_Technologies { set; get; }
 
         public bool pd_WaitForConfirmation { set; get; }
         
