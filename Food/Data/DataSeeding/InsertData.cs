@@ -670,25 +670,52 @@ namespace Food.Data.DataSeeding
             //Table Product In Cart
 
 
+            // Set id for Categories
+            var idCategories1 = Guid.NewGuid().ToString();
+            var idCategories2 = Guid.NewGuid().ToString();
+            var idCategories3 = Guid.NewGuid().ToString();
+            var idCategories4 = Guid.NewGuid().ToString();
+            var idCategories5 = Guid.NewGuid().ToString();
+
+
             //Table Categories
-
-
-
-
-
             builder.Entity<Categories>().HasData(
                 new Categories()
                 {
-                    cg_Id = 1,
-                    cg_Name = "women",
+                    cg_Id = idCategories1,
+                    cg_Name = "Dry food",
                     cg_Type = "",
                     cg_Sale = ""
 
                 },
                 new Categories()
                 {
-                    cg_Id = 2,
-                    cg_Name = "Man",
+                    cg_Id = idCategories2,
+                    cg_Name = "Food",
+                    cg_Type = "",
+                    cg_Sale = ""
+
+                },
+                new Categories()
+                {
+                    cg_Id = idCategories3,
+                    cg_Name = "Drink",
+                    cg_Type = "",
+                    cg_Sale = ""
+
+                },
+                new Categories()
+                {
+                    cg_Id = idCategories4,
+                    cg_Name = "Banhmi",
+                    cg_Type = "",
+                    cg_Sale = ""
+
+                },
+                new Categories()
+                {
+                    cg_Id = idCategories5,
+                    cg_Name = "AnVat",
                     cg_Type = "",
                     cg_Sale = ""
 
@@ -830,8 +857,143 @@ namespace Food.Data.DataSeeding
             builder.Entity<ProductsInCategories>().HasData(
                 new ProductsInCategories()
                 {
-                    pic_CategoriesId = 1,
-                    pic_productId = 1
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product7
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product8
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product10
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product11
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product12
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product13
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product14
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product16
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product1
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product4
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product5
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product6
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product19
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories3,
+                    pic_productId = product23
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories3,
+                    pic_productId = product24
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories3,
+                    pic_productId = product26
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories3,
+                    pic_productId = product27
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories4,
+                    pic_productId = product2
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories4,
+                    pic_productId = product18
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product3
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product9
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product15
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product17
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product20
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product21
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product22
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product25
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product28
                 });
 
 
@@ -880,7 +1042,6 @@ namespace Food.Data.DataSeeding
 
 
             string billId1 = "D269BF93-A5E2-4C4A-8146-9967DDE80D30";
-            string billId2 = "AFD66490-12F5-4EA7-BFF6-425624290D6D";
 
             //Table Bills
 

@@ -31,7 +31,7 @@ namespace Food.Controllers
 
         [Route("/productdetail")]
         [HttpGet("{id}")]
-        public IActionResult Index(int id)
+        public IActionResult Index(string id)
         {
             //Count product in cart page
             var queryCart = _context.CartsDevice;
@@ -52,22 +52,6 @@ namespace Food.Controllers
             ViewBag.Rate = productDetailQuery.pd_Rate;
             ViewBag.ShortDescription = productDetailQuery.pd_ShortDescription;
             ViewBag.Description = productDetailQuery.pd_Description;
-            ViewBag.Size7 = productDetailQuery.pd_Size7;
-            ViewBag.Size7_5 = productDetailQuery.pd_Size7_5;
-            ViewBag.Size8 = productDetailQuery.pd_Size8;
-            ViewBag.Size8_5 = productDetailQuery.pd_Size8_5;
-            ViewBag.Size9 = productDetailQuery.pd_Size9;
-            ViewBag.Size9_5 = productDetailQuery.pd_Size9_5;
-            ViewBag.Size10 = productDetailQuery.pd_Size10;
-            ViewBag.Size10_5 = productDetailQuery.pd_Size10_5;
-            ViewBag.Size11 = productDetailQuery.pd_Size11;
-            ViewBag.Size11_5 = productDetailQuery.pd_Size11_5;
-            ViewBag.Size12 = productDetailQuery.pd_Size12;
-            ViewBag.Size12_5 = productDetailQuery.pd_Size12_5;
-            ViewBag.Size13 = productDetailQuery.pd_Size13;
-            ViewBag.Size13_5 = productDetailQuery.pd_Size13_5;
-            ViewBag.Size14 = productDetailQuery.pd_Size14;
-            ViewBag.Size14_5 = productDetailQuery.pd_Size14_5;
 
 
 
@@ -275,11 +259,10 @@ namespace Food.Controllers
                         review_ReviewType = "Review"
                     };
 
-                    int idProductInt = Int32.Parse(idproduct);
                     _context.Reviews.Add(reviews);
                     var reviewInProduct = new ReviewInproduct()
                     {
-                        rip_ProductId = idProductInt,
+                        rip_ProductId = idproduct,
                         rip_ReviewId = reviewId
                     };
                     _context.ReviewInproduct.Add(reviewInProduct);

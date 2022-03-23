@@ -8,7 +8,7 @@ namespace Food.Models
     public class ReviewModel
     {
         //Table product
-        public int review_ProductId { set; get; }
+        public string review_ProductId { set; get; }
         public string review_ProductName { set; get; }
         public string review_ProductIMG1 { set; get; }
         public string review_ProductDecription { set; get; }

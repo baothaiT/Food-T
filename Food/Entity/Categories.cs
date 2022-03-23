@@ -7,7 +7,7 @@ namespace Food.Entity
 {
     public class Categories
     {
-        public int cg_Id { set; get; }
+        public string cg_Id { set; get; }
         public string cg_Name { set; get; }
         public string cg_Type { set; get; }
         public string cg_Sale { set; get; }

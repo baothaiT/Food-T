@@ -10,7 +10,7 @@ namespace Food.Models
     public class ProductModel
     {
         
-        public int pd_Id { set; get; }
+        public string pd_Id { set; get; }
         public string pd_Name { set; get; }
         public string pd_Description { set; get; }
         public int pd_Price { set; get; }
