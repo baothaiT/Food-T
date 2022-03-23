@@ -126,7 +126,7 @@ namespace Food.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2022, 3, 19, 18, 14, 56, 95, DateTimeKind.Local).AddTicks(1757),
+                            bill_DatetimeOrder = new DateTime(2022, 3, 23, 13, 24, 4, 349, DateTimeKind.Local).AddTicks(9675),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -140,30 +140,6 @@ namespace Food.Migrations
                             bill_ProductPricelist = "550|450|350|640",
                             bill_ProductSizelist = "7|8|9|14",
                             bill_Quantity = "1|1|2|1",
-                            bill_Shipping = 10,
-                            bill_UserId = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
-                            bill_WaitForConfirmation = false,
-                            bill_WaitPickup = false
-                        },
-                        new
-                        {
-                            bill_Id = "AFD66490-12F5-4EA7-BFF6-425624290D6D",
-                            bill_Cancelled = false,
-                            bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2022, 3, 19, 18, 14, 56, 96, DateTimeKind.Local).AddTicks(2432),
-                            bill_Delivered = false,
-                            bill_Delivering = false,
-                            bill_Discount = 0,
-                            bill_HideStatus = false,
-                            bill_Note = "",
-                            bill_PaidTotal = 2100,
-                            bill_PaymentMethod = "Check Payment",
-                            bill_ProductColorlist = "Blue|Red|Black|Green",
-                            bill_ProductIdlist = "5|6|7|8",
-                            bill_ProductNamelist = "product 5|product 6| product 7| product 8",
-                            bill_ProductPricelist = "550|450|350|640",
-                            bill_ProductSizelist = "7|8|9|14",
-                            bill_Quantity = "1|1|2|2",
                             bill_Shipping = 10,
                             bill_UserId = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             bill_WaitForConfirmation = false,
@@ -215,10 +191,8 @@ namespace Food.Migrations
 
             modelBuilder.Entity("Food.Entity.Categories", b =>
                 {
-                    b.Property<int>("cg_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("cg_Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("cg_Name")
                         .HasColumnType("nvarchar(max)");
@@ -236,15 +210,36 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            cg_Id = 1,
-                            cg_Name = "women",
+                            cg_Id = "12a93d87-d27b-4802-a3bc-8891e82088d7",
+                            cg_Name = "Dry food",
                             cg_Sale = "",
                             cg_Type = ""
                         },
                         new
                         {
-                            cg_Id = 2,
-                            cg_Name = "Man",
+                            cg_Id = "5c707e4b-c9c3-498a-8601-12218189a148",
+                            cg_Name = "Food",
+                            cg_Sale = "",
+                            cg_Type = ""
+                        },
+                        new
+                        {
+                            cg_Id = "206197fd-ba96-4d4e-99f9-8f7fd8a8cbc0",
+                            cg_Name = "Drink",
+                            cg_Sale = "",
+                            cg_Type = ""
+                        },
+                        new
+                        {
+                            cg_Id = "ae6913c2-8b7f-444e-af77-177e0aafc11f",
+                            cg_Name = "Banhmi",
+                            cg_Sale = "",
+                            cg_Type = ""
+                        },
+                        new
+                        {
+                            cg_Id = "dc36ef03-d23d-466c-a084-3b0c979f308e",
+                            cg_Name = "AnVat",
                             cg_Sale = "",
                             cg_Type = ""
                         });
@@ -340,13 +335,13 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "49a1020c-1c72-4c9c-8df2-d8b11038cfa9",
+                            couponId = "7162095c-0650-47e5-a4a6-2e49839ac718",
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "fa84ca0b-b109-4e5c-939d-c00c761162a0",
+                            couponId = "d1e7df2d-fefb-4c68-b610-46e7b662c9cc",
                             couponCode = "code50",
                             couponPrice = 50
                         });
@@ -394,8 +389,8 @@ namespace Food.Migrations
                     b.Property<string>("pic_CartId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("pic_ProductId")
-                        .HasColumnType("int");
+                    b.Property<string>("pic_ProductId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("pic_amount")
                         .HasColumnType("int");
@@ -411,32 +406,6 @@ namespace Food.Migrations
                     b.HasIndex("pic_ProductId");
 
                     b.ToTable("ProductInCart");
-
-                    b.HasData(
-                        new
-                        {
-                            pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
-                            pic_ProductId = 1,
-                            pic_amount = 2,
-                            pic_color = "blue",
-                            pic_size = "7"
-                        },
-                        new
-                        {
-                            pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
-                            pic_ProductId = 2,
-                            pic_amount = 3,
-                            pic_color = "blue",
-                            pic_size = "7.5"
-                        },
-                        new
-                        {
-                            pic_CartId = "D355458F-1DD3-4834-AA28-6DA34B6357FF",
-                            pic_ProductId = 3,
-                            pic_amount = 1,
-                            pic_color = "blue",
-                            pic_size = "8"
-                        });
                 });
 
             modelBuilder.Entity("Food.Entity.ProductInCartDevices", b =>
@@ -444,8 +413,8 @@ namespace Food.Migrations
                     b.Property<string>("picd_CartId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("picd_ProductId")
-                        .HasColumnType("int");
+                    b.Property<string>("picd_ProductId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("picd_amount")
                         .HasColumnType("int");
@@ -463,44 +432,10 @@ namespace Food.Migrations
                     b.ToTable("ProductInCartDevices");
                 });
 
-            modelBuilder.Entity("Food.Entity.ProductInWishlist", b =>
-                {
-                    b.Property<int>("piw_WishlistId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("piw_ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("piw_amount")
-                        .HasColumnType("int");
-
-                    b.HasKey("piw_WishlistId", "piw_ProductId");
-
-                    b.HasIndex("piw_ProductId");
-
-                    b.ToTable("ProductInWishlist");
-
-                    b.HasData(
-                        new
-                        {
-                            piw_WishlistId = 1,
-                            piw_ProductId = 1,
-                            piw_amount = 0
-                        });
-                });
-
             modelBuilder.Entity("Food.Entity.Products", b =>
                 {
-                    b.Property<int>("pd_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("pd_Brand")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pd_Color")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("pd_Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("pd_Description")
                         .HasColumnType("nvarchar(max)");
@@ -515,12 +450,6 @@ namespace Food.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("pd_Img4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pd_Material")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pd_MenuFacturer")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("pd_Name")
@@ -550,63 +479,6 @@ namespace Food.Migrations
                     b.Property<string>("pd_ShortDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("pd_Size")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("pd_Size10")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size10_5")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size11")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size11_5")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size12")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size12_5")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size13")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size13_5")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size14")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size14_5")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size7")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size7_5")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size8")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size8_5")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size9")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("pd_Size9_5")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("pd_Style")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("pd_Technologies")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("pd_WaitForConfirmation")
                         .HasColumnType("bit");
 
@@ -617,17 +489,13 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            pd_Id = 1,
-                            pd_Brand = "Nike",
-                            pd_Color = "White/White",
-                            pd_Description = "Description",
-                            pd_Img1 = "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1YBpU6fwcCzV18ho__mhCCO0yD8ES-ef7",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1sBANC4Og5eumFJBTVLYGIp2qTBKfwSzh",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a",
-                            pd_Material = "1",
-                            pd_MenuFacturer = "1",
-                            pd_Name = "Fish",
+                            pd_Id = "3973e4fa-dd55-4f42-a9ab-a0596c7fb887",
+                            pd_Description = "BanhCanhCua",
+                            pd_Img1 = "/images/item250x300/BanhCanhCua.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "BanhCanhCua",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
@@ -636,40 +504,17 @@ namespace Food.Migrations
                             pd_Rate = 5,
                             pd_ReducePrice = 0,
                             pd_ShortDescription = "Short Description",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CW2288-111",
-                            pd_Technologies = "1",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 2,
-                            pd_Brand = "Nike",
-                            pd_Color = "Medium Olive/Carbon Green/Sail/Black",
-                            pd_Description = "Cream1",
-                            pd_Img1 = "https://drive.google.com/uc?id=1aaIG6S0bGnm5uhxHVBXy_BkEDb867O0-",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1Y4gS9zvfZdshJc4YySjz13ZGlMIft4kv",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1AyILI7QsTzqBPE6OvDMZpY7OAtxjkuH8",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1WT_vD4nC_szHPH9LVbl_UztqvXlmqs2e",
-                            pd_Material = "2",
-                            pd_MenuFacturer = "2",
-                            pd_Name = "Cream",
+                            pd_Id = "07f2ca36-f48e-4b38-9505-8019fa819ad6",
+                            pd_Description = "BanhMi",
+                            pd_Img1 = "/images/item250x300/BanhMi.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "BanhMi",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
@@ -677,1465 +522,512 @@ namespace Food.Migrations
                             pd_Price = 1,
                             pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "Cream1",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DM6435-222",
-                            pd_Technologies = "2",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 3,
-                            pd_Brand = "Nike",
-                            pd_Color = "Cream II/Orange/Black/White",
-                            pd_Description = "Cream2",
-                            pd_Img1 = "https://drive.google.com/uc?id=1raFVtP42IkQ1t-lPPRFi_E5X4iJ0NW4-",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1kFLigFwBNPiqYhIOs2QRL39nRo0IJYWS",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1KZJQR5jt9rzVOBxfUZRx-tjKoO3dKNDJ",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=10oXph87Rn43M13WNaxJWpL0XS_Mf_JFt",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Cream",
+                            pd_Id = "b9941d0a-9d1a-495c-af30-4bfbd9fa89bf",
+                            pd_Description = "banhtrangtron",
+                            pd_Img1 = "/images/item250x300/banhtrangtron.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "banhtrangtron",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "Cream2",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DC2650-200",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 4,
-                            pd_Brand = "Nike",
-                            pd_Color = "Hemp/Sand Drift/Light Orewood Brown/Summit White",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1M0_A-sZfffj7gncHmbj88dHvvqXM1eEa",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1K85ItvCTycDSRX9p1Jbzm7Egg5l6OdRa",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1b5FDJjrsLKAlj7zBVGLoxdp_gaVTFkVE",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1LSQUzknGNiwOIVtHFNmPhGSh8ZE0CFJx",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Missu",
+                            pd_Id = "5b616fb7-3876-45f0-85ec-772797aff13a",
+                            pd_Description = "banhuotlongdalat",
+                            pd_Img1 = "/images/item250x300/banhuotlongdalat.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "banhuotlongdalat",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "hile Max Air cushioning adds comfort to your journey.",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DA1641-201",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 5,
-                            pd_Brand = "Nike",
-                            pd_Color = "Dark Driftwood/Sail/Light Chocolate/Black",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1ov844eV9xL19atvdLqYtsG6oLz1XPT0g",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1kxFSmfxV3eYg_2ikz2fF0G4UoXPedRJG",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1DxgC1AAKFgDxKSOtBnp_kytP3TlZ-kqr",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1dmp8HCRjPGXUyT3TkkHLZNiP9utabt_S",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike Air Max 90",
+                            pd_Id = "3a99e0b6-3710-4717-bba7-3447023ab7ca",
+                            pd_Description = "BoKho",
+                            pd_Img1 = "/images/item250x300/BoKho.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "BoKho",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DB0625-200",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 6,
-                            pd_Brand = "Nike",
-                            pd_Color = "Moon Fossil/Black",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1q5roIlNeK4nQtTmqAqz4wWAC6kI0aGQq",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1ezOB26pX2VmYZC1uVja89pZ4QJty7hXe",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1IiK2AM0M9bKRhSBofRlNSR8ZhseQsUmG",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1rctQk2u8mHcN41-GdWdCfHSeSRvDr1dr",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike ACG Air Deschutz +",
+                            pd_Id = "a721212a-e956-49cb-a4e2-119596bd8a22",
+                            pd_Description = "bunbo",
+                            pd_Img1 = "/images/item250x300/bunbo.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "bunbo",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DC9092-001",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 7,
-                            pd_Brand = "Nike",
-                            pd_Color = "Hasta/Thunder Blue/Bucktan/Obsidian",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1BYoyjK2a0qyq6zPdr1enQBluAkifs_4d",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1cITDpeROBtZfWCsBYRj-obyMYR4SZQYX",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1Suli5ByGxovAPGmd_kM6GIenMTy32JPe",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1SkQjussYGb4HIrIIk0URRFY-L0rZjEpI",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike Air Max 97 SE",
+                            pd_Id = "3b9c173e-5b79-444b-a36e-fbf82eda394f",
+                            pd_Description = "bundaumamtom",
+                            pd_Img1 = "/images/item250x300/bundaumamtom.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "bundaumamtom",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DC3986-300",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 8,
-                            pd_Brand = "Nike",
-                            pd_Color = "Metallic Silver/Black/White/Persian Violet",
-                            pd_Description = " ",
-                            pd_Img1 = "https://drive.google.com/uc?id=1TOlxRiO2y8v05O7ZPDBaPO2OnFPrjIY7",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1-zJ4GbHm0iys-PO3XwWHTOB1LLlMQhaR",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1UUI3tV4jyTpPvv8akrL0jcJXDuIWzjM1",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1AXIRrKM96HazbtzcSxhKY59wFjEm1zVe",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike Air Max 97",
+                            pd_Id = "69f1fd84-3224-4819-bf40-e918bd6d8f08",
+                            pd_Description = "Bunxaochay",
+                            pd_Img1 = "/images/item250x300/Bunxaochay.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "Bunxaochay",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = " ",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DJ0717-001",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 9,
-                            pd_Brand = "Nike",
-                            pd_Color = "Grey Fog/Melon Tint/Metallic Silver",
-                            pd_Description = " ",
-                            pd_Img1 = "https://drive.google.com/uc?id=1lbsJAVJkbf-_V6pKzm1CZcAJfIsjjv0o",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1kRRsPNYRT0V5f7LKVRmJp82QMWJVYxeQ",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15wsxpi791SMVlR2Cn7k6FAbCOgUt3I2U",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1XdL62dPC4dpqNdc-BhHnrkm2Hl6morgo",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike ACG Air Nasu 2",
+                            pd_Id = "3659e5fa-323a-4083-89e3-b14a542162f7",
+                            pd_Description = "cocosummer",
+                            pd_Img1 = "/images/item250x300/cocosummer.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "cocosummer",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = " ",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DC8296-001",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 10,
-                            pd_Brand = "Nike",
-                            pd_Color = "Light Mulberry/Flash Crimson",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1Dc-PtwoLK8v4YbJ6YWfuhKJ8KgqTs8tI",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1nm4RlNHYo8JP3KtJvT_bvFqOQ5vEGY2m",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1DcJqtgAnjTxw_zZyvTEsktIcR5pljTk6",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1bjUxZvzpqdlFxn5GrukZilFWpwx5UyvX",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike ACG Mountain Fly Low",
+                            pd_Id = "0ce1bcb1-3652-4824-9bf5-3550bccac56b",
+                            pd_Description = "comboxao",
+                            pd_Img1 = "/images/item250x300/comboxao.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "comboxao",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DC9045-0",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 11,
-                            pd_Brand = "Nike",
-                            pd_Color = "Black/Wolf Grey/Cool Grey/White",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1vSAQa_8Evmm1tkOzODtMz4GgWTHH5jq-",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1EERkVDnTn-m3dfv2eUCxIGIKZuENwZIu",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1B6Ae6KBW8vwsPz9K1btBZuSC9OZPn5Hu",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1WS6keGw5BUnYs04Ji-yuVf8_CFdh-mRz",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike SB Zoom Blazer Mid Premium",
+                            pd_Id = "46d2105d-fd3f-4a8d-b6b2-6cc81dbef570",
+                            pd_Description = "comga",
+                            pd_Img1 = "/images/item250x300/comga.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "comga",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DA8854-001",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 12,
-                            pd_Brand = "Nike",
-                            pd_Color = "Ghost/Ashen Slate/Obsidian Mist/Obsidian",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1UZX6cca2sF8sj5pO70ub8Gf23i1Zp6jO",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=184n1JhhW9eVPiPU01g2LsrQaga75xZoT",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=1vQa7rOZejxU29875pv8ne4fyrxt8WEdH",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1shZnWARtq5SwsibFewT6Km0duAMAkpoZ",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike Air Max 2021",
+                            pd_Id = "2525bdfa-9372-4eca-bfbd-83c48fa4b8e2",
+                            pd_Description = "comgadenhat",
+                            pd_Img1 = "/images/item250x300/comgadenhat.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "comgadenhat",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "DA1925-002",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 13,
-                            pd_Brand = "Nike",
-                            pd_Color = "Beach/Topaz Gold/Bright Crimson/Black",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1dzvmQMDzkUdh79Sw2Z0itgm1I12xwkA2",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike SB Nyjah Free 2",
+                            pd_Id = "69102647-9cb6-4622-b78a-46303b1640a4",
+                            pd_Description = "denhatthitnuong",
+                            pd_Img1 = "/images/item250x300/denhatthitnuong.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "denhatthitnuong",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "BV2078-200",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 14,
-                            pd_Brand = "Nike",
-                            pd_Color = "Beach/Topaz Gold/Bright Crimson/Black",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1sKbuA1SGLb7l947dvLYBnV2Nzj9thvFB",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike SB Nyjah Free 2",
+                            pd_Id = "4f3bc5dc-192c-4157-be55-f3c96d3657f7",
+                            pd_Description = "goicuon",
+                            pd_Img1 = "/images/item250x300/goicuon.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "goicuon",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "BV2078-200",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 15,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=170Vm7Py5XUTDhFLn2tLt0CCBftOKbdFd",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike SB Nyjah Free 2",
+                            pd_Id = "379df0a6-0225-47c9-97e4-3dfa459f2f23",
+                            pd_Description = "kfc",
+                            pd_Img1 = "/images/item250x300/kfc.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "kfc",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 16,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "https://drive.google.com/uc?id=1WlG6_0L1Hz6pXP50zUsaz2IPxZg6kjEi",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Nike SB Nyjah Free 2",
+                            pd_Id = "651238c9-965a-4a29-8b67-ff309efdeb65",
+                            pd_Description = "KimBap",
+                            pd_Img1 = "/images/item250x300/KimBap.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "KimBap",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 17,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/6-trung-ga-ta.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
+                            pd_Id = "16dc906b-8e0d-4e32-a0bf-812598070316",
+                            pd_Description = "loteria",
+                            pd_Img1 = "/images/item250x300/loteria.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "loteria",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 18,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/ca-cam.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Fish",
+                            pd_Id = "afd5b1a9-e944-49ac-9331-0f20064ebf5e",
+                            pd_Description = "mitronanvat",
+                            pd_Img1 = "/images/item250x300/mitronanvat.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "mitronanvat",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 19,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/ca-hoi-cat-khuc.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Fish",
+                            pd_Id = "9bf9b3f9-4320-4b65-8494-c053d7453871",
+                            pd_Description = "monngontrangbang",
+                            pd_Img1 = "/images/item250x300/monngontrangbang.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "monngontrangbang",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 20,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/ca-huong.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Fish",
+                            pd_Id = "b56f0fe7-656e-4548-b2e7-ff25db8f3df8",
+                            pd_Description = "ParisBaguete",
+                            pd_Img1 = "/images/item250x300/ParisBaguete.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "ParisBaguete",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 21,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/ca-ngu.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "Fish",
+                            pd_Id = "12b120a5-f8c2-4957-a33a-a43209e4fa5f",
+                            pd_Description = "pizza",
+                            pd_Img1 = "/images/item250x300/pizza.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "pizza",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 22,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/ca-song-dong-lanh.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
+                            pd_Id = "a5c3e2e1-6d0f-48c6-ba7b-154da67f3762",
+                            pd_Description = "quanngontrangbang",
+                            pd_Img1 = "/images/item250x300/quanngontrangbang.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "quanngontrangbang",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 23,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/ca-thu-cat-khuc.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
+                            pd_Id = "1f89a058-5006-43af-8b28-73cf2f56baeb",
+                            pd_Description = "RauMaMix",
+                            pd_Img1 = "/images/item250x300/RauMaMix.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "RauMaMix",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 24,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/dalat-milk.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
+                            pd_Id = "2698297a-09c9-47a7-9087-9249d9db5500",
+                            pd_Description = "Royaltea",
+                            pd_Img1 = "/images/item250x300/Royaltea.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "Royaltea",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 25,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/gia-vi-nau-bun.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
+                            pd_Id = "d2300ed5-d85a-4e70-b5ee-d66afd73e2d7",
+                            pd_Description = "Sanfulou",
+                            pd_Img1 = "/images/item250x300/Sanfulou.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "Sanfulou",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 26,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/gia-vi-nau-bun-rieu.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
+                            pd_Id = "77c3b775-fe55-48d3-8b3a-cf27154a5d88",
+                            pd_Description = "stacbuk-cf",
+                            pd_Img1 = "/images/item250x300/stacbuk-cf.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "stacbuk-cf",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 27,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/gia-vi-pho.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
+                            pd_Id = "1038b4d5-3a19-45d0-adff-3342e454d914",
+                            pd_Description = "trasuanhalam",
+                            pd_Img1 = "/images/item250x300/trasuanhalam.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "trasuanhalam",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         },
                         new
                         {
-                            pd_Id = 28,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/gia-vi-sup-ga.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
+                            pd_Id = "a80efe2a-7d54-4bf5-be5e-f4caecaa3559",
+                            pd_Description = "Xoixeoba3beo",
+                            pd_Img1 = "/images/item250x300/Xoixeoba3beo.png",
+                            pd_Img2 = "",
+                            pd_Img3 = "",
+                            pd_Img4 = "",
+                            pd_Name = "Xoixeoba3beo",
                             pd_NameImg1 = "1",
                             pd_NameImg2 = "2",
                             pd_NameImg3 = "3",
                             pd_NameImg4 = "4",
                             pd_Price = 1,
-                            pd_Rate = 4,
+                            pd_Rate = 5,
                             pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 29,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/gia-vi-tom.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 1,
-                            pd_Rate = 4,
-                            pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 30,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/Hop-12-trung-ga.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 1,
-                            pd_Rate = 4,
-                            pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 31,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/Hop-12-trung-vit.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 1,
-                            pd_Rate = 4,
-                            pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 32,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/hop-4-trung-vit-bach-thao.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 1,
-                            pd_Rate = 4,
-                            pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 33,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/Hop-5-trung-vit-bach-thao.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 1,
-                            pd_Rate = 4,
-                            pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 34,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/Hop-6-trung-bach-thao.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 1,
-                            pd_Rate = 4,
-                            pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 35,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/th-true-milk.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 1,
-                            pd_Rate = 4,
-                            pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
-                            pd_WaitForConfirmation = false
-                        },
-                        new
-                        {
-                            pd_Id = 36,
-                            pd_Brand = "Nike",
-                            pd_Color = "Pollen/Pink Blast/Black",
-                            pd_Description = "",
-                            pd_Img1 = "/images/item250x300/trung-vit-bach-thao.png",
-                            pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                            pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                            pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                            pd_Material = "3",
-                            pd_MenuFacturer = "3",
-                            pd_Name = "EGG",
-                            pd_NameImg1 = "1",
-                            pd_NameImg2 = "2",
-                            pd_NameImg3 = "3",
-                            pd_NameImg4 = "4",
-                            pd_Price = 1,
-                            pd_Rate = 4,
-                            pd_ReducePrice = 0,
-                            pd_ShortDescription = "",
-                            pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                            pd_Size10 = true,
-                            pd_Size10_5 = true,
-                            pd_Size11 = true,
-                            pd_Size11_5 = true,
-                            pd_Size12 = true,
-                            pd_Size12_5 = true,
-                            pd_Size13 = false,
-                            pd_Size13_5 = true,
-                            pd_Size14 = true,
-                            pd_Size14_5 = true,
-                            pd_Size7 = true,
-                            pd_Size7_5 = true,
-                            pd_Size8 = true,
-                            pd_Size8_5 = true,
-                            pd_Size9 = true,
-                            pd_Size9_5 = true,
-                            pd_Style = "CU9224-700",
-                            pd_Technologies = "3",
+                            pd_ShortDescription = "Short Description",
                             pd_WaitForConfirmation = false
                         });
                 });
 
             modelBuilder.Entity("Food.Entity.ProductsInCategories", b =>
                 {
-                    b.Property<int>("pic_productId")
-                        .HasColumnType("int");
+                    b.Property<string>("pic_productId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("pic_CategoriesId")
-                        .HasColumnType("int");
+                    b.Property<string>("pic_CategoriesId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("pic_productId", "pic_CategoriesId");
 
@@ -2146,25 +1038,150 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            pic_productId = 1,
-                            pic_CategoriesId = 1
+                            pic_productId = "3b9c173e-5b79-444b-a36e-fbf82eda394f",
+                            pic_CategoriesId = "12a93d87-d27b-4802-a3bc-8891e82088d7"
                         },
                         new
                         {
-                            pic_productId = 2,
-                            pic_CategoriesId = 1
+                            pic_productId = "69f1fd84-3224-4819-bf40-e918bd6d8f08",
+                            pic_CategoriesId = "12a93d87-d27b-4802-a3bc-8891e82088d7"
                         },
                         new
                         {
-                            pic_productId = 3,
-                            pic_CategoriesId = 2
+                            pic_productId = "0ce1bcb1-3652-4824-9bf5-3550bccac56b",
+                            pic_CategoriesId = "12a93d87-d27b-4802-a3bc-8891e82088d7"
+                        },
+                        new
+                        {
+                            pic_productId = "46d2105d-fd3f-4a8d-b6b2-6cc81dbef570",
+                            pic_CategoriesId = "12a93d87-d27b-4802-a3bc-8891e82088d7"
+                        },
+                        new
+                        {
+                            pic_productId = "2525bdfa-9372-4eca-bfbd-83c48fa4b8e2",
+                            pic_CategoriesId = "12a93d87-d27b-4802-a3bc-8891e82088d7"
+                        },
+                        new
+                        {
+                            pic_productId = "69102647-9cb6-4622-b78a-46303b1640a4",
+                            pic_CategoriesId = "12a93d87-d27b-4802-a3bc-8891e82088d7"
+                        },
+                        new
+                        {
+                            pic_productId = "4f3bc5dc-192c-4157-be55-f3c96d3657f7",
+                            pic_CategoriesId = "12a93d87-d27b-4802-a3bc-8891e82088d7"
+                        },
+                        new
+                        {
+                            pic_productId = "651238c9-965a-4a29-8b67-ff309efdeb65",
+                            pic_CategoriesId = "12a93d87-d27b-4802-a3bc-8891e82088d7"
+                        },
+                        new
+                        {
+                            pic_productId = "3973e4fa-dd55-4f42-a9ab-a0596c7fb887",
+                            pic_CategoriesId = "5c707e4b-c9c3-498a-8601-12218189a148"
+                        },
+                        new
+                        {
+                            pic_productId = "5b616fb7-3876-45f0-85ec-772797aff13a",
+                            pic_CategoriesId = "5c707e4b-c9c3-498a-8601-12218189a148"
+                        },
+                        new
+                        {
+                            pic_productId = "3a99e0b6-3710-4717-bba7-3447023ab7ca",
+                            pic_CategoriesId = "5c707e4b-c9c3-498a-8601-12218189a148"
+                        },
+                        new
+                        {
+                            pic_productId = "a721212a-e956-49cb-a4e2-119596bd8a22",
+                            pic_CategoriesId = "5c707e4b-c9c3-498a-8601-12218189a148"
+                        },
+                        new
+                        {
+                            pic_productId = "9bf9b3f9-4320-4b65-8494-c053d7453871",
+                            pic_CategoriesId = "5c707e4b-c9c3-498a-8601-12218189a148"
+                        },
+                        new
+                        {
+                            pic_productId = "1f89a058-5006-43af-8b28-73cf2f56baeb",
+                            pic_CategoriesId = "206197fd-ba96-4d4e-99f9-8f7fd8a8cbc0"
+                        },
+                        new
+                        {
+                            pic_productId = "2698297a-09c9-47a7-9087-9249d9db5500",
+                            pic_CategoriesId = "206197fd-ba96-4d4e-99f9-8f7fd8a8cbc0"
+                        },
+                        new
+                        {
+                            pic_productId = "77c3b775-fe55-48d3-8b3a-cf27154a5d88",
+                            pic_CategoriesId = "206197fd-ba96-4d4e-99f9-8f7fd8a8cbc0"
+                        },
+                        new
+                        {
+                            pic_productId = "1038b4d5-3a19-45d0-adff-3342e454d914",
+                            pic_CategoriesId = "206197fd-ba96-4d4e-99f9-8f7fd8a8cbc0"
+                        },
+                        new
+                        {
+                            pic_productId = "07f2ca36-f48e-4b38-9505-8019fa819ad6",
+                            pic_CategoriesId = "ae6913c2-8b7f-444e-af77-177e0aafc11f"
+                        },
+                        new
+                        {
+                            pic_productId = "afd5b1a9-e944-49ac-9331-0f20064ebf5e",
+                            pic_CategoriesId = "ae6913c2-8b7f-444e-af77-177e0aafc11f"
+                        },
+                        new
+                        {
+                            pic_productId = "b9941d0a-9d1a-495c-af30-4bfbd9fa89bf",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
+                        },
+                        new
+                        {
+                            pic_productId = "3659e5fa-323a-4083-89e3-b14a542162f7",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
+                        },
+                        new
+                        {
+                            pic_productId = "379df0a6-0225-47c9-97e4-3dfa459f2f23",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
+                        },
+                        new
+                        {
+                            pic_productId = "16dc906b-8e0d-4e32-a0bf-812598070316",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
+                        },
+                        new
+                        {
+                            pic_productId = "b56f0fe7-656e-4548-b2e7-ff25db8f3df8",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
+                        },
+                        new
+                        {
+                            pic_productId = "12b120a5-f8c2-4957-a33a-a43209e4fa5f",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
+                        },
+                        new
+                        {
+                            pic_productId = "a5c3e2e1-6d0f-48c6-ba7b-154da67f3762",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
+                        },
+                        new
+                        {
+                            pic_productId = "d2300ed5-d85a-4e70-b5ee-d66afd73e2d7",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
+                        },
+                        new
+                        {
+                            pic_productId = "a80efe2a-7d54-4bf5-be5e-f4caecaa3559",
+                            pic_CategoriesId = "dc36ef03-d23d-466c-a084-3b0c979f308e"
                         });
                 });
 
             modelBuilder.Entity("Food.Entity.ReviewInproduct", b =>
                 {
-                    b.Property<int>("rip_ProductId")
-                        .HasColumnType("int");
+                    b.Property<string>("rip_ProductId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("rip_ReviewId")
                         .HasColumnType("nvarchar(450)");
@@ -2178,17 +1195,17 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            rip_ProductId = 1,
+                            rip_ProductId = "3973e4fa-dd55-4f42-a9ab-a0596c7fb887",
                             rip_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C"
                         },
                         new
                         {
-                            rip_ProductId = 1,
+                            rip_ProductId = "3973e4fa-dd55-4f42-a9ab-a0596c7fb887",
                             rip_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97"
                         },
                         new
                         {
-                            rip_ProductId = 1,
+                            rip_ProductId = "3973e4fa-dd55-4f42-a9ab-a0596c7fb887",
                             rip_ReviewId = "C2A543C2-B1E2-4DC5-A131-9137E4673FA6"
                         });
                 });
@@ -2302,7 +1319,7 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "f2563a6a-9e02-4e72-965d-b1e38e6b56e6",
+                            subReview_Id = "bb14c624-5e6a-4dfb-a246-39cde057e2d5",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2311,7 +1328,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            subReview_Id = "92c3061f-0fbf-40db-ad6e-9c4f184fecae",
+                            subReview_Id = "f571044e-026d-4c6e-a431-81543efde16e",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2320,7 +1337,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            subReview_Id = "d86cb986-0719-448d-9ca0-e1eda5c9c046",
+                            subReview_Id = "aa56b1de-5959-4dee-8a09-e9fa6f7cbf6b",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -2347,41 +1364,17 @@ namespace Food.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "f2563a6a-9e02-4e72-965d-b1e38e6b56e6"
+                            SRiR_SubReviewId = "bb14c624-5e6a-4dfb-a246-39cde057e2d5"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "92c3061f-0fbf-40db-ad6e-9c4f184fecae"
+                            SRiR_SubReviewId = "f571044e-026d-4c6e-a431-81543efde16e"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "d86cb986-0719-448d-9ca0-e1eda5c9c046"
-                        });
-                });
-
-            modelBuilder.Entity("Food.Entity.Wishlists", b =>
-                {
-                    b.Property<int>("wl_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("wl_UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("wl_Id");
-
-                    b.HasIndex("wl_UserId");
-
-                    b.ToTable("Wishlists");
-
-                    b.HasData(
-                        new
-                        {
-                            wl_Id = 1,
-                            wl_UserId = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff"
+                            SRiR_SubReviewId = "aa56b1de-5959-4dee-8a09-e9fa6f7cbf6b"
                         });
                 });
 
@@ -2649,14 +1642,14 @@ namespace Food.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "bdaf9b2f-11eb-4814-b141-2090e626acb2",
+                            ConcurrencyStamp = "652b8b83-cbc6-4699-9de4-b84d1eacfe4f",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "24d53486-4d19-4795-93e9-c42bc1f8612b",
+                            ConcurrencyStamp = "74a3f96e-32c2-46e9-aa80-5475af003610",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -2708,15 +1701,15 @@ namespace Food.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7b834731-a31b-4e78-a386-c21156c40248",
+                            ConcurrencyStamp = "79709253-b428-443a-8afe-945fe84147b7",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI08wUTcCpRsJ5YaCAebJnVSKr3tLFOQAiEo4QmGz4d0gZK/7uOZ7TImiRWRDW58XA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI4yvyjxNvycaqd1+b1uSK74q1BGSQ6mAwCMDZLl54vJpaEJddLGxgUAln5KKpz1kg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a4715831-6eee-423a-8d6d-e51e6da07a6d",
+                            SecurityStamp = "866713db-1721-4978-a22c-9eff3c4a39e4",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -2727,15 +1720,15 @@ namespace Food.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e7ae2dae-5f7f-48c6-b5bf-d9cddc546eb0",
+                            ConcurrencyStamp = "e74ff7ab-383c-478a-8ce8-70f485753d8e",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEF63WwQtmAQqpzAvELHedNE0UGcmOOd2Gx8Y9FUun/YyXsF4F/LSLQWs1ZhUXrYlXA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIqDFgf8UW+5STyM/lwuP//qdz9VPbMsoJF7H1sR+deMf91b+/6Q5K9AzQ6TXvC99Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3bcf1aef-ee10-4851-889d-59c8ddd60bea",
+                            SecurityStamp = "7c87933a-7f5f-4ce6-a294-6dc16da38f71",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -2807,25 +1800,6 @@ namespace Food.Migrations
                     b.Navigation("CartsDevicePICD");
 
                     b.Navigation("ProductsPICD");
-                });
-
-            modelBuilder.Entity("Food.Entity.ProductInWishlist", b =>
-                {
-                    b.HasOne("Food.Entity.Products", "ProductsPIW")
-                        .WithMany("ProductInWishlistP")
-                        .HasForeignKey("piw_ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Food.Entity.Wishlists", "WishlistsPIW")
-                        .WithMany("ProductInWishlistW")
-                        .HasForeignKey("piw_WishlistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ProductsPIW");
-
-                    b.Navigation("WishlistsPIW");
                 });
 
             modelBuilder.Entity("Food.Entity.ProductsInCategories", b =>
@@ -2901,15 +1875,6 @@ namespace Food.Migrations
                     b.Navigation("Reviews");
 
                     b.Navigation("SubReview");
-                });
-
-            modelBuilder.Entity("Food.Entity.Wishlists", b =>
-                {
-                    b.HasOne("Food.Entity.AppUser", "UserW")
-                        .WithMany("WishlistsU")
-                        .HasForeignKey("wl_UserId");
-
-                    b.Navigation("UserW");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -2989,8 +1954,6 @@ namespace Food.Migrations
 
                     b.Navigation("ProductInCartP");
 
-                    b.Navigation("ProductInWishlistP");
-
                     b.Navigation("ProductsInCategoriesP");
 
                     b.Navigation("ReviewInproductP");
@@ -3008,11 +1971,6 @@ namespace Food.Migrations
                     b.Navigation("SubReviewInReview");
                 });
 
-            modelBuilder.Entity("Food.Entity.Wishlists", b =>
-                {
-                    b.Navigation("ProductInWishlistW");
-                });
-
             modelBuilder.Entity("Food.Entity.AppUser", b =>
                 {
                     b.Navigation("BillsAU");
@@ -3022,8 +1980,6 @@ namespace Food.Migrations
                     b.Navigation("ReviewsU");
 
                     b.Navigation("SubReviewSR");
-
-                    b.Navigation("WishlistsU");
                 });
 #pragma warning restore 612, 618
         }

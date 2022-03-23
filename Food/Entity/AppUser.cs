@@ -23,7 +23,6 @@ namespace Food.Entity
         public string bill_Address2 { set; get; }
         public List<SubReview> SubReviewSR { get; set; }
 
-        public List<Wishlists> WishlistsU { get; set; }
         public List<Bills> BillsAU { get; set; }
         public List<Reviews> ReviewsU { get; set; }
         public List<Cart> CartU { get; set; }

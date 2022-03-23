@@ -11,7 +11,7 @@ namespace Food.Entity
         public string picd_CartId { get; set; }
         public Products ProductsPICD { get; set; }
 
-        public int picd_ProductId { get; set; }
+        public string picd_ProductId { get; set; }
 
         public int picd_amount { get; set; }
 

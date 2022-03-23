@@ -14,1502 +14,543 @@ namespace Food.Data.DataSeeding
         {
 
 
-            //var hasher = new PasswordHasher<AppUsers>();
-
+            //Id for product id
+            var product1 = Guid.NewGuid().ToString();
+            var product2 = Guid.NewGuid().ToString();
+            var product3 = Guid.NewGuid().ToString();
+            var product4 = Guid.NewGuid().ToString();
+            var product5 = Guid.NewGuid().ToString();
+            var product6 = Guid.NewGuid().ToString();
+            var product7 = Guid.NewGuid().ToString();
+            var product8 = Guid.NewGuid().ToString();
+            var product9 = Guid.NewGuid().ToString();
+            var product10 = Guid.NewGuid().ToString();
+            var product11 = Guid.NewGuid().ToString();
+            var product12 = Guid.NewGuid().ToString();
+            var product13 = Guid.NewGuid().ToString();
+            var product14 = Guid.NewGuid().ToString();
+            var product15 = Guid.NewGuid().ToString();
+            var product16 = Guid.NewGuid().ToString();
+            var product17 = Guid.NewGuid().ToString();
+            var product18 = Guid.NewGuid().ToString();
+            var product19 = Guid.NewGuid().ToString();
+            var product20 = Guid.NewGuid().ToString();
+            var product21 = Guid.NewGuid().ToString();
+            var product22 = Guid.NewGuid().ToString();
+            var product23 = Guid.NewGuid().ToString();
+            var product24 = Guid.NewGuid().ToString();
+            var product25 = Guid.NewGuid().ToString();
+            var product26 = Guid.NewGuid().ToString();
+            var product27 = Guid.NewGuid().ToString();
+            var product28 = Guid.NewGuid().ToString();
 
 
             //Table Products
             builder.Entity<Products>().HasData(
                 new Products()
                 {
-                    pd_Id = 1,
-                    pd_Name = "Fish",
-                    pd_Description = "Description",
+                    pd_Id = product1,
+                    pd_Name = "BanhCanhCua",
+                    pd_Description = "BanhCanhCua",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1y-bME8oi9DccN-zG_Eo-aChLBs8pwVEI",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1YBpU6fwcCzV18ho__mhCCO0yD8ES-ef7",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1sBANC4Og5eumFJBTVLYGIp2qTBKfwSzh",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1A74yTUs0Lmya24nL5UPG8N6cV7GFhn5a",
+                    pd_Img1 = "/images/item250x300/BanhCanhCua.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
                     pd_Rate = 5,
-                    pd_MenuFacturer = "1",
                     pd_ShortDescription = "Short Description",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CW2288-111",
-                    pd_Color = "White/White",
-                    pd_Material = "1",
-                    pd_Technologies = "1",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 =true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 =true,
-                    pd_Size12 =true,
-                    pd_Size12_5= true,
-                    pd_Size13_5=true,
-                    pd_Size14 = true,
-                    pd_Size14_5 =true,
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
-
                 },
-
                 new Products()
                 {
-                    pd_Id = 2,
-                    pd_Name = "Cream",
-                    pd_Description = "Cream1",
+                    pd_Id = product2,
+                    pd_Name = "BanhMi",
+                    pd_Description = "BanhMi",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1aaIG6S0bGnm5uhxHVBXy_BkEDb867O0-",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1Y4gS9zvfZdshJc4YySjz13ZGlMIft4kv",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1AyILI7QsTzqBPE6OvDMZpY7OAtxjkuH8",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1WT_vD4nC_szHPH9LVbl_UztqvXlmqs2e",
+                    pd_Img1 = "/images/item250x300/BanhMi.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
                     pd_Rate = 5,
-                    pd_MenuFacturer = "2",
-                    pd_ShortDescription = "Cream1",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DM6435-222",
-                    pd_Color = "Medium Olive/Carbon Green/Sail/Black",
-                    pd_Material = "2",
-                    pd_Technologies = "2",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
-                },
-
+                }
+                ,
                 new Products()
                 {
-                    pd_Id = 3,
-                    pd_Name = "Cream",
-                    pd_Description = "Cream2",
+                    pd_Id = product3,
+                    pd_Name = "banhtrangtron",
+                    pd_Description = "banhtrangtron",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1raFVtP42IkQ1t-lPPRFi_E5X4iJ0NW4-",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1kFLigFwBNPiqYhIOs2QRL39nRo0IJYWS",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1KZJQR5jt9rzVOBxfUZRx-tjKoO3dKNDJ",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=10oXph87Rn43M13WNaxJWpL0XS_Mf_JFt",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "Cream2",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DC2650-200",
-                    pd_Color = "Cream II/Orange/Black/White",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/banhtrangtron.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 4,
-                    pd_Name = "Missu",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1M0_A-sZfffj7gncHmbj88dHvvqXM1eEa",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1K85ItvCTycDSRX9p1Jbzm7Egg5l6OdRa",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1b5FDJjrsLKAlj7zBVGLoxdp_gaVTFkVE",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1LSQUzknGNiwOIVtHFNmPhGSh8ZE0CFJx",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "hile Max Air cushioning adds comfort to your journey.",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DA1641-201",
-                    pd_Color = "Hemp/Sand Drift/Light Orewood Brown/Summit White",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 5,
-                    pd_Name = "Nike Air Max 90",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1ov844eV9xL19atvdLqYtsG6oLz1XPT0g",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1kxFSmfxV3eYg_2ikz2fF0G4UoXPedRJG",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1DxgC1AAKFgDxKSOtBnp_kytP3TlZ-kqr",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1dmp8HCRjPGXUyT3TkkHLZNiP9utabt_S",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DB0625-200",
-                    pd_Color = "Dark Driftwood/Sail/Light Chocolate/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 6,
-                    pd_Name = "Nike ACG Air Deschutz +",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1q5roIlNeK4nQtTmqAqz4wWAC6kI0aGQq",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1ezOB26pX2VmYZC1uVja89pZ4QJty7hXe",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1IiK2AM0M9bKRhSBofRlNSR8ZhseQsUmG",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1rctQk2u8mHcN41-GdWdCfHSeSRvDr1dr",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DC9092-001",
-                    pd_Color = "Moon Fossil/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 7,
-                    pd_Name = "Nike Air Max 97 SE",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1BYoyjK2a0qyq6zPdr1enQBluAkifs_4d",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1cITDpeROBtZfWCsBYRj-obyMYR4SZQYX",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1Suli5ByGxovAPGmd_kM6GIenMTy32JPe",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1SkQjussYGb4HIrIIk0URRFY-L0rZjEpI",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DC3986-300",
-                    pd_Color = "Hasta/Thunder Blue/Bucktan/Obsidian",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 8,
-                    pd_Name = "Nike Air Max 97",
-                    pd_Description = " ",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1TOlxRiO2y8v05O7ZPDBaPO2OnFPrjIY7",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1-zJ4GbHm0iys-PO3XwWHTOB1LLlMQhaR",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1UUI3tV4jyTpPvv8akrL0jcJXDuIWzjM1",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1AXIRrKM96HazbtzcSxhKY59wFjEm1zVe",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = " ",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DJ0717-001",
-                    pd_Color = "Metallic Silver/Black/White/Persian Violet",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 9,
-                    pd_Name = "Nike ACG Air Nasu 2",
-                    pd_Description = " ",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1lbsJAVJkbf-_V6pKzm1CZcAJfIsjjv0o",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1kRRsPNYRT0V5f7LKVRmJp82QMWJVYxeQ",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15wsxpi791SMVlR2Cn7k6FAbCOgUt3I2U",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1XdL62dPC4dpqNdc-BhHnrkm2Hl6morgo",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = " ",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DC8296-001",
-                    pd_Color = "Grey Fog/Melon Tint/Metallic Silver",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 10,
-                    pd_Name = "Nike ACG Mountain Fly Low",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1Dc-PtwoLK8v4YbJ6YWfuhKJ8KgqTs8tI",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1nm4RlNHYo8JP3KtJvT_bvFqOQ5vEGY2m",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1DcJqtgAnjTxw_zZyvTEsktIcR5pljTk6",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1bjUxZvzpqdlFxn5GrukZilFWpwx5UyvX",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DC9045-0",
-                    pd_Color = "Light Mulberry/Flash Crimson",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 11,
-                    pd_Name = "Nike SB Zoom Blazer Mid Premium",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1vSAQa_8Evmm1tkOzODtMz4GgWTHH5jq-",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1EERkVDnTn-m3dfv2eUCxIGIKZuENwZIu",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1B6Ae6KBW8vwsPz9K1btBZuSC9OZPn5Hu",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1WS6keGw5BUnYs04Ji-yuVf8_CFdh-mRz",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DA8854-001",
-                    pd_Color = "Black/Wolf Grey/Cool Grey/White",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 12,
-                    pd_Name = "Nike Air Max 2021",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1UZX6cca2sF8sj5pO70ub8Gf23i1Zp6jO",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=184n1JhhW9eVPiPU01g2LsrQaga75xZoT",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=1vQa7rOZejxU29875pv8ne4fyrxt8WEdH",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1shZnWARtq5SwsibFewT6Km0duAMAkpoZ",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "DA1925-002",
-                    pd_Color = "Ghost/Ashen Slate/Obsidian Mist/Obsidian",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 13,
-                    pd_Name = "Nike SB Nyjah Free 2",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1dzvmQMDzkUdh79Sw2Z0itgm1I12xwkA2",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "BV2078-200",
-                    pd_Color = "Beach/Topaz Gold/Bright Crimson/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 14,
-                    pd_Name = "Nike SB Nyjah Free 2",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1sKbuA1SGLb7l947dvLYBnV2Nzj9thvFB",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "BV2078-200",
-                    pd_Color = "Beach/Topaz Gold/Bright Crimson/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
-                },
-
-                new Products()
-                {
-                    pd_Id = 15,
-                    pd_Name = "Nike SB Nyjah Free 2",
-                    pd_Description = "",
-                    pd_Price = 1,
-                    pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=170Vm7Py5XUTDhFLn2tLt0CCBftOKbdFd",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
-                    pd_NameImg1 = "1",
-                    pd_NameImg2 = "2",
-                    pd_NameImg3 = "3",
-                    pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 16,
-                    pd_Name = "Nike SB Nyjah Free 2",
-                    pd_Description = "",
+                    pd_Id = product4,
+                    pd_Name = "banhuotlongdalat",
+                    pd_Description = "banhuotlongdalat",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "https://drive.google.com/uc?id=1WlG6_0L1Hz6pXP50zUsaz2IPxZg6kjEi",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/banhuotlongdalat.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 17,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product5,
+                    pd_Name = "BoKho",
+                    pd_Description = "BoKho",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/6-trung-ga-ta.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/BoKho.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 18,
-                    pd_Name = "Fish",
-                    pd_Description = "",
+                    pd_Id = product6,
+                    pd_Name = "bunbo",
+                    pd_Description = "bunbo",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/ca-cam.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/bunbo.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 19,
-                    pd_Name = "Fish",
-                    pd_Description = "",
+                    pd_Id = product7,
+                    pd_Name = "bundaumamtom",
+                    pd_Description = "bundaumamtom",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/ca-hoi-cat-khuc.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/bundaumamtom.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 20,
-                    pd_Name = "Fish",
-                    pd_Description = "",
+                    pd_Id = product8,
+                    pd_Name = "Bunxaochay",
+                    pd_Description = "Bunxaochay",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/ca-huong.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/Bunxaochay.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 21,
-                    pd_Name = "Fish",
-                    pd_Description = "",
+                    pd_Id = product9,
+                    pd_Name = "cocosummer",
+                    pd_Description = "cocosummer",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/ca-ngu.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/cocosummer.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 22,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product10,
+                    pd_Name = "comboxao",
+                    pd_Description = "comboxao",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/ca-song-dong-lanh.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/comboxao.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 23,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product11,
+                    pd_Name = "comga",
+                    pd_Description = "comga",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/ca-thu-cat-khuc.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/comga.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 24,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product12,
+                    pd_Name = "comgadenhat",
+                    pd_Description = "comgadenhat",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/dalat-milk.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/comgadenhat.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 25,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product13,
+                    pd_Name = "denhatthitnuong",
+                    pd_Description = "denhatthitnuong",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/gia-vi-nau-bun.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/denhatthitnuong.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 26,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product14,
+                    pd_Name = "goicuon",
+                    pd_Description = "goicuon",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/gia-vi-nau-bun-rieu.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/goicuon.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 27,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product15,
+                    pd_Name = "kfc",
+                    pd_Description = "kfc",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/gia-vi-pho.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/kfc.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 28,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product16,
+                    pd_Name = "KimBap",
+                    pd_Description = "KimBap",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/gia-vi-sup-ga.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/KimBap.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 29,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product17,
+                    pd_Name = "loteria",
+                    pd_Description = "loteria",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/gia-vi-tom.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/loteria.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 30,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product18,
+                    pd_Name = "mitronanvat",
+                    pd_Description = "mitronanvat",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/Hop-12-trung-ga.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/mitronanvat.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 31,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product19,
+                    pd_Name = "monngontrangbang",
+                    pd_Description = "monngontrangbang",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/Hop-12-trung-vit.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/monngontrangbang.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 32,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product20,
+                    pd_Name = "ParisBaguete",
+                    pd_Description = "ParisBaguete",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/hop-4-trung-vit-bach-thao.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/ParisBaguete.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 33,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product21,
+                    pd_Name = "pizza",
+                    pd_Description = "pizza",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/Hop-5-trung-vit-bach-thao.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/pizza.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 34,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product22,
+                    pd_Name = "quanngontrangbang",
+                    pd_Description = "quanngontrangbang",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/Hop-6-trung-bach-thao.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/quanngontrangbang.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 35,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product23,
+                    pd_Name = "RauMaMix",
+                    pd_Description = "RauMaMix",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/th-true-milk.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/RauMaMix.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
                 },
                 new Products()
                 {
-                    pd_Id = 36,
-                    pd_Name = "EGG",
-                    pd_Description = "",
+                    pd_Id = product24,
+                    pd_Name = "Royaltea",
+                    pd_Description = "Royaltea",
                     pd_Price = 1,
                     pd_ReducePrice = 0,
-                    pd_Img1 = "/images/item250x300/trung-vit-bach-thao.png",
-                    pd_Img2 = "https://drive.google.com/uc?export=download&id=1xDl63HP0U_CkYQMetWNkVH-3p8aFtTSh",
-                    pd_Img3 = "https://drive.google.com/uc?export=download&id=15ZOwySMtoHQ9gL9SgNcyR_VZKMH_C4Nf",
-                    pd_Img4 = "https://drive.google.com/uc?export=download&id=1sziE_7UxXlHpSSLbn3ca12o34F0Q25Ya",
-                    pd_Rate = 4,
-                    pd_MenuFacturer = "3",
-                    pd_ShortDescription = "",
-                    pd_Size = "EU41|EU41.5|EU42|EU43|EU44|EU45|EU46|EU47|EU48",
-                    pd_Brand = "Nike",
-                    pd_Style = "CU9224-700",
-                    pd_Color = "Pollen/Pink Blast/Black",
-                    pd_Material = "3",
-                    pd_Technologies = "3",
-                    pd_Size7 = true,
-                    pd_Size7_5 = true,
-                    pd_Size8 = true,
-                    pd_Size8_5 = true,
-                    pd_Size9 = true,
-                    pd_Size9_5 = true,
-                    pd_Size10 = true,
-                    pd_Size10_5 = true,
-                    pd_Size11 = true,
-                    pd_Size11_5 = true,
-                    pd_Size12 = true,
-                    pd_Size12_5 = true,
-                    pd_Size13_5 = true,
-                    pd_Size14 = true,
-                    pd_Size14_5 = true,
+                    pd_Img1 = "/images/item250x300/Royaltea.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
                     pd_NameImg1 = "1",
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-
+                },
+                new Products()
+                {
+                    pd_Id = product25,
+                    pd_Name = "Sanfulou",
+                    pd_Description = "Sanfulou",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/Sanfulou.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product26,
+                    pd_Name = "stacbuk-cf",
+                    pd_Description = "stacbuk-cf",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/stacbuk-cf.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product27,
+                    pd_Name = "trasuanhalam",
+                    pd_Description = "trasuanhalam",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/trasuanhalam.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
+                },
+                new Products()
+                {
+                    pd_Id = product28,
+                    pd_Name = "Xoixeoba3beo",
+                    pd_Description = "Xoixeoba3beo",
+                    pd_Price = 1,
+                    pd_ReducePrice = 0,
+                    pd_Img1 = "/images/item250x300/Xoixeoba3beo.png",
+                    pd_Img2 = "",
+                    pd_Img3 = "",
+                    pd_Img4 = "",
+                    pd_Rate = 5,
+                    pd_ShortDescription = "Short Description",
+                    pd_NameImg1 = "1",
+                    pd_NameImg2 = "2",
+                    pd_NameImg3 = "3",
+                    pd_NameImg4 = "4"
                 }
                 );
 
@@ -1628,54 +669,53 @@ namespace Food.Data.DataSeeding
 
             //Table Product In Cart
 
-            builder.Entity<ProductInCart>().HasData(
-                new ProductInCart()
-                {
-                     pic_CartId = IdCart2,
-                     pic_ProductId =1,
-                     pic_amount = 2,
-                     pic_size = "7",
-                     pic_color = "blue"
 
-                },
-                new ProductInCart()
-                {
-                    pic_CartId = IdCart2,
-                    pic_ProductId = 2,
-                    pic_amount = 3,
-                    pic_size = "7.5",
-                    pic_color = "blue"
-
-                },
-                new ProductInCart()
-                {
-                    pic_CartId = IdCart2,
-                    pic_ProductId = 3,
-                    pic_amount = 1,
-                    pic_size = "8",
-                    pic_color = "blue"
-                });
+            // Set id for Categories
+            var idCategories1 = Guid.NewGuid().ToString();
+            var idCategories2 = Guid.NewGuid().ToString();
+            var idCategories3 = Guid.NewGuid().ToString();
+            var idCategories4 = Guid.NewGuid().ToString();
+            var idCategories5 = Guid.NewGuid().ToString();
 
 
             //Table Categories
-
-
-
-
-
             builder.Entity<Categories>().HasData(
                 new Categories()
                 {
-                    cg_Id = 1,
-                    cg_Name = "women",
+                    cg_Id = idCategories1,
+                    cg_Name = "Dry food",
                     cg_Type = "",
                     cg_Sale = ""
 
                 },
                 new Categories()
                 {
-                    cg_Id = 2,
-                    cg_Name = "Man",
+                    cg_Id = idCategories2,
+                    cg_Name = "Food",
+                    cg_Type = "",
+                    cg_Sale = ""
+
+                },
+                new Categories()
+                {
+                    cg_Id = idCategories3,
+                    cg_Name = "Drink",
+                    cg_Type = "",
+                    cg_Sale = ""
+
+                },
+                new Categories()
+                {
+                    cg_Id = idCategories4,
+                    cg_Name = "Banhmi",
+                    cg_Type = "",
+                    cg_Sale = ""
+
+                },
+                new Categories()
+                {
+                    cg_Id = idCategories5,
+                    cg_Name = "AnVat",
                     cg_Type = "",
                     cg_Sale = ""
 
@@ -1717,9 +757,7 @@ namespace Food.Data.DataSeeding
 
 
             var ReviewId1 = "EEBA6608-AB75-4E83-909F-604B1A06F16C";
-
             var ReviewId2 = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97";
-
             var ReviewId3 = "C2A543C2-B1E2-4DC5-A131-9137E4673FA6";
 
 
@@ -1761,9 +799,7 @@ namespace Food.Data.DataSeeding
                 });
 
             var SubReviewId1 = Guid.NewGuid().ToString(); 
-
             var SubReviewId2 = Guid.NewGuid().ToString();
-
             var SubReviewId3 = Guid.NewGuid().ToString();
 
 
@@ -1817,57 +853,152 @@ namespace Food.Data.DataSeeding
                 }
                 );
 
-
-
-
-            //Table Wishlist
-
-
-            builder.Entity<Wishlists>().HasData(
-                new Wishlists()
-                {
-                    wl_Id = 1,
-                    wl_UserId = IdStaff
-
-                });
-
-
-
-
-
-
             //Table ProductInCategories
-
-
-
             builder.Entity<ProductsInCategories>().HasData(
                 new ProductsInCategories()
                 {
-                    pic_CategoriesId = 1,
-                    pic_productId = 1
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product7
                 },
                 new ProductsInCategories()
                 {
-                    pic_CategoriesId = 1,
-                    pic_productId = 2
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product8
                 },
                 new ProductsInCategories()
                 {
-                    pic_CategoriesId = 2,
-                    pic_productId = 3
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product10
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product11
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product12
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product13
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product14
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories1,
+                    pic_productId = product16
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product1
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product4
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product5
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product6
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories2,
+                    pic_productId = product19
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories3,
+                    pic_productId = product23
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories3,
+                    pic_productId = product24
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories3,
+                    pic_productId = product26
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories3,
+                    pic_productId = product27
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories4,
+                    pic_productId = product2
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories4,
+                    pic_productId = product18
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product3
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product9
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product15
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product17
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product20
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product21
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product22
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product25
+                },
+                new ProductsInCategories()
+                {
+                    pic_CategoriesId = idCategories5,
+                    pic_productId = product28
                 });
 
 
             //Table ProductInCategories
 
-
-
-            builder.Entity<ProductInWishlist>().HasData(
-                new ProductInWishlist()
-                {
-                    piw_ProductId = 1,
-                    piw_WishlistId = 1
-                });
 
 
 
@@ -1879,17 +1010,17 @@ namespace Food.Data.DataSeeding
             builder.Entity<ReviewInproduct>().HasData(
                 new ReviewInproduct()
                 {
-                    rip_ProductId = 1,
+                    rip_ProductId = product1,
                     rip_ReviewId = ReviewId1,
                 },
                 new ReviewInproduct()
                 {
-                    rip_ProductId = 1,
+                    rip_ProductId = product1,
                     rip_ReviewId = ReviewId2,
                 },
                 new ReviewInproduct()
                 {
-                    rip_ProductId = 1,
+                    rip_ProductId = product1,
                     rip_ReviewId = ReviewId3,
                 });
 
@@ -1911,7 +1042,6 @@ namespace Food.Data.DataSeeding
 
 
             string billId1 = "D269BF93-A5E2-4C4A-8146-9967DDE80D30";
-            string billId2 = "AFD66490-12F5-4EA7-BFF6-425624290D6D";
 
             //Table Bills
 
@@ -1938,32 +1068,6 @@ namespace Food.Data.DataSeeding
                     bill_WaitPickup = false,
                     bill_Delivering = false,
                     bill_Delivered =  false,
-                    bill_Cancelled = false
-                },
-
-                new Bills()
-                {
-                    bill_Id = billId2,
-                    bill_UserId = IdStaff,
-                    bill_PaidTotal = 2100,
-                    bill_ProductIdlist = "5|6|7|8",
-                    bill_ProductNamelist = "product 5|product 6| product 7| product 8",
-                    bill_ProductSizelist = "7|8|9|14",
-                    bill_ProductColorlist = "Blue|Red|Black|Green",
-                    bill_ProductPricelist = "550|450|350|640",
-                    bill_Shipping = 10,
-                    bill_Discount = 0,
-                    bill_Confirmation = true,
-                    bill_DatetimeOrder = DateTime.Now,
-                    bill_PaymentMethod = "Check Payment",
-                    bill_Note = "",
-                    bill_Quantity = "1|1|2|2",
-                    bill_WaitForConfirmation = false,
-                    bill_HideStatus = false,
-
-                    bill_WaitPickup = false,
-                    bill_Delivering = false,
-                    bill_Delivered = false,
                     bill_Cancelled = false
                 }); ;
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Food.Data;
 using Food.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Food.Controllers.System
 {
@@ -21,9 +22,29 @@ namespace Food.Controllers.System
 
         public IActionResult Index()
         {
+            //Count product in cart page
+            var queryCart = _context.CartsDevice;
+            ViewBag.CountProductInCart =  queryCart.Count();
+
+
             // Print list product in Home Page
-            var HomeProductQuery = from a in _context.Products select a;
-            return View(HomeProductQuery);
+            var HomeProductQuery = from a in _context.Products 
+                                   join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
+                                   join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
+                                   select new { a, b, c, };
+
+            var homeQuery = HomeProductQuery.Select(x => new ProductModel()
+            {
+                pd_Id =  x.a.pd_Id,
+                pd_Img1 = x.a.pd_Img1,
+                pd_Price = x.a.pd_Price,
+                pd_ReducePrice = x.a.pd_ReducePrice,
+                pd_categoryName = x.c.cg_Name,
+                pd_Name = x.a.pd_Name
+
+
+            });
+            return View(homeQuery);
         }
 
         public IActionResult Privacy()
