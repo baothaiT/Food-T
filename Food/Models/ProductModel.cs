@@ -23,18 +23,13 @@ namespace Food.Models
         public string pd_Img4 { set; get; }
         public int pd_Rate { set; get; }
 
-        public string pd_MenuFacturer { set; get; }
         public string pd_ShortDescription { set; get; }
-        public string pd_Size { set; get; }
 
-        public string pd_Brand { set; get; }
-        public string pd_Style { set; get; }
-        public string pd_Color { set; get; }
+        public string pd_categoryName { set; get; }
 
-        public string pd_Material { set; get; }
-        public string pd_Technologies { set; get; }
-     
-      
+
+
+
 
     }
 }
