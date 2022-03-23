@@ -20,8 +20,8 @@ namespace Food.Controllers.System
 
 
         [Route("/food")]
-        [HttpGet("{id}")]
-        public IActionResult Index()
+        [HttpGet("{categoriesName}")]
+        public IActionResult Index(string categoriesName)
         {
             //Count product in cart page
             var queryCart = _context.CartsDevice;
@@ -32,8 +32,10 @@ namespace Food.Controllers.System
                         join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
                         join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
                         select new { a, c };
-
-            query = query.Where(x => x.c.cg_Name == "man");
+            if ((categoriesName == "")|| (categoriesName == null))
+            {
+                query = query.Where(x => x.c.cg_Name == categoriesName);
+            }
 
             var productModelQuery = query
                 .Select(x => new ProductModel()
@@ -41,8 +43,9 @@ namespace Food.Controllers.System
                     pd_Id = x.a.pd_Id,
                     pd_Img1 = x.a.pd_Img1,
                     pd_Name = x.a.pd_Name,
-                    pd_Price = x.a.pd_Price
-
+                    pd_Price = x.a.pd_Price,
+                    pd_categoryName = x.c.cg_Name,
+                    pd_ReducePrice = x.a.pd_ReducePrice
                 });
             return View(productModelQuery);
         }
