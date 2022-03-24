@@ -20,12 +20,6 @@ namespace Food.Controllers.System
             return View();
         }
 
-        // GET: SubscribeOurNewsletterController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
 
         // POST: SubscribeOurNewsletterController/Create
         [HttpPost]
@@ -49,50 +43,10 @@ namespace Food.Controllers.System
             }
             catch
             {
-                return View();
+                return Redirect("/");
             }
         }
 
-        // GET: SubscribeOurNewsletterController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: SubscribeOurNewsletterController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: SubscribeOurNewsletterController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: SubscribeOurNewsletterController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
     }
 }

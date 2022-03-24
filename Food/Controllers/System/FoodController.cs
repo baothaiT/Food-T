@@ -32,6 +32,8 @@ namespace Food.Controllers.System
                         join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
                         join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
                         select new { a, c };
+
+            //Search form
             if ((categoriesName == "")|| (categoriesName == null))
             {
                 if ((searchName == "") || (searchName == null))
@@ -43,7 +45,6 @@ namespace Food.Controllers.System
                     //search by product name
                      query = query.Where(a => a.a.pd_Name.Contains(searchName));
                 }
-
             }
             else
             {
@@ -52,6 +53,18 @@ namespace Food.Controllers.System
             }
 
 
+            // Print Count Product in category
+
+            var countDryFoodQuery = from a in _context.Products
+                                    join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
+                                    join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
+                                    select new { a, c };
+            countDryFoodQuery = countDryFoodQuery.Where(x => x.c.cg_Name == "Dry food");
+
+
+            ViewBag.CountDryProduct = countDryFoodQuery.Count();
+
+            // Insert data into model
             var productModelQuery = query
                 .Select(x => new ProductModel()
                 {

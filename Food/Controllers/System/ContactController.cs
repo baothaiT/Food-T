@@ -31,7 +31,7 @@ namespace Food.Controllers.System
             return View();
         }
 
-        [Route("/contactusersmanagement/create")]
+        [Route("/contactuser/create")]
         [HttpPost]
         public async Task<ActionResult> create()
         {

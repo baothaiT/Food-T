@@ -39,34 +39,29 @@
              <div class="row">
                <div class="col-md-8">
                  <div class="aa-contact-address-left">
-                   <form class="comments-form contact-form" action="">
+                   <form class="comments-form contact-form" asp-controller="Contact" asp-action="create" asp-method="post">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">                        
-                          <input type="text" placeholder="Your Name" class="form-control">
+                          <input type="text" placeholder="Your Name" class="form-control" name="firstname">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">                        
-                          <input type="email" placeholder="Email" class="form-control">
+                          <input type="email" placeholder="Email" class="form-control" name="email">
                         </div>
                       </div>
                     </div>
                      <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">                        
-                          <input type="text" placeholder="Subject" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">                        
-                          <input type="text" placeholder="Company" class="form-control">
+                          <input type="text" placeholder="Subject" class="form-control" name="subject">
                         </div>
                       </div>
                     </div>                  
                      
                     <div class="form-group">                        
-                      <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                      <textarea class="form-control" rows="3" placeholder="Message" name="message"></textarea>
                     </div>
                     <button class="aa-secondary-btn">Send</button>
                   </form>
