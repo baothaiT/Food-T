@@ -34,8 +34,13 @@ namespace Food.Controllers.System
                         select new { a, c };
             if ((categoriesName == "")|| (categoriesName == null))
             {
+                
+            }
+            else
+            {
                 query = query.Where(x => x.c.cg_Name == categoriesName);
             }
+
 
             var productModelQuery = query
                 .Select(x => new ProductModel()
