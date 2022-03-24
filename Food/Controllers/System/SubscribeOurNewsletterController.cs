@@ -1,48 +1,51 @@
 ﻿using Food.Data;
+using Food.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Food.Models;
+using System;
 
 namespace Food.Controllers.System
 {
-    public class SearchController : Controller
+    public class SubscribeOurNewsletterController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public SearchController(ApplicationDbContext context)
+        public SubscribeOurNewsletterController(ApplicationDbContext context)
         {
             _context = context;
         }
-        // GET: SearchController
+        // GET: SubscribeOurNewsletterController
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: SearchController/Details/5
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Search(SearchModel searchModel)
-        {
-
-            return Redirect("/food?searchName="+ searchModel.searchName);
-        }
-
-        // GET: SearchController/Create
-        public ActionResult Create()
+        // GET: SubscribeOurNewsletterController/Details/5
+        public ActionResult Details(int id)
         {
             return View();
         }
 
-        // POST: SearchController/Create
+
+        // POST: SubscribeOurNewsletterController/Create
         [HttpPost]
+        [Route("subscribeemail")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(SubscribeEmail subscribeEmail)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                //string Nickname = Request.Form["inpNickname"];
+                var contactCreate = new SubscribeEmail()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = subscribeEmail.Email,
+                };
+
+                _context.SubscribeEmail.Add(contactCreate);
+                _context.SaveChanges();
+
+                return Redirect("/");
             }
             catch
             {
@@ -50,13 +53,13 @@ namespace Food.Controllers.System
             }
         }
 
-        // GET: SearchController/Edit/5
+        // GET: SubscribeOurNewsletterController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: SearchController/Edit/5
+        // POST: SubscribeOurNewsletterController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -71,13 +74,13 @@ namespace Food.Controllers.System
             }
         }
 
-        // GET: SearchController/Delete/5
+        // GET: SubscribeOurNewsletterController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: SearchController/Delete/5
+        // POST: SubscribeOurNewsletterController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
