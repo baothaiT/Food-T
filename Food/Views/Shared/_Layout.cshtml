@@ -138,8 +138,8 @@
                             <!-- / cart box -->
                             <!-- search box -->
                             <div class="aa-search-box">
-                                <form action="">
-                                    <input type="text" name="" id="" placeholder="Search here ex. 'food' ">
+                                <form asp-method="post" asp-controller="Search" asp-action="Search">
+                                    <input type="text" name="searchName" id="searchName" placeholder="Search here ex. 'food' ">
                                     <button type="submit"><span class="fa fa-search"></span></button>
                                 </form>
                             </div>

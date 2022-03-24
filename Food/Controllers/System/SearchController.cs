@@ -1,23 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Food.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Food.Data;
+using Food.Models;
 
 namespace Food.Controllers.System
 {
     public class SearchController : Controller
     {
-        //Database
         private readonly ApplicationDbContext _context;
 
         public SearchController(ApplicationDbContext context)
         {
             _context = context;
         }
-
         // GET: SearchController
         public ActionResult Index()
         {
@@ -25,9 +20,13 @@ namespace Food.Controllers.System
         }
 
         // GET: SearchController/Details/5
-        public ActionResult Details(int id)
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Search(SearchModel searchModel)
         {
-            return View();
+
+            return Redirect("/food?searchName="+ searchModel.searchName);
         }
 
         // GET: SearchController/Create

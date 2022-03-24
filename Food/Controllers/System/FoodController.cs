@@ -20,8 +20,8 @@ namespace Food.Controllers.System
 
 
         [Route("/food")]
-        [HttpGet("{categoriesName}")]
-        public IActionResult Index(string categoriesName)
+        [HttpGet("{categoriesName,searchName}")]
+        public IActionResult Index(string categoriesName,string searchName)
         {
             //Count product in cart page
             var queryCart = _context.CartsDevice;
@@ -34,10 +34,20 @@ namespace Food.Controllers.System
                         select new { a, c };
             if ((categoriesName == "")|| (categoriesName == null))
             {
-                
+                if ((searchName == "") || (searchName == null))
+                {
+
+                }
+                else
+                {
+                    //search by product name
+                     query = query.Where(a => a.a.pd_Name.Contains(searchName));
+                }
+
             }
             else
             {
+                //search by product categories
                 query = query.Where(x => x.c.cg_Name == categoriesName);
             }
 
