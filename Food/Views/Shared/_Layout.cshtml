@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -191,8 +193,8 @@
                 <div class="col-md-12">
                     <div class="aa-subscribe-area">
                         <h3>Subscribe our newsletter </h3>
-                        <form action="" class="aa-subscribe-form">
-                            <input type="email" name="" id="" placeholder="Enter your Email">
+                        <form  class="aa-subscribe-form" asp-controller="SubscribeOurNewsletter" asp-action="Create" asp-method="post">
+                            <input type="email" name="Email" id="Email" placeholder="Enter your Email">
                             <input type="submit" value="Subscribe">
                         </form>
                     </div>

@@ -66,6 +66,7 @@ namespace Food.Data
             builder.ApplyConfiguration(new ShippingConfigurations());
             builder.ApplyConfiguration(new SubReviewInReviewConfigurations());
             builder.ApplyConfiguration(new SubReviewConfigurations());
+            builder.ApplyConfiguration(new SubscribeOurNewsletterConfigurations());
 
             //builder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
             //builder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRole").HasKey(x => new { x.UserId, x.RoleId });
@@ -101,6 +102,7 @@ namespace Food.Data
         public DbSet<SubReview> SubReview { set; get; }
         public DbSet<SubReviewInReview> SubReviewInReview { set; get; }
         public DbSet<Food.Models.UserInRoleModel> UserInRoleModel { get; set; }
+        public DbSet<SubscribeEmail> SubscribeEmail { set; get; }
         //public DbSet<AppUserRole> AppUserRole { set; get; }
 
     }
