@@ -10,6 +10,7 @@ using Food.Entity;
 using Food.Models;
 using Food.StatisFile;
 using Microsoft.AspNetCore.Http;
+using Food.StatisFile.Function;
 
 namespace Food.Controllers.System
 {
@@ -27,18 +28,25 @@ namespace Food.Controllers.System
         }
 
 
-
         [Route("/checkout")]
         [HttpGet]
         public IActionResult Index()
         {
             //Count product in cart page
-            var queryCart = _context.CartsDevice;
-            ViewBag.CountProductInCart = queryCart.Count();
+            string namePc = Environment.MachineName;
+            bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userIdString = "";
+            if (userId != null)
+            {
+                userIdString = userId.ToString();
+            }
+            ViewBag.CountProductInCart = CheckCart.CheckProudctCart(_context, namePc, checkLogin, userIdString);
+
 
             try
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+             
                 var userName = User.FindFirstValue(ClaimTypes.Name);
 
                 //Query product in cart
@@ -170,8 +178,6 @@ namespace Food.Controllers.System
             await _context.SaveChangesAsync();
             return Redirect("/paymentcomplete");
         }
-
-
 
         private int GetDiscount()
         {

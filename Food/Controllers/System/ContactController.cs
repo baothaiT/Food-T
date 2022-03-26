@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Food.Data;
 using Food.Entity;
+using Food.StatisFile.Function;
+using System.Security.Claims;
 
 namespace Food.Controllers.System
 {
@@ -23,8 +25,15 @@ namespace Food.Controllers.System
         public IActionResult Index()
         {
             //Count product in cart page
-            var queryCart = _context.CartsDevice;
-            ViewBag.CountProductInCart = queryCart.Count();
+            string namePc = Environment.MachineName;
+            bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userIdString = "";
+            if (userId != null)
+            {
+                userIdString = userId.ToString();
+            }
+            ViewBag.CountProductInCart = CheckCart.CheckProudctCart(_context, namePc, checkLogin, userIdString);
 
             //var contact = _context.ContactSystem.FirstOrDefault(a => a.Contact_Id ==1);
 

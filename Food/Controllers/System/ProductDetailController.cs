@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Food.Data;
 using Food.Entity;
 using Food.Models;
+using Food.StatisFile.Function;
 
 namespace Food.Controllers
 {
@@ -34,8 +35,15 @@ namespace Food.Controllers
         public IActionResult Index(string id)
         {
             //Count product in cart page
-            var queryCart = _context.CartsDevice;
-            ViewBag.CountProductInCart = queryCart.Count();
+            string namePc = Environment.MachineName;
+            bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userIdString = "";
+            if (userId != null)
+            {
+                userIdString = userId.ToString();
+            }
+            ViewBag.CountProductInCart = CheckCart.CheckProudctCart(_context, namePc, checkLogin, userIdString);
 
             //Query product
 

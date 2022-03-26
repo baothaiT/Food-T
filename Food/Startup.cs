@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
@@ -34,6 +34,11 @@ namespace Food
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddSession();
+            services.Configure<MailSettings>(mailsettings);                // đăng ký để Inject
+
+            // Đăng ký SendMailService với kiểu Transient, mỗi lần gọi dịch
+            // vụ ISendMailService một đới tượng SendMailService tạo ra (đã inject config)
+            services.AddTransient<ISendMailService, SendMailService>();
 
             services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

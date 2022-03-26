@@ -33,7 +33,6 @@ namespace Food.Controllers.System
             {
                 userIdString = userId.ToString();
             }
-
             ViewBag.CountProductInCart = CheckCart.CheckProudctCart(_context, namePc, checkLogin, userIdString);
 
 

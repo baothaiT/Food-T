@@ -10,6 +10,7 @@ using Food.Entity;
 using Food.Models;
 using Microsoft.AspNetCore.Http;
 using Food.StatisFile;
+using Food.StatisFile.Function;
 
 namespace Food.Controllers.System
 {
@@ -34,11 +35,16 @@ namespace Food.Controllers.System
         [HttpGet]
         public IActionResult Index()
         {
-
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userName = User.FindFirstValue(ClaimTypes.Name);
             string namePc = Environment.MachineName;
             bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userIdString = "";
+            if (userId != null)
+            {
+                userIdString = userId.ToString();
+            }
+            ViewBag.CountProductInCart = CheckCart.CheckProudctCart(_context, namePc, checkLogin, userIdString);
+
             
             if (checkLogin)
             {
