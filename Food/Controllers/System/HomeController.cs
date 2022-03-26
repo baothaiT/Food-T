@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Food.Data;
 using Food.Models;
 using Microsoft.AspNetCore.Http;
+using Food.StatisFile.Function;
+using System.Security.Claims;
 
 namespace Food.Controllers.System
 {
@@ -23,8 +25,11 @@ namespace Food.Controllers.System
         public IActionResult Index()
         {
             //Count product in cart page
-            var queryCart = _context.CartsDevice;
-            ViewBag.CountProductInCart =  queryCart.Count();
+            string namePc = Environment.MachineName;
+            bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            ViewBag.CountProductInCart = CheckCart.CheckProudctCart(_context, namePc, checkLogin, userId.ToString());
 
 
             // Print list product in Home Page
