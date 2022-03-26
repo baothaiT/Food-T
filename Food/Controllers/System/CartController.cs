@@ -161,7 +161,6 @@ namespace Food.Controllers.System
             return ship;
         }
         
-
         private int CaculateTotal(int reTotal, int ship, int discount)
         {
             ViewBag.total = reTotal - ship - discount;
@@ -183,8 +182,6 @@ namespace Food.Controllers.System
             return discount;
         }
 
-
-
         [Route("/cart/remove")]
         [HttpGet("id")]
         public IActionResult RemoveProduct(string id)
@@ -199,7 +196,6 @@ namespace Food.Controllers.System
                     var productQuery = _context.ProductInCart.FirstOrDefault(a => a.pic_ProductId == id);
                     _context.ProductInCart.Remove(productQuery);
                     _context.SaveChanges();
-
                 }
                 else
                 {

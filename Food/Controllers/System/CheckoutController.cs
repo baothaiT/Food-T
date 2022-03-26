@@ -51,22 +51,6 @@ namespace Food.Controllers.System
 
                 query = query.Where(x => x.d.Id == userId);
 
-                //// Product list
-                //var productInCartModelQuery = query
-                //    .Select(x => new ProductInCartModel()
-                //    {
-                //        ProductId = x.a.pd_Id,
-                //        ProductName = x.a.pd_Name,
-                //        ProductPrice = x.a.pd_Price,
-                //        ProductImg1 = x.a.pd_Img1,
-                //        Quantity = x.b.pic_amount,
-                //        UserId = x.d.Id,
-                //        Color = x.b.pic_color,
-                //        Size = x.b.pic_size
-
-                //    });
-
-
                 var cartDetail = query.Select(a => new CheckOutModel()
                 {
                     checkout_ProductName = a.a.pd_Name,
@@ -74,45 +58,24 @@ namespace Food.Controllers.System
                     checkout_Price = a.a.pd_Price
                 });
 
-                
-
-                
                 // Get ReTotal
                 int reTotal = 0;
                 foreach (var item in cartDetail)
                 {
                     reTotal += item.checkout_Price;
                 }
+                ViewBag.Retotal = reTotal;
 
                 //Get CouponPrice In Session
-                int discount;
-                if ((HttpContext.Session.GetString(KeySession.sessionCouponPrice) == null) || (HttpContext.Session.GetString(KeySession.sessionCouponPrice) == ""))
-                {
-                    ViewBag.Discount = 0;
-                    discount = 0;
-                }
-                else
-                {
-                    ViewBag.Discount = HttpContext.Session.GetString(KeySession.sessionCouponPrice);
-                    discount = Int32.Parse(HttpContext.Session.GetString(KeySession.sessionCouponPrice)); 
-                }
+                int discount = GetDiscount();
+                ViewBag.Discount = discount;
 
-                ViewBag.Retotal = reTotal;
+                
 
                 //Get and set Price of shipping
                 //Get Shipping Price
-                var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
-                int ship;
-                if (shipingQuery != null)
-                {
-                    ship = shipingQuery.ship_Price;
-                    ViewBag.Ship = shipingQuery.ship_Price;
-                }
-                else
-                {
-                    ship = 0;
-                    ViewBag.Ship = 0;
-                }
+
+                int ship = GetShippingPrice("ship");
 
                 ViewBag.Total = reTotal + ship - discount;
 
@@ -143,9 +106,6 @@ namespace Food.Controllers.System
             string email = Request.Form["Email"];
             string phone = Request.Form["Phone"];
 
-            string address2 = Request.Form["Address2"];
-            string reducePrice = Request.Form["Reduceprice"];
-
             //Query Database in table
             var query = from a in _context.Products
                         join b in _context.ProductInCart on a.pd_Id equals b.pic_ProductId
@@ -154,19 +114,6 @@ namespace Food.Controllers.System
                         select new { a, b, c, d };
 
             query = query.Where(x => x.d.Id == userId);
-
-            var productInCartModelQuery = query
-                .Select(x => new ProductInCartModel()
-                {
-                    ProductId = x.a.pd_Id,
-                    ProductName = x.a.pd_Name,
-                    ProductPrice = x.a.pd_Price,
-                    ProductImg1 = x.a.pd_Img1,
-                    Quantity = x.b.pic_amount,
-                    UserId = x.d.Id,
-                    Color = x.b.pic_color,
-                    Size = x.b.pic_size
-                });
 
 
             var cartDetail = query.Select(a => new CheckOutModel()
@@ -177,25 +124,22 @@ namespace Food.Controllers.System
             });
             var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
 
-            ViewBag.Discount = reducePrice;
+           
             int reTotal = 0;
             foreach (var item in cartDetail)
             {
                 reTotal += item.checkout_Price;
             }
-
             ViewBag.Retotal = reTotal;
+            //Discount 
+            int discount = GetDiscount();
+
+            ViewBag.Discount = discount;
+            
+            //Shipping
+            int ship = GetShippingPrice("ship");
             ViewBag.Ship = 0;
-            int ship = 0;
 
-            if (shipingQuery != null)
-            {
-                string a = shipingQuery.ship_Price.ToString();
-                ship = Int32.Parse(a);
-                ViewBag.Ship = ship;
-            }
-
-            int discount = Int32.Parse(reducePrice.ToString());
             ViewBag.Total = reTotal + ship - discount;
 
             string productNameList = "";
@@ -229,5 +173,38 @@ namespace Food.Controllers.System
 
 
 
+        private int GetDiscount()
+        {
+            int discount = 0;
+            if ((HttpContext.Session.GetString(KeySession.sessionCouponPrice) == null) || (HttpContext.Session.GetString(KeySession.sessionCouponPrice) == ""))
+            {
+                ViewBag.CouponPrice = 0;
+            }
+            else
+            {
+                discount = Int32.Parse(HttpContext.Session.GetString(KeySession.sessionCouponPrice));
+                ViewBag.CouponPrice = HttpContext.Session.GetString(KeySession.sessionCouponPrice);
+            }
+            return discount;
+        }
+
+        private int GetShippingPrice(string NameShip)
+        {
+            var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == NameShip);
+            int ship;
+            if (shipingQuery != null)
+            {
+                ship = shipingQuery.ship_Price;
+                ViewBag.Ship = shipingQuery.ship_Price;
+            }
+            else
+            {
+                ship = 0;
+                ViewBag.Ship = 0;
+            }
+            return ship;
+        }
     }
+
+
 }
