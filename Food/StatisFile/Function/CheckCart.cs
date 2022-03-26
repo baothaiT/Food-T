@@ -16,7 +16,7 @@ namespace Food.StatisFile.Function
         internal static int CheckProudctCart(ApplicationDbContext _context,
             string namePC,
             bool checklogin,
-            string userId)
+            string userId = "")
         {
 
 

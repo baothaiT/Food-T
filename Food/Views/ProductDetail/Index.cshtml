@@ -62,24 +62,24 @@
                                     </div>
                                     <p>@ViewBag.ShortDescription</p>
 
-
-
-                                    <div class="aa-prod-quantity">
-                                        <form action="">
-                                            <select id="" name="">
-                                                <option selected="1" value="0">1</option>
-                                                <option value="1">2</option>
-                                                <option value="2">3</option>
-                                                <option value="3">4</option>
-                                                <option value="4">5</option>
-                                                <option value="5">6</option>
+                                    <form asp-controller="ProductDetail" asp-action="AddToCart" method="post">
+                                        <div class="aa-prod-quantity">
+                                            <select id="quantityProuct" name="quantityProuct">
+                                                <option selected="1" value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
                                             </select>
-                                        </form>
-
-                                    </div>
-                                    <div class="aa-prod-view-bottom">
-                                        <a class="aa-add-to-cart-btn" href="/productdetailadd?productid=@ViewBag.Id&quantity=1&color=blue&size=X">Add To Cart</a>
-                                    </div>
+                                        </div>
+                                        <div>
+                                            <input type="text" name="productid" value="@ViewBag.Id" id="productid"/>
+                                        </div>
+                                        <div class="aa-prod-view-bottom">
+                                            <input type="submit" class="aa-add-to-cart-btn" value="Add To Cart" />
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                             <li><a href="#review" data-toggle="tab">Reviews</a></li>
                         </ul>
 
-                        <!-- Tab panes -->
+                        <!-- Tab panes comment-->
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="description">
                                 <p>@ViewBag.Description</p>
@@ -390,227 +390,24 @@
 
     var ProductColor;
     var ProductSize;
-    var ProductAmount;
 
 
-    function color(color, idbutton1, idbutton2, idbutton3, idbutton4,indexbutton,urlimage) {
-
-        switch (indexbutton) {
-            case 1:
-                // code block
-                var button1 = document.getElementById(idbutton1); //click
-                button1.style = 'background-color: #4CAF50;';
-
-                var button2 = document.getElementById(idbutton2);
-                button2.style = '';
-
-                var button3 = document.getElementById(idbutton3);
-                button3.style = '';
-
-                var button4 = document.getElementById(idbutton4);
-                button4.style = '';
-
-                var aa = document.querySelector("#slider-product");
-                aa.src = urlimage;
-                break;
-
-            case 2:
-                // code block
-                var button1 = document.getElementById(idbutton1);
-                button1.style = '';
-
-                var button2 = document.getElementById(idbutton2); //click
-                button2.style = 'background-color: #4CAF50;';
-
-                var button3 = document.getElementById(idbutton3);
-                button3.style = '';
-
-                var button4 = document.getElementById(idbutton4);
-                button4.style = '';
-                var aa = document.querySelector("#slider-product");
-                aa.src = urlimage;
-                break;
-            case 3:
-                // code block
-                var button1 = document.getElementById(idbutton1);
-                button1.style = '';
-
-                var button2 = document.getElementById(idbutton2);
-                button2.style = '';
-
-                var button3 = document.getElementById(idbutton3); //click
-                button3.style = 'background-color: #4CAF50;';
-
-                var button4 = document.getElementById(idbutton4);
-                button4.style = '';
-                var aa = document.querySelector("#slider-product");
-                aa.src = urlimage;
-                break;
-
-            case 4:
-                // code block
-                var button1 = document.getElementById(idbutton1);
-                button1.style = '';
-
-                var button2 = document.getElementById(idbutton2);
-                button2.style = '';
-
-                var button3 = document.getElementById(idbutton3);
-                button3.style = '';
-
-                var button4 = document.getElementById(idbutton4);  //click
-                button4.style = 'background-color: #4CAF50;';
-                var aa = document.querySelector("#slider-product");
-                aa.src = urlimage;
-                break;
-            default:
-            // code block
-        }
-
-
-        ProductColor = color;
-        modalImage(color);
-
-    }
-
-    function Sizebutton(size, chooseSizeid) {
-
-        //Size 7
-        var size7 = document.getElementById('size_7');
-        if (size7 != null) {
-            size7.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 7.5
-        var size7_5 = document.getElementById('size_7_5');
-        if (size7_5 != null) {
-            size7_5.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 8
-        var size8 = document.getElementById('size_8');
-        if (size8 != null) {
-            size8.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 8.5
-        var size8_5 = document.getElementById('size_8_5');
-        if (size8_5 != null) {
-            size8_5.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 9
-        var size9 = document.getElementById('size_9');
-        if (size9 != null) {
-            size9.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 9.5
-        var size9_5 = document.getElementById('size_9_5');
-        if (size9_5 != null) {
-            size9_5.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 10
-        var size10= document.getElementById('size_10');
-        if (size10 != null) {
-            size10.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 10.5
-        var size10_5 = document.getElementById('size_10_5');
-        if (size10_5 != null) {
-            size10_5.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 11
-        var size11 = document.getElementById('size_11');
-        if (size11 != null) {
-            size11.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 11.5
-        var size11_5 = document.getElementById('size_11_5');
-        if (size11_5 != null) {
-            size11_5.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 12
-        var size12 = document.getElementById('size_12');
-        if (size12 != null) {
-            size12.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 12.5
-        var size12_5 = document.getElementById('size_12_5');
-        if (size12_5 != null) {
-            size12_5.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 13
-        var size13 = document.getElementById('size_13');
-        if (size13 != null) {
-            size13.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 13.5
-        var size13_5 = document.getElementById('size_13_5');
-        if (size13_5 != null) {
-            size13_5.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 14
-        var size14 = document.getElementById('size_14');
-        if (size14 != null) {
-            size14.style = 'background-color: #CCCCCC;';
-        }
-
-        //Size 14.5
-        var size14_5 = document.getElementById('size_14_5');
-        if (size14_5 != null) {
-            size14_5.style = 'background-color: #CCCCCC;';
-        }
-
-
-        var choose = document.getElementById(chooseSizeid);
-        choose.style = "background-color: #4CAF50;";
-
-
-        // add input text
-        ProductSize = size;
-    }
 
 
 
     function amount() {
 
         var a = document.querySelector("#quantity");
-
-        ProductAmount = a.value;
-    }
-
-    function addtocart() {
-
-        amount();
-
-        var a = document.querySelector("#addtocartbutton");
-        a.href = "/productdetailadd?productid=@ViewBag.Id&quantity=" + ProductAmount + "&color=" + ProductColor + "&size=" + ProductSize;
-
+        return a.value;
     }
 
 
     function QuantityAdd() {
         var button = document.getElementById('button-add');
         var textQuantity = document.getElementById('quantity');
-
         var value = textQuantity.value;
 
-
         textQuantity.value = parseInt(value) + 1;
-
-
-
-
     }
 
     function QuantityMinus(){
@@ -621,7 +418,5 @@
         if (value >0) {
             textQuantity.value = value - 1;
         }
-
-
     }
 </script>
