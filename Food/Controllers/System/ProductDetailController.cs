@@ -238,10 +238,8 @@ namespace Food.Controllers
         [HttpPost]
         public async Task<IActionResult> Comment()
         {
-            
             try
             {
-
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var userName = User.FindFirstValue(ClaimTypes.Name);
                 string reviewId = Guid.NewGuid().ToString();
