@@ -65,6 +65,28 @@ namespace Food.Controllers.System
 
                     });
 
+                // Calculate Ship, Subtotal, Total, Discount
+                // Discount
+
+                int discount = GetDiscount();
+
+                // Ship
+                int ship = GetShippingPrice("ship");
+
+                // SubTotal
+                int reTotal = 0;
+                foreach (var item in productInCartModelQuery)
+                {
+                    reTotal += item.Quantity * item.ProductPrice;
+                }
+                if (reTotal != 0)
+                {
+                    ViewBag.Subtotal = reTotal;
+                }
+
+                // Total
+                CaculateTotal(reTotal, ship, discount);
+
                 return View(productInCartModelQuery);
             }
             else
@@ -82,17 +104,6 @@ namespace Food.Controllers.System
                             select new { a, b, c, d };
                 query = query.Where(x => x.d.deviceName == namePc);
 
-                //Get CouponPrice In Session
-                if ((HttpContext.Session.GetString(KeySession.sessionCouponPrice) == null)||(HttpContext.Session.GetString(KeySession.sessionCouponPrice) == ""))
-                {
-                    ViewBag.CouponPrice = 0;
-                }
-                else
-                {
-                    ViewBag.CouponPrice = HttpContext.Session.GetString(KeySession.sessionCouponPrice);
-                }
-                
-
                 var productInCartModelQuery = query
                     .Select(x => new ProductInCartModel()
                     {
@@ -106,8 +117,70 @@ namespace Food.Controllers.System
                         Size = x.b.picd_size
                     });
 
+                // Calculate Ship, Subtotal, Total, Discount
+                // Discount
+
+                int discount = GetDiscount();
+
+                // Ship
+                int ship = GetShippingPrice("ship");
+
+                // SubTotal
+                int reTotal = 0;
+                foreach (var item in productInCartModelQuery)
+                {
+                    reTotal += item.Quantity * item.ProductPrice;
+                }
+                if (reTotal != 0)
+                {
+                    ViewBag.Subtotal = reTotal;
+                }
+
+                // Total
+                CaculateTotal(reTotal, ship, discount);
+
+
                 return View(productInCartModelQuery);
             }
+        }
+
+        private int GetShippingPrice(string NameShip)
+        {
+            var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == NameShip);
+            int ship;
+            if (shipingQuery != null)
+            {
+                ship = shipingQuery.ship_Price;
+                ViewBag.Ship = shipingQuery.ship_Price;
+            }
+            else
+            {
+                ship = 0;
+                ViewBag.Ship = 0;
+            }
+            return ship;
+        }
+        
+
+        private int CaculateTotal(int reTotal, int ship, int discount)
+        {
+            ViewBag.total = reTotal - ship - discount;
+            return reTotal - ship - discount;
+        }
+
+        private int GetDiscount()
+        {
+            int discount = 0;
+            if ((HttpContext.Session.GetString(KeySession.sessionCouponPrice) == null) || (HttpContext.Session.GetString(KeySession.sessionCouponPrice) == ""))
+            {
+                ViewBag.CouponPrice = 0;
+            }
+            else
+            {
+                discount = Int32.Parse(HttpContext.Session.GetString(KeySession.sessionCouponPrice));
+                ViewBag.CouponPrice = HttpContext.Session.GetString(KeySession.sessionCouponPrice);
+            }
+            return discount;
         }
 
 
@@ -123,6 +196,9 @@ namespace Food.Controllers.System
                 if (checkLogin)
                 {
                     //Logined
+                    var productQuery = _context.ProductInCart.FirstOrDefault(a => a.pic_ProductId == id);
+                    _context.ProductInCart.Remove(productQuery);
+                    _context.SaveChanges();
 
                 }
                 else

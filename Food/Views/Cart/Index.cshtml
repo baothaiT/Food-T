@@ -80,17 +80,21 @@
                <h4>Cart Totals</h4>
                <table class="aa-totals-table">
                  <tbody>
+                     <tr>
+                     <th>Subtotal</th>
+                     <td>$@ViewBag.Subtotal</td>
+                   </tr>
                    <tr>
                      <th>Discount</th>
                      <td>@ViewBag.CouponPrice</td>
                    </tr>
                    <tr>
-                     <th>Subtotal</th>
-                     <td>$450</td>
+                     <th>Shipping</th>
+                     <td>$@ViewBag.Ship</td>
                    </tr>
                    <tr>
                      <th>Total</th>
-                     <td>$450</td>
+                     <td>$@ViewBag.total </td>
                    </tr>
                  </tbody>
                </table>

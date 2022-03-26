@@ -74,18 +74,18 @@ namespace Food.Controllers.System
                     checkout_Price = a.a.pd_Price
                 });
 
-                //Get Shipping Price
-                var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
-
                 
 
+                
+                // Get ReTotal
                 int reTotal = 0;
                 foreach (var item in cartDetail)
                 {
                     reTotal += item.checkout_Price;
                 }
-                int discount; 
+
                 //Get CouponPrice In Session
+                int discount;
                 if ((HttpContext.Session.GetString(KeySession.sessionCouponPrice) == null) || (HttpContext.Session.GetString(KeySession.sessionCouponPrice) == ""))
                 {
                     ViewBag.Discount = 0;
@@ -100,6 +100,8 @@ namespace Food.Controllers.System
                 ViewBag.Retotal = reTotal;
 
                 //Get and set Price of shipping
+                //Get Shipping Price
+                var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
                 int ship;
                 if (shipingQuery != null)
                 {
