@@ -68,7 +68,7 @@ namespace Food.Controllers
                             select new {a,b,c,d };
 
 
-            review = review.Where(x => x.d.pd_Id == id && x.b.review_HideStatus == false);
+            review = review.Where(x => x.d.pd_Id == id && x.b.review_HideStatus == false).OrderBy(x => x.b.review_UploadTime); ;
 
             var reviewQuery = review.Select(x => new ReviewModel()
             {

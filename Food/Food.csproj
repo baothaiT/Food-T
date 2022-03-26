@@ -499,6 +499,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\Categories-home\" />
-    <Folder Include="wwwroot\images\Users\" />
   </ItemGroup>
 </Project>
