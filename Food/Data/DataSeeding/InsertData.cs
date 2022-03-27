@@ -551,10 +551,7 @@ namespace Food.Data.DataSeeding
                     pd_NameImg2 = "2",
                     pd_NameImg3 = "3",
                     pd_NameImg4 = "4"
-                }
-                );
-
-
+                });
 
 
         //Table About
@@ -573,7 +570,6 @@ namespace Food.Data.DataSeeding
 
 
             //Table AppRole 2222222222222222222222222222222222222222222222222222222222222222222
-
             builder.Entity<AppRole>().HasData(
                 new AppRole()
                 {
@@ -596,9 +592,7 @@ namespace Food.Data.DataSeeding
             var IdAdmin = "DE544998-A3CC-4E12-ABB4-0642E57BD222";
 
             //Table AppUser 2222222222222222222222222222222222222222222222222222222222222222222
-
             var hasher = new PasswordHasher<AppUser>();
-
             builder.Entity<AppUser>().HasData(
             new AppUser
             {

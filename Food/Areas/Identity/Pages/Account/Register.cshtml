@@ -30,20 +30,7 @@
             </div>
 
             <!-- START CAPTCHA -->
-            <br>
-            <div class="capbox">
-
-                <div id="CaptchaDiv"></div>
-
-                <div class="capbox-inner">
-                    Type the number:<br>
-
-                    <input type="hidden" id="txtCaptcha">
-                    <input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
-
-                </div>
-            </div>
-            <br><br>
+            <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
             <!-- END CAPTCHA -->
             <button type="submit" class="btn btn-primary">Register</button>
@@ -52,7 +39,7 @@
     
 </div>
 
-<script src="~/js/captcha.js"></script>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
