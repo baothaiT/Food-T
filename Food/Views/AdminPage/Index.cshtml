@@ -54,10 +54,18 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ["Element", "Volum", { role: "style" } ],
-          ["Copper", 18, "#b87333"],
-          ["Silver", 20.49, "silver"],
-          ["Gold", 50, "gold"],
-          ["Platinum", 150, "color: #e5e4e2"]
+          ["January", parseInt(@ViewBag.January), "#b87333"],
+          ["February", parseInt(@ViewBag.February), "silver"],
+          ["March", parseInt(@ViewBag.March), "gold"],
+          ["April", parseInt(@ViewBag.April), "color: #e5e4e2"],
+          ["May", parseInt(@ViewBag.May), "#b87333"],
+          ["June", parseInt(@ViewBag.June), "silver"],
+          ["July", parseInt(@ViewBag.July), "gold"],
+          ["August", parseInt(@ViewBag.August), "color: #e5e4e2"],
+          ["September", parseInt(@ViewBag.September), "#b87333"],
+          ["October", parseInt(@ViewBag.October), "silver"],
+          ["November", parseInt(@ViewBag.November), "gold"],
+          ["December", parseInt(@ViewBag.December), "color: #e5e4e2"],
         ]);
 
         var view = new google.visualization.DataView(data);

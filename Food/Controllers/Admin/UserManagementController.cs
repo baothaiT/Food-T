@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 using Food.Data;
 using Food.Entity;
 using Food.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Food.Controllers.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class UserManagementController : Controller
     {
 

@@ -6,9 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Food.Data;
 using Food.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Food.Controllers.Staff
 {
+    [Authorize(Roles = "Admin,Staff")]
     public class OrderConfirmationManagementController : Controller
     {
         private readonly ApplicationDbContext _context;

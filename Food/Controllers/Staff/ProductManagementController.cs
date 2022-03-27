@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using Food.Data;
 using Food.Entity;
 using Food.Models;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace Food.Controllers.Staff
 {
-
+    [Authorize(Roles = "Admin,Staff")]
     public class ProductManagementController : Controller
     {
         private readonly ApplicationDbContext _context;

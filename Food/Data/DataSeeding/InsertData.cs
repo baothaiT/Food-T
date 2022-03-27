@@ -578,14 +578,17 @@ namespace Food.Data.DataSeeding
                 new AppRole()
                 {
                     Id = IdRoleStaff,
-                    Name ="staff",
-                    Description = "Staff"
+                    Name ="Staff",
+                    Description = "Staff",
+                    NormalizedName = "staff"
                 },
                 new AppRole()
                 {
                     Id = IdRoleAdmin,
-                    Name = "admin",
-                    Description = "admin"
+                    Name = "Admin",
+                    Description = "Admin",
+                    NormalizedName = "admin"
+
                 });
 
 
@@ -610,7 +613,6 @@ namespace Food.Data.DataSeeding
                 FirstName = "admin",
                 LastName = "admin",
                 DoB = new DateTime(2020, 01, 02)
-
             },
             new AppUser
             {
@@ -625,7 +627,6 @@ namespace Food.Data.DataSeeding
                 FirstName = "staff",
                 LastName = "staff",
                 DoB = new DateTime(2020, 03, 02)
-
             });
 
 

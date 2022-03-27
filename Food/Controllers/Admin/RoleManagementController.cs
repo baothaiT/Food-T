@@ -6,9 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Food.Data;
 using Food.Entity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Food.Controllers.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class RoleManagementController : Controller
     {
 

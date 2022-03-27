@@ -7,21 +7,19 @@ using System.Threading.Tasks;
 using Food.Data;
 using Food.Entity;
 using Food.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Food.Controllers.Staff
 {
+    [Authorize(Roles = "Admin,Staff")]
     public class CommentsManagementController : Controller
     {
         private readonly ApplicationDbContext _context;
-
 
         public CommentsManagementController(ApplicationDbContext context)
         {
             _context = context;
         }
-
-
-
         // GET: CommentsManagementController
         [Route("/commentsmanagement")]
         [HttpGet]

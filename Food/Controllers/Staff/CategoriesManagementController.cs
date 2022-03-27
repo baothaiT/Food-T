@@ -6,36 +6,36 @@ using Microsoft.AspNetCore.Mvc;
 namespace Food.Controllers.Staff
 {
     [Authorize(Roles = "Admin,Staff")]
-    public class ContactMarkettingController : Controller
+    public class CategoriesManagementController : Controller
     {
-
-
+       
         private readonly ApplicationDbContext _context;
-        public ContactMarkettingController(ApplicationDbContext context)
+        public CategoriesManagementController(ApplicationDbContext context)
         {
             _context = context;
         }
-        [Route("/contactmarketting")]
-        // GET: ContactMarkettingController
+        // GET: CategoriesManagementController
+        [Route("categoriesmanagement")]
         public ActionResult Index()
         {
-            var queryEmail = _context.SubscribeEmail;
-            return View(queryEmail);
+
+            var query = _context.Categories;
+            return View(query);
         }
 
-        // GET: ContactMarkettingController/Details/5
+        // GET: CategoriesManagementController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: ContactMarkettingController/Create
+        // GET: CategoriesManagementController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ContactMarkettingController/Create
+        // POST: CategoriesManagementController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -50,13 +50,13 @@ namespace Food.Controllers.Staff
             }
         }
 
-        // GET: ContactMarkettingController/Edit/5
+        // GET: CategoriesManagementController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: ContactMarkettingController/Edit/5
+        // POST: CategoriesManagementController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -71,13 +71,13 @@ namespace Food.Controllers.Staff
             }
         }
 
-        // GET: ContactMarkettingController/Delete/5
+        // GET: CategoriesManagementController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: ContactMarkettingController/Delete/5
+        // POST: CategoriesManagementController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

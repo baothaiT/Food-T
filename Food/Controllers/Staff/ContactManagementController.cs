@@ -1,9 +1,11 @@
 ﻿using Food.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Food.Controllers.Staff
 {
+    [Authorize(Roles = "Admin,Staff")]
     public class ContactManagementController : Controller
     {
         private readonly ApplicationDbContext _context;
