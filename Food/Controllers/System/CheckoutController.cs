@@ -108,19 +108,26 @@ namespace Food.Controllers.System
 
             if (checkLogin)
             {
+                //logined
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var userName = User.FindFirstValue(ClaimTypes.Name);
                 AddBill(userId, checkLogin);
             }
             else
             {
-                var user = new AppUser { UserName = "test1", Email = "test1@gmail.com" };
+                // No login
+                string email = Request.Form["Email"];
+                string firstName = Request.Form["FirstName"];
+                var user = new AppUser { UserName = firstName, Email = email };
                 var result = await _UserManager.CreateAsync(user, "123@123Aa");
+
+                string mess = "Account:" + email+ " | Password: 123@123Aa";
+
+                
                 if (result.Succeeded)
                 {
+                    SendMail(email, "New account for food shop", mess);
                     AddBill(user.Id, checkLogin);
-
-
                 }
             }
             return Redirect("/paymentcomplete");
@@ -198,7 +205,7 @@ namespace Food.Controllers.System
                     bill_ProductNamelist = productNameList,
                     bill_PaymentMethod = "Cash on Delivery"
                 };
-
+                
                 /// Add -- 2
                 _context.Bills.Add(bill);
 
@@ -276,16 +283,6 @@ namespace Food.Controllers.System
                 _context.ProductInCartDevices.RemoveRange(ProductInCartQueryDelete);
                 await _context.SaveChangesAsync();
             }
-            
-            
-
-            
-
-            
-            
-
-            
-
             
         }
 
