@@ -11,6 +11,7 @@ using Food.Models;
 using Food.StatisFile;
 using Microsoft.AspNetCore.Http;
 using Food.StatisFile.Function;
+using Microsoft.Extensions.Configuration;
 
 namespace Food.Controllers.System
 {
@@ -101,8 +102,34 @@ namespace Food.Controllers.System
         [HttpPost]
         public async Task<IActionResult> AddToBill()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userName = User.FindFirstValue(ClaimTypes.Name);
+            
+            
+            bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+
+            if (checkLogin)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userName = User.FindFirstValue(ClaimTypes.Name);
+                AddBill(userId, checkLogin);
+            }
+            else
+            {
+                var user = new AppUser { UserName = "test1", Email = "test1@gmail.com" };
+                var result = await _UserManager.CreateAsync(user, "123@123Aa");
+                if (result.Succeeded)
+                {
+                    AddBill(user.Id, checkLogin);
+
+
+                }
+            }
+            return Redirect("/paymentcomplete");
+        }
+
+        public async void AddBill(string userId, bool checklogin)
+        {
+
+            string namePc = Environment.MachineName;
 
             string firstName = Request.Form["FirstName"];
             string country = Request.Form["Country"];
@@ -113,70 +140,174 @@ namespace Food.Controllers.System
             string postal = Request.Form["Postal"];
             string email = Request.Form["Email"];
             string phone = Request.Form["Phone"];
-
-            //Query Database in table
-            var query = from a in _context.Products
-                        join b in _context.ProductInCart on a.pd_Id equals b.pic_ProductId
-                        join c in _context.Cart on b.pic_CartId equals c.cart_Id
-                        join d in _context.AppUser on c.cart_UserID equals d.Id
-                        select new { a, b, c, d };
-
-            query = query.Where(x => x.d.Id == userId);
-
-
-            var cartDetail = query.Select(a => new CheckOutModel()
-            {
-                checkout_ProductName = a.a.pd_Name,
-                checkout_Quantity = a.b.pic_amount,
-                checkout_Price = a.a.pd_Price
-            });
-            var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == "ship");
-
-           
-            int reTotal = 0;
-            foreach (var item in cartDetail)
-            {
-                reTotal += item.checkout_Price;
-            }
-            ViewBag.Retotal = reTotal;
-            //Discount 
-            int discount = GetDiscount();
-
-            ViewBag.Discount = discount;
             
-            //Shipping
-            int ship = GetShippingPrice("ship");
-            ViewBag.Ship = 0;
-
-            ViewBag.Total = reTotal + ship - discount;
-
-            string productNameList = "";
-            foreach (var item in cartDetail)
+            if(checklogin)
             {
-                productNameList += "|" + item.checkout_Quantity + "|" + item.checkout_ProductName;
+                //Query Database in table -- logined
+                var query = from a in _context.Products
+                            join b in _context.ProductInCart on a.pd_Id equals b.pic_ProductId
+                            join c in _context.Cart on b.pic_CartId equals c.cart_Id
+                            join d in _context.AppUser on c.cart_UserID equals d.Id
+                            select new { a, b, c, d };
+
+                query = query.Where(x => x.d.Id == userId);
+
+                //Create checkout model -- 2
+                var cartDetail = query.Select(a => new CheckOutModel()
+                {
+                    checkout_ProductName = a.a.pd_Name,
+                    checkout_Quantity = a.b.pic_amount,
+                    checkout_Price = a.a.pd_Price,
+                    Id = a.a.pd_Id
+                });
+
+                //Read reTotal -- 2
+                int reTotal = 0;
+                foreach (var item in cartDetail)
+                {
+                    reTotal += item.checkout_Price;
+                }
+                ViewBag.Retotal = reTotal;
+
+                //Read Discount -- 2
+                int discount = GetDiscount();
+                ViewBag.Discount = discount;
+
+                //Read Shipping -- 2
+                int ship = GetShippingPrice("ship");
+                ViewBag.Ship = 0;
+                ViewBag.Total = reTotal + ship - discount;
+
+                //Create list -- 2
+                string productNameList = "";
+                string productIdList = "";
+                foreach (var item in cartDetail)
+                {
+                    productNameList += "|" + item.checkout_Quantity + "|" + item.checkout_ProductName;
+                    productIdList += "|" + item.Id;
+                }
+
+                //Create bill -- 2
+                var bill = new Bills()
+                {
+                    bill_Id = Guid.NewGuid().ToString(),
+                    bill_UserId = userId,
+                    bill_Discount = discount,
+                    bill_Shipping = ship,
+                    bill_PaidTotal = reTotal + ship - discount,
+                    bill_ProductNamelist = productNameList,
+                    bill_PaymentMethod = "Cash on Delivery"
+                };
+
+                /// Add -- 2
+                _context.Bills.Add(bill);
+
+                /// Remove -- logined
+                var CartQuery = _context.Cart.FirstOrDefault(x => x.cart_UserID == userId);
+                var ProductInCartQueryDelete = _context.ProductInCart.Where(a => a.pic_CartId == CartQuery.cart_Id);
+                _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
+                await _context.SaveChangesAsync();
             }
-
-            var bill = new Bills()
+            else
             {
-                bill_Id = Guid.NewGuid().ToString(),
-                bill_UserId = userId,
-                bill_Discount = discount,
-                bill_Shipping = ship,
-                bill_PaidTotal = reTotal + ship - discount,
-                bill_ProductNamelist = productNameList
-            };
+                //Query produdct in Cart
+                var query = from a in _context.Products
+                            join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
+                            join c in _context.CartsDevice on b.picd_CartId equals c.cartd_Id
+                            join d in _context.Devices on c.cartd_DeviceId equals d.deviceId
+                            select new { a, b, c, d };
+                query = query.Where(x => x.d.deviceName == namePc);
 
-            /// Add
-            _context.Bills.Add(bill);
+                //Create checkout model -- 2
+                var cartDetail = query.Select(a => new CheckOutModel()
+                {
+                    checkout_ProductName = a.a.pd_Name,
+                    checkout_Quantity = a.b.picd_amount,
+                    checkout_Price = a.a.pd_Price,
+                    Id = a.a.pd_Id
+                });
 
-            /// Remove
-            var CartQuery = _context.Cart.FirstOrDefault(x => x.cart_UserID == userId);
+                //Read reTotal -- 2
+                int reTotal = 0;
+                foreach (var item in cartDetail)
+                {
+                    reTotal += item.checkout_Price;
+                }
+                ViewBag.Retotal = reTotal;
 
-            var ProductInCartQueryDelete = _context.ProductInCart.Where(a => a.pic_CartId == CartQuery.cart_Id);
+                //Read Discount -- 2
+                int discount = GetDiscount();
+                ViewBag.Discount = discount;
 
-            _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
-            await _context.SaveChangesAsync();
-            return Redirect("/paymentcomplete");
+                //Read Shipping -- 2
+                int ship = GetShippingPrice("ship");
+                ViewBag.Ship = 0;
+                ViewBag.Total = reTotal + ship - discount;
+
+                //Create list -- 2
+                string productNameList = "";
+                string productIdList = "";
+                foreach (var item in cartDetail)
+                {
+                    productNameList += "|" + item.checkout_Quantity + "|" + item.checkout_ProductName;
+                    productIdList += "|" + item.Id;
+                }
+
+                //Create bill -- 2
+                var bill = new Bills()
+                {
+                    bill_Id = Guid.NewGuid().ToString(),
+                    bill_UserId = userId,
+                    bill_Discount = discount,
+                    bill_Shipping = ship,
+                    bill_PaidTotal = reTotal + ship - discount,
+                    bill_ProductNamelist = productNameList,
+                    bill_PaymentMethod = "Cash on Delivery"
+                };
+
+                /// Add -- 2
+                _context.Bills.Add(bill);
+
+                /// Remove -- logined
+                
+                var queryIdProduct = _context.Devices.FirstOrDefault(x => x.deviceName == namePc);
+                var CartQuery = _context.CartsDevice.FirstOrDefault(x => x.cartd_DeviceId == queryIdProduct.deviceId);
+                var ProductInCartQueryDelete = _context.ProductInCartDevices.Where(a => a.picd_CartId == CartQuery.cartd_Id);
+                _context.ProductInCartDevices.RemoveRange(ProductInCartQueryDelete);
+                await _context.SaveChangesAsync();
+            }
+            
+            
+
+            
+
+            
+            
+
+            
+
+            
+        }
+
+
+        public void SendMail(string Mailto, string subject, string boddy)
+        {
+            var smtpacountJson = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("MailSettings")["Mail"];
+            var smtppasswordJson = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("MailSettings")["Password"];
+
+            String mailgui = smtpacountJson.ToString();
+            string smtpacount = smtpacountJson.ToString();
+            string smtppassword = smtppasswordJson.ToString();
+
+            MailUtils.MailUtils.SendMailGoogleSmtp(
+                mailgui,
+                Mailto,
+                subject,
+                boddy,
+                smtpacount,
+                smtppassword
+
+            ).Wait();
         }
 
         private int GetDiscount()

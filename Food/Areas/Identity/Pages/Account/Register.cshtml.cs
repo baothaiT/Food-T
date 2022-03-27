@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Food.Entity;
+using Microsoft.Extensions.Configuration;
 
 namespace Food.Areas.Identity.Pages.Account
 {
@@ -89,12 +90,15 @@ namespace Food.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                       // $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                    SendMail(Input.Email, "Register new account", $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        //return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("WaitConfirmEmail");
                     }
                     else
                     {
@@ -110,6 +114,26 @@ namespace Food.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        public void SendMail(string Mailto, string subject, string boddy)
+        {
+            var smtpacountJson = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("MailSettings")["Mail"];
+            var smtppasswordJson = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("MailSettings")["Password"];
+
+            String mailgui = smtpacountJson.ToString();
+            string smtpacount = smtpacountJson.ToString();
+            string smtppassword = smtppasswordJson.ToString();
+
+            MailUtils.MailUtils.SendMailGoogleSmtp(
+                mailgui,
+                Mailto,
+                subject,
+                boddy,
+                smtpacount,
+                smtppassword
+
+            ).Wait();
         }
     }
 }
