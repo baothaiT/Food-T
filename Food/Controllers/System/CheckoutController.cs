@@ -118,7 +118,7 @@ namespace Food.Controllers.System
                 // No login
                 string email = Request.Form["Email"];
                 string firstName = Request.Form["FirstName"];
-                var user = new AppUser { UserName = firstName, Email = email };
+                var user = new AppUser { UserName = firstName, Email = email, EmailConfirmed= true };
                 var result = await _UserManager.CreateAsync(user, "123@123Aa");
 
                 string mess = "Account:" + email+ " | Password: 123@123Aa";
