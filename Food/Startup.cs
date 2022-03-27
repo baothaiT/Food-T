@@ -14,10 +14,12 @@ using System.Threading.Tasks;
 using Food.Data;
 using Food.Entity;
 
+
 namespace Food
 {
     public class Startup
     {
+        IConfiguration _configuration;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,11 +36,7 @@ namespace Food
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddSession();
-            services.Configure<MailSettings>(mailsettings);                // đăng ký để Inject
 
-            // Đăng ký SendMailService với kiểu Transient, mỗi lần gọi dịch
-            // vụ ISendMailService một đới tượng SendMailService tạo ra (đã inject config)
-            services.AddTransient<ISendMailService, SendMailService>();
 
             services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
