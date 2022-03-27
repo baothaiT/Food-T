@@ -1,15 +1,24 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Food.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Food.Controllers.Staff
 {
     public class ContactMarkettingController : Controller
     {
+
+
+        private readonly ApplicationDbContext _context;
+        public ContactMarkettingController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         [Route("/contactmarketting")]
         // GET: ContactMarkettingController
         public ActionResult Index()
         {
-            return View();
+            var queryEmail = _context.SubscribeEmail;
+            return View(queryEmail);
         }
 
         // GET: ContactMarkettingController/Details/5
