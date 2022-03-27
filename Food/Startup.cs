@@ -37,7 +37,6 @@ namespace Food
 
             services.AddSession();
 
-
             services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
@@ -62,7 +61,6 @@ namespace Food
             app.UseStaticFiles();
             app.UseSession();
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
 
