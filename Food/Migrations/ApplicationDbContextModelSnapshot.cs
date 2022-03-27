@@ -126,7 +126,7 @@ namespace Food.Migrations
                             bill_Id = "D269BF93-A5E2-4C4A-8146-9967DDE80D30",
                             bill_Cancelled = false,
                             bill_Confirmation = true,
-                            bill_DatetimeOrder = new DateTime(2022, 3, 26, 8, 37, 3, 967, DateTimeKind.Local).AddTicks(365),
+                            bill_DatetimeOrder = new DateTime(2022, 3, 27, 11, 22, 39, 983, DateTimeKind.Local).AddTicks(5219),
                             bill_Delivered = false,
                             bill_Delivering = false,
                             bill_Discount = 0,
@@ -210,35 +210,35 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            cg_Id = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca",
+                            cg_Id = "0f5851cc-33b0-473b-8d22-651b7b160ffe",
                             cg_Name = "Dry food",
                             cg_Sale = "",
                             cg_Type = ""
                         },
                         new
                         {
-                            cg_Id = "0dbd5e8d-cfb2-4ff6-a290-d3df4458e131",
+                            cg_Id = "f8e671eb-7acb-4f81-b507-16193aa50847",
                             cg_Name = "Food",
                             cg_Sale = "",
                             cg_Type = ""
                         },
                         new
                         {
-                            cg_Id = "98d88fd6-1ebd-417b-bba2-f191d4062cbb",
+                            cg_Id = "727440cd-3707-4de9-80ed-7a7aedff3fe7",
                             cg_Name = "Drink",
                             cg_Sale = "",
                             cg_Type = ""
                         },
                         new
                         {
-                            cg_Id = "66fb12cb-32aa-453f-90b3-a9e931ca5528",
+                            cg_Id = "0a41561e-e2c4-430f-a278-00927508be19",
                             cg_Name = "Banhmi",
                             cg_Sale = "",
                             cg_Type = ""
                         },
                         new
                         {
-                            cg_Id = "7977f53b-b289-42a9-a64e-a5ca0f9d3180",
+                            cg_Id = "8b151907-252d-4728-a6f4-26b44a8985ca",
                             cg_Name = "AnVat",
                             cg_Sale = "",
                             cg_Type = ""
@@ -281,10 +281,8 @@ namespace Food.Migrations
 
             modelBuilder.Entity("Food.Entity.ContactUsers", b =>
                 {
-                    b.Property<int>("cu_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("cu_Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("cu_Description")
                         .HasColumnType("nvarchar(max)");
@@ -308,7 +306,7 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            cu_Id = 1,
+                            cu_Id = "0364d173-9092-44fe-8a16-dc85d0fdcd94",
                             cu_Description = "Description",
                             cu_Email = "Email",
                             cu_FirstName = "FirstName",
@@ -335,13 +333,13 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            couponId = "892cbaf2-b462-4c6b-a1e1-08d416cb6eb1",
+                            couponId = "fa775cbe-df1b-4ffd-b683-b3ad4e1f1eaf",
                             couponCode = "code10",
                             couponPrice = 10
                         },
                         new
                         {
-                            couponId = "9e1ef5f7-83fb-44d0-b620-0837b61db15d",
+                            couponId = "70fbe229-b1bd-4286-913f-e914968556eb",
                             couponCode = "code50",
                             couponPrice = 50
                         });
@@ -489,7 +487,7 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            pd_Id = "6f905c50-2ee6-4712-8c1a-719c08917337",
+                            pd_Id = "ff489933-9e1c-4260-99b0-184787a28a48",
                             pd_Description = "BanhCanhCua",
                             pd_Img1 = "/images/item250x300/BanhCanhCua.png",
                             pd_Img2 = "",
@@ -508,7 +506,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "d7f05687-b168-4ecb-8fb0-5f1b457d7f8b",
+                            pd_Id = "8819f11c-9d22-483a-9449-d801d2b3521c",
                             pd_Description = "BanhMi",
                             pd_Img1 = "/images/item250x300/BanhMi.png",
                             pd_Img2 = "",
@@ -527,7 +525,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "0b8b9ffe-2a89-4c02-acf6-4cb620f6068a",
+                            pd_Id = "7e5ab985-3bf4-46e0-914f-fa2c2bd61736",
                             pd_Description = "banhtrangtron",
                             pd_Img1 = "/images/item250x300/banhtrangtron.png",
                             pd_Img2 = "",
@@ -546,7 +544,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "795cd832-3680-4188-828f-a7bcbc35eccd",
+                            pd_Id = "9300d3fe-ca1d-4eef-b3a2-bd45c4f208ab",
                             pd_Description = "banhuotlongdalat",
                             pd_Img1 = "/images/item250x300/banhuotlongdalat.png",
                             pd_Img2 = "",
@@ -565,7 +563,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "4605f4d4-2be4-4a79-b263-93fcff84c632",
+                            pd_Id = "b023e349-7cc6-422b-a26a-b04a5ca055cb",
                             pd_Description = "BoKho",
                             pd_Img1 = "/images/item250x300/BoKho.png",
                             pd_Img2 = "",
@@ -584,7 +582,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "77a9de59-72bb-45bf-9e92-6fd0316d00dd",
+                            pd_Id = "86ef7686-5427-4439-9270-701d96ddeb0a",
                             pd_Description = "bunbo",
                             pd_Img1 = "/images/item250x300/bunbo.png",
                             pd_Img2 = "",
@@ -603,7 +601,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "073aa5f3-a508-4721-9b3f-f9f5e8a86f53",
+                            pd_Id = "03fb3b28-887d-4e21-a847-e51a9a978c8e",
                             pd_Description = "bundaumamtom",
                             pd_Img1 = "/images/item250x300/bundaumamtom.png",
                             pd_Img2 = "",
@@ -622,7 +620,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "4d8989d6-7d7d-4922-a501-988bbf6e0cf6",
+                            pd_Id = "f9225110-3ede-41e0-9df2-81020531f6e3",
                             pd_Description = "Bunxaochay",
                             pd_Img1 = "/images/item250x300/Bunxaochay.png",
                             pd_Img2 = "",
@@ -641,7 +639,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "405ce7d0-90e9-41a1-b9c0-719b85a50918",
+                            pd_Id = "eb4abe31-5cbc-4e28-8d14-d52127e724ae",
                             pd_Description = "cocosummer",
                             pd_Img1 = "/images/item250x300/cocosummer.png",
                             pd_Img2 = "",
@@ -660,7 +658,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "28909af3-b2e5-4c4d-8054-2dc7dc205b23",
+                            pd_Id = "802abdeb-010e-49ef-afa0-2104b5e1b1c7",
                             pd_Description = "comboxao",
                             pd_Img1 = "/images/item250x300/comboxao.png",
                             pd_Img2 = "",
@@ -679,7 +677,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "9855de58-9308-456e-a2a4-3799b746c49d",
+                            pd_Id = "1126c02a-91f6-4c7e-b779-5b7997babceb",
                             pd_Description = "comga",
                             pd_Img1 = "/images/item250x300/comga.png",
                             pd_Img2 = "",
@@ -698,7 +696,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "e88238fb-960c-40b3-b41f-3e0318d11645",
+                            pd_Id = "ec065f07-4553-4340-9fcd-ac8d2db4e73b",
                             pd_Description = "comgadenhat",
                             pd_Img1 = "/images/item250x300/comgadenhat.png",
                             pd_Img2 = "",
@@ -717,7 +715,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "8a760a81-480c-489f-86d6-527d948979bb",
+                            pd_Id = "0e21debd-2e42-4d53-a1d4-2121ae417c8c",
                             pd_Description = "denhatthitnuong",
                             pd_Img1 = "/images/item250x300/denhatthitnuong.png",
                             pd_Img2 = "",
@@ -736,7 +734,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "d8b6c538-a0ab-4a15-910f-c94ff2f48395",
+                            pd_Id = "0e61fa87-bea4-42ef-abda-af6865e31855",
                             pd_Description = "goicuon",
                             pd_Img1 = "/images/item250x300/goicuon.png",
                             pd_Img2 = "",
@@ -755,7 +753,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "72fdde7b-be28-40e1-8edd-bdcbbb39ef5a",
+                            pd_Id = "42bf82a1-4691-48b5-8ab5-3cf889167347",
                             pd_Description = "kfc",
                             pd_Img1 = "/images/item250x300/kfc.png",
                             pd_Img2 = "",
@@ -774,7 +772,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "2420fb67-db2d-4247-b3af-a816383a2d34",
+                            pd_Id = "f4fba032-3ada-4b57-a654-f99839654881",
                             pd_Description = "KimBap",
                             pd_Img1 = "/images/item250x300/KimBap.png",
                             pd_Img2 = "",
@@ -793,7 +791,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "0c936128-0ebe-4046-9ac0-af7a38fba7a4",
+                            pd_Id = "1b7df9a1-42df-4391-bdaf-241e4b6c14a7",
                             pd_Description = "loteria",
                             pd_Img1 = "/images/item250x300/loteria.png",
                             pd_Img2 = "",
@@ -812,7 +810,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "847a34a8-696a-4875-939c-455514b26f87",
+                            pd_Id = "c66d2f8e-9250-49b3-ba1f-ad95db049536",
                             pd_Description = "mitronanvat",
                             pd_Img1 = "/images/item250x300/mitronanvat.png",
                             pd_Img2 = "",
@@ -831,7 +829,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "14d3d70b-0780-4efa-a46c-f820b59874d7",
+                            pd_Id = "2eb80b67-0f7e-42f3-a510-43e9dcc9edc1",
                             pd_Description = "monngontrangbang",
                             pd_Img1 = "/images/item250x300/monngontrangbang.png",
                             pd_Img2 = "",
@@ -850,7 +848,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "7e27f7cc-0e07-4239-b2c7-b5820aa9a032",
+                            pd_Id = "f4fbd7d4-bc43-42bd-b93a-f080a6e60d23",
                             pd_Description = "ParisBaguete",
                             pd_Img1 = "/images/item250x300/ParisBaguete.png",
                             pd_Img2 = "",
@@ -869,7 +867,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "0d920467-76cf-4822-b5f6-50425ff8353f",
+                            pd_Id = "c499311a-5e3d-47bf-a555-4e257538540f",
                             pd_Description = "pizza",
                             pd_Img1 = "/images/item250x300/pizza.png",
                             pd_Img2 = "",
@@ -888,7 +886,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "2decf8bb-14c2-4245-81ec-9a08d0a4be5e",
+                            pd_Id = "113469c6-ff2d-4208-87ba-69b65e42f6ba",
                             pd_Description = "quanngontrangbang",
                             pd_Img1 = "/images/item250x300/quanngontrangbang.png",
                             pd_Img2 = "",
@@ -907,7 +905,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "5d794664-25bc-496d-8219-8332330a81f1",
+                            pd_Id = "add76e6f-ad60-45bd-89ca-afc81b8fd6e2",
                             pd_Description = "RauMaMix",
                             pd_Img1 = "/images/item250x300/RauMaMix.png",
                             pd_Img2 = "",
@@ -926,7 +924,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "ef01334d-6c88-4326-831a-577d7b875a92",
+                            pd_Id = "b30fa8f7-f87c-461f-8a13-1ce361331b3d",
                             pd_Description = "Royaltea",
                             pd_Img1 = "/images/item250x300/Royaltea.png",
                             pd_Img2 = "",
@@ -945,7 +943,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "9d1c9944-d00a-4dba-92bb-70216b2345e8",
+                            pd_Id = "c87356de-9a9d-4f2d-a925-ed65e4b678f9",
                             pd_Description = "Sanfulou",
                             pd_Img1 = "/images/item250x300/Sanfulou.png",
                             pd_Img2 = "",
@@ -964,7 +962,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "bb75f934-7a6c-4404-afb3-00e342ec323d",
+                            pd_Id = "e05d8636-e42e-420e-8818-334fcb7cdd30",
                             pd_Description = "stacbuk-cf",
                             pd_Img1 = "/images/item250x300/stacbuk-cf.png",
                             pd_Img2 = "",
@@ -983,7 +981,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "62da6a12-d263-483c-8513-707b464f500f",
+                            pd_Id = "6ec53dda-9273-4144-b004-b47e9fff3fb1",
                             pd_Description = "trasuanhalam",
                             pd_Img1 = "/images/item250x300/trasuanhalam.png",
                             pd_Img2 = "",
@@ -1002,7 +1000,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            pd_Id = "ebf2a8da-2fd3-4612-9230-1d3e0ec9021a",
+                            pd_Id = "099369bf-0838-4702-b126-7ce7d1b6dde2",
                             pd_Description = "Xoixeoba3beo",
                             pd_Img1 = "/images/item250x300/Xoixeoba3beo.png",
                             pd_Img2 = "",
@@ -1038,143 +1036,143 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            pic_productId = "073aa5f3-a508-4721-9b3f-f9f5e8a86f53",
-                            pic_CategoriesId = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca"
+                            pic_productId = "03fb3b28-887d-4e21-a847-e51a9a978c8e",
+                            pic_CategoriesId = "0f5851cc-33b0-473b-8d22-651b7b160ffe"
                         },
                         new
                         {
-                            pic_productId = "4d8989d6-7d7d-4922-a501-988bbf6e0cf6",
-                            pic_CategoriesId = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca"
+                            pic_productId = "f9225110-3ede-41e0-9df2-81020531f6e3",
+                            pic_CategoriesId = "0f5851cc-33b0-473b-8d22-651b7b160ffe"
                         },
                         new
                         {
-                            pic_productId = "28909af3-b2e5-4c4d-8054-2dc7dc205b23",
-                            pic_CategoriesId = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca"
+                            pic_productId = "802abdeb-010e-49ef-afa0-2104b5e1b1c7",
+                            pic_CategoriesId = "0f5851cc-33b0-473b-8d22-651b7b160ffe"
                         },
                         new
                         {
-                            pic_productId = "9855de58-9308-456e-a2a4-3799b746c49d",
-                            pic_CategoriesId = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca"
+                            pic_productId = "1126c02a-91f6-4c7e-b779-5b7997babceb",
+                            pic_CategoriesId = "0f5851cc-33b0-473b-8d22-651b7b160ffe"
                         },
                         new
                         {
-                            pic_productId = "e88238fb-960c-40b3-b41f-3e0318d11645",
-                            pic_CategoriesId = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca"
+                            pic_productId = "ec065f07-4553-4340-9fcd-ac8d2db4e73b",
+                            pic_CategoriesId = "0f5851cc-33b0-473b-8d22-651b7b160ffe"
                         },
                         new
                         {
-                            pic_productId = "8a760a81-480c-489f-86d6-527d948979bb",
-                            pic_CategoriesId = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca"
+                            pic_productId = "0e21debd-2e42-4d53-a1d4-2121ae417c8c",
+                            pic_CategoriesId = "0f5851cc-33b0-473b-8d22-651b7b160ffe"
                         },
                         new
                         {
-                            pic_productId = "d8b6c538-a0ab-4a15-910f-c94ff2f48395",
-                            pic_CategoriesId = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca"
+                            pic_productId = "0e61fa87-bea4-42ef-abda-af6865e31855",
+                            pic_CategoriesId = "0f5851cc-33b0-473b-8d22-651b7b160ffe"
                         },
                         new
                         {
-                            pic_productId = "2420fb67-db2d-4247-b3af-a816383a2d34",
-                            pic_CategoriesId = "c66c9a88-a039-4294-80a9-2b7b0e4c68ca"
+                            pic_productId = "f4fba032-3ada-4b57-a654-f99839654881",
+                            pic_CategoriesId = "0f5851cc-33b0-473b-8d22-651b7b160ffe"
                         },
                         new
                         {
-                            pic_productId = "6f905c50-2ee6-4712-8c1a-719c08917337",
-                            pic_CategoriesId = "0dbd5e8d-cfb2-4ff6-a290-d3df4458e131"
+                            pic_productId = "ff489933-9e1c-4260-99b0-184787a28a48",
+                            pic_CategoriesId = "f8e671eb-7acb-4f81-b507-16193aa50847"
                         },
                         new
                         {
-                            pic_productId = "795cd832-3680-4188-828f-a7bcbc35eccd",
-                            pic_CategoriesId = "0dbd5e8d-cfb2-4ff6-a290-d3df4458e131"
+                            pic_productId = "9300d3fe-ca1d-4eef-b3a2-bd45c4f208ab",
+                            pic_CategoriesId = "f8e671eb-7acb-4f81-b507-16193aa50847"
                         },
                         new
                         {
-                            pic_productId = "4605f4d4-2be4-4a79-b263-93fcff84c632",
-                            pic_CategoriesId = "0dbd5e8d-cfb2-4ff6-a290-d3df4458e131"
+                            pic_productId = "b023e349-7cc6-422b-a26a-b04a5ca055cb",
+                            pic_CategoriesId = "f8e671eb-7acb-4f81-b507-16193aa50847"
                         },
                         new
                         {
-                            pic_productId = "77a9de59-72bb-45bf-9e92-6fd0316d00dd",
-                            pic_CategoriesId = "0dbd5e8d-cfb2-4ff6-a290-d3df4458e131"
+                            pic_productId = "86ef7686-5427-4439-9270-701d96ddeb0a",
+                            pic_CategoriesId = "f8e671eb-7acb-4f81-b507-16193aa50847"
                         },
                         new
                         {
-                            pic_productId = "14d3d70b-0780-4efa-a46c-f820b59874d7",
-                            pic_CategoriesId = "0dbd5e8d-cfb2-4ff6-a290-d3df4458e131"
+                            pic_productId = "2eb80b67-0f7e-42f3-a510-43e9dcc9edc1",
+                            pic_CategoriesId = "f8e671eb-7acb-4f81-b507-16193aa50847"
                         },
                         new
                         {
-                            pic_productId = "5d794664-25bc-496d-8219-8332330a81f1",
-                            pic_CategoriesId = "98d88fd6-1ebd-417b-bba2-f191d4062cbb"
+                            pic_productId = "add76e6f-ad60-45bd-89ca-afc81b8fd6e2",
+                            pic_CategoriesId = "727440cd-3707-4de9-80ed-7a7aedff3fe7"
                         },
                         new
                         {
-                            pic_productId = "ef01334d-6c88-4326-831a-577d7b875a92",
-                            pic_CategoriesId = "98d88fd6-1ebd-417b-bba2-f191d4062cbb"
+                            pic_productId = "b30fa8f7-f87c-461f-8a13-1ce361331b3d",
+                            pic_CategoriesId = "727440cd-3707-4de9-80ed-7a7aedff3fe7"
                         },
                         new
                         {
-                            pic_productId = "bb75f934-7a6c-4404-afb3-00e342ec323d",
-                            pic_CategoriesId = "98d88fd6-1ebd-417b-bba2-f191d4062cbb"
+                            pic_productId = "e05d8636-e42e-420e-8818-334fcb7cdd30",
+                            pic_CategoriesId = "727440cd-3707-4de9-80ed-7a7aedff3fe7"
                         },
                         new
                         {
-                            pic_productId = "62da6a12-d263-483c-8513-707b464f500f",
-                            pic_CategoriesId = "98d88fd6-1ebd-417b-bba2-f191d4062cbb"
+                            pic_productId = "6ec53dda-9273-4144-b004-b47e9fff3fb1",
+                            pic_CategoriesId = "727440cd-3707-4de9-80ed-7a7aedff3fe7"
                         },
                         new
                         {
-                            pic_productId = "d7f05687-b168-4ecb-8fb0-5f1b457d7f8b",
-                            pic_CategoriesId = "66fb12cb-32aa-453f-90b3-a9e931ca5528"
+                            pic_productId = "8819f11c-9d22-483a-9449-d801d2b3521c",
+                            pic_CategoriesId = "0a41561e-e2c4-430f-a278-00927508be19"
                         },
                         new
                         {
-                            pic_productId = "847a34a8-696a-4875-939c-455514b26f87",
-                            pic_CategoriesId = "66fb12cb-32aa-453f-90b3-a9e931ca5528"
+                            pic_productId = "c66d2f8e-9250-49b3-ba1f-ad95db049536",
+                            pic_CategoriesId = "0a41561e-e2c4-430f-a278-00927508be19"
                         },
                         new
                         {
-                            pic_productId = "0b8b9ffe-2a89-4c02-acf6-4cb620f6068a",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "7e5ab985-3bf4-46e0-914f-fa2c2bd61736",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         },
                         new
                         {
-                            pic_productId = "405ce7d0-90e9-41a1-b9c0-719b85a50918",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "eb4abe31-5cbc-4e28-8d14-d52127e724ae",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         },
                         new
                         {
-                            pic_productId = "72fdde7b-be28-40e1-8edd-bdcbbb39ef5a",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "42bf82a1-4691-48b5-8ab5-3cf889167347",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         },
                         new
                         {
-                            pic_productId = "0c936128-0ebe-4046-9ac0-af7a38fba7a4",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "1b7df9a1-42df-4391-bdaf-241e4b6c14a7",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         },
                         new
                         {
-                            pic_productId = "7e27f7cc-0e07-4239-b2c7-b5820aa9a032",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "f4fbd7d4-bc43-42bd-b93a-f080a6e60d23",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         },
                         new
                         {
-                            pic_productId = "0d920467-76cf-4822-b5f6-50425ff8353f",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "c499311a-5e3d-47bf-a555-4e257538540f",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         },
                         new
                         {
-                            pic_productId = "2decf8bb-14c2-4245-81ec-9a08d0a4be5e",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "113469c6-ff2d-4208-87ba-69b65e42f6ba",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         },
                         new
                         {
-                            pic_productId = "9d1c9944-d00a-4dba-92bb-70216b2345e8",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "c87356de-9a9d-4f2d-a925-ed65e4b678f9",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         },
                         new
                         {
-                            pic_productId = "ebf2a8da-2fd3-4612-9230-1d3e0ec9021a",
-                            pic_CategoriesId = "7977f53b-b289-42a9-a64e-a5ca0f9d3180"
+                            pic_productId = "099369bf-0838-4702-b126-7ce7d1b6dde2",
+                            pic_CategoriesId = "8b151907-252d-4728-a6f4-26b44a8985ca"
                         });
                 });
 
@@ -1195,17 +1193,17 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            rip_ProductId = "6f905c50-2ee6-4712-8c1a-719c08917337",
+                            rip_ProductId = "ff489933-9e1c-4260-99b0-184787a28a48",
                             rip_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C"
                         },
                         new
                         {
-                            rip_ProductId = "6f905c50-2ee6-4712-8c1a-719c08917337",
+                            rip_ProductId = "ff489933-9e1c-4260-99b0-184787a28a48",
                             rip_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97"
                         },
                         new
                         {
-                            rip_ProductId = "6f905c50-2ee6-4712-8c1a-719c08917337",
+                            rip_ProductId = "ff489933-9e1c-4260-99b0-184787a28a48",
                             rip_ReviewId = "C2A543C2-B1E2-4DC5-A131-9137E4673FA6"
                         });
                 });
@@ -1319,7 +1317,7 @@ namespace Food.Migrations
                     b.HasData(
                         new
                         {
-                            subReview_Id = "9d830078-dec4-497a-9335-1238f78f664d",
+                            subReview_Id = "104293dd-2f44-45fc-9f9b-5afc3c6336c8",
                             subReview_Commnet = "subreview 1",
                             subReview_DateCommnet = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -1328,7 +1326,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            subReview_Id = "e75c9949-a58f-4396-9a5e-69a1929c6e80",
+                            subReview_Id = "6ecdaf02-bc58-4441-b529-ccc058e20504",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -1337,7 +1335,7 @@ namespace Food.Migrations
                         },
                         new
                         {
-                            subReview_Id = "3be2809a-6aaa-4f6f-bcb9-c23364d1418d",
+                            subReview_Id = "75b70239-0b4b-4259-9f94-78ed6f5abe4b",
                             subReview_Commnet = "subreview 3",
                             subReview_DateCommnet = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             subReview_HideStatus = false,
@@ -1364,17 +1362,17 @@ namespace Food.Migrations
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "9d830078-dec4-497a-9335-1238f78f664d"
+                            SRiR_SubReviewId = "104293dd-2f44-45fc-9f9b-5afc3c6336c8"
                         },
                         new
                         {
                             SRiR_ReviewId = "EEBA6608-AB75-4E83-909F-604B1A06F16C",
-                            SRiR_SubReviewId = "e75c9949-a58f-4396-9a5e-69a1929c6e80"
+                            SRiR_SubReviewId = "6ecdaf02-bc58-4441-b529-ccc058e20504"
                         },
                         new
                         {
                             SRiR_ReviewId = "9EED8607-D2BB-45EE-AEE3-C59D858A7F97",
-                            SRiR_SubReviewId = "3be2809a-6aaa-4f6f-bcb9-c23364d1418d"
+                            SRiR_SubReviewId = "75b70239-0b4b-4259-9f94-78ed6f5abe4b"
                         });
                 });
 
@@ -1655,14 +1653,14 @@ namespace Food.Migrations
                         new
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd",
-                            ConcurrencyStamp = "c48fa718-309c-4713-b9c0-163cb767fcbc",
+                            ConcurrencyStamp = "15fc7585-dc5e-4d44-90d0-e943e960929a",
                             Name = "staff",
                             Description = "Staff"
                         },
                         new
                         {
                             Id = "360E601E-92F2-4F08-832B-604A21293258",
-                            ConcurrencyStamp = "0366ee00-61ea-4bf0-8cd8-b26fc2f5ce72",
+                            ConcurrencyStamp = "a55ef442-7967-4ce3-adba-79a78296ed21",
                             Name = "admin",
                             Description = "admin"
                         });
@@ -1714,15 +1712,15 @@ namespace Food.Migrations
                         {
                             Id = "DE544998-A3CC-4E12-ABB4-0642E57BD222",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7293404f-f908-425f-a2f8-946f29094eb9",
+                            ConcurrencyStamp = "910e5d78-0825-47d1-81ec-d4977a74b909",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECm2ZPKByG6DIy3dJ5ZuIb4lDt6hwX7mrwiCpwuegaysERfR7EWfiovveBwQnnOYZQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENNcFPWFcs/MnhaIJ98rDtRqdg2Q12cN8RfSgIevMIRGeu9qRi4ot2PB0hIIEpCALw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "53bf52d0-d1e6-4725-ab70-1f2b9e8507c7",
+                            SecurityStamp = "d66fa760-433a-4161-a898-c72684f87465",
                             TwoFactorEnabled = false,
                             UserName = "Admin",
                             DoB = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1733,15 +1731,15 @@ namespace Food.Migrations
                         {
                             Id = "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e739a8c-c4c0-4c09-9ebe-f3d28c4e024e",
+                            ConcurrencyStamp = "f0ccfadf-2cf2-4a94-a81b-990dc180e2cc",
                             Email = "staff@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF@GMAIL.COM",
                             NormalizedUserName = "STAFF@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHaTWsXRV0Qrgl0wHIEFTRZfZRXVMtpS4mKwgOJaKeKw2jJidB1weJUsl3M3HZcw3g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEE0vb8GNpP5HX8I1gspoIyf8PWDawrs3KRDjquKUfHypXl2cFJUz+Dmp0dds0EHb3A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bfe07292-4c0f-403d-8047-40928de68650",
+                            SecurityStamp = "56952923-1957-4c58-85e4-d369afb96e82",
                             TwoFactorEnabled = false,
                             UserName = "Staff",
                             DoB = new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),

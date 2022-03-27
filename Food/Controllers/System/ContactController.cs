@@ -40,7 +40,33 @@ namespace Food.Controllers.System
             return View();
         }
 
+        [Route("/contact/create")]
+        [HttpPost]
+        public IActionResult Create(ContactUsers contactUsers)
+        {
+            try
+            {
+                var contactCreate = new ContactUsers()
+                {
+                    cu_Subject = contactUsers.cu_Subject,
+                    cu_Description = contactUsers.cu_Description,
+                    cu_Email = contactUsers.cu_Email,
+                    cu_FirstName = contactUsers.cu_FirstName,
+                    cu_Id = Guid.NewGuid().ToString()
+                };
 
+                _context.ContactUsers.Add(contactCreate);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction(nameof(Index));
+            }
+            
+
+        }
 
     }
 }

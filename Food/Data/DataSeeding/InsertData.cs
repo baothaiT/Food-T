@@ -742,12 +742,12 @@ namespace Food.Data.DataSeeding
 
 
             //Table ContactUsers
-
+            var contactUser = Guid.NewGuid().ToString();
 
             builder.Entity<ContactUsers>().HasData(
                 new ContactUsers()
                 {
-                    cu_Id = 1,
+                    cu_Id = contactUser.ToString(),
                     cu_FirstName = "FirstName",
                     cu_LastName = "LastName",
                     cu_Email = "Email",

@@ -16,8 +16,8 @@ namespace Food.Controllers.Staff
         [HttpGet]
         public ActionResult Index()
         {
-            
-            return View();
+            var query = _context.ContactUsers;
+            return View(query);
         }
 
         // GET: ContactManagementController/Details/5

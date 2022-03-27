@@ -19,7 +19,7 @@ namespace Food
 {
     public class Startup
     {
-        IConfiguration _configuration;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
