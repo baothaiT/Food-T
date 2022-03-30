@@ -63,6 +63,14 @@
                 <input asp-for="pd_ShortDescription" class="form-control" />
                 <span asp-validation-for="pd_ShortDescription" class="text-danger"></span>
             </div>
+             <div class="form-group" >
+                <select name="CategoriesSelect" class ="form-control">
+                    @foreach (var item in @ViewBag.CategoriesList)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+            </div>
             <div class="form-group">
                 <a style="color:red"> @ViewBag.thongbao </a>
             </div>

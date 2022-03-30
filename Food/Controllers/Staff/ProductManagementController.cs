@@ -10,6 +10,7 @@ using Food.Data;
 using Food.Entity;
 using Food.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Food.Controllers.Staff
 {
@@ -35,9 +36,7 @@ namespace Food.Controllers.Staff
                 var productListTest1 = from a in _context.Products select a;
 
                 return View(productListTest1);
-
             }
-
             catch
             {
                 ViewBag.thongbao = "Cann't create";
@@ -61,7 +60,20 @@ namespace Food.Controllers.Staff
         [HttpGet]
         public ActionResult Create()
         {
-            ViewBag.thongbao = "test";
+            ViewBag.thongbao = "";
+
+
+            //Query Categories 
+            var categoriesQuery = _context.Categories;
+
+            List<SelectListItem> CategoriesList = new List<SelectListItem>();
+            foreach (var category in categoriesQuery)
+            {
+                var itemCategory = new SelectListItem { Value = category.cg_Id, Text = category.cg_Name };
+                CategoriesList.Add(itemCategory);
+            }
+            ViewBag.CategoriesList = CategoriesList;
+
             return View();
         }
 
@@ -72,10 +84,11 @@ namespace Food.Controllers.Staff
         {
             try
             {
-
-
+                //Create product
+                var productId = Guid.NewGuid().ToString();
                 var product1 = new Products()
                 {
+                    pd_Id = productId,
                     pd_Name = productModel.pd_Name,
                     pd_Description = productModel.pd_Description,
                     pd_Price = productModel.pd_Price,
@@ -87,9 +100,20 @@ namespace Food.Controllers.Staff
                     pd_Rate = productModel.pd_Rate,
                     pd_ShortDescription = productModel.pd_ShortDescription
                 };
-
-
                 _context.Products.Add(product1);
+
+                //Create Product In Categories
+                string CategoriesSelect = Request.Form["CategoriesSelect"];
+                var CategoriesIdQuery = _context.Categories.FirstOrDefault(a => a.cg_Id == CategoriesSelect);
+
+                var productInCategories = new ProductsInCategories()
+                {
+                    pic_productId = productId,
+                    pic_CategoriesId = CategoriesSelect,
+                };
+
+                _context.ProductsInCategories.Add(productInCategories);
+
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
@@ -170,8 +194,14 @@ namespace Food.Controllers.Staff
         {
             try
             {
+                //Delete in Product Table
                 var productQuery = _context.Products.FirstOrDefault(x => x.pd_Id == id);
                 _context.Products.Remove(productQuery);
+
+                //Delete in ProductsInCategories Table
+                var productsInCategoriesQuery = _context.ProductsInCategories.FirstOrDefault(x => x.pic_productId == id);
+                _context.ProductsInCategories.Remove(productsInCategoriesQuery);
+
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
