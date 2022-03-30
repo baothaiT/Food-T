@@ -20,7 +20,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.cu_Description)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -37,11 +36,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.cu_Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.cu_Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.cu_Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.cu_Id">Delete</a>
             </td>
         </tr>
 }
