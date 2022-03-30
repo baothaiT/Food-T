@@ -17,7 +17,7 @@ namespace Food.Controllers.Admin
     {
 
         private readonly ApplicationDbContext _context;
-        //private readonly UserManager<AppUser> _userManager;
+        private readonly UserManager<AppUser> _userManager;
 
         public UsersModel usersModel;
         public UserManagementController(ApplicationDbContext context)
@@ -173,13 +173,8 @@ namespace Food.Controllers.Admin
         [HttpGet]
         public ActionResult UserInRole(string id)
         {
-            //var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-
-
             var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
-
             var roleQuery = from a in _context.AppRole select a;
-
 
             ViewBag.Id = id;
             ViewBag.UserName = userQuery.UserName;
@@ -207,15 +202,26 @@ namespace Food.Controllers.Admin
                 string RoleName = Request.Form["NameSelect"];
 
                 var roleQueryId = _context.AppRole.FirstOrDefault(a => a.Name == RoleName);
+                var UserQueryName = _context.AppUser.FirstOrDefault(a => a.Id == idUser);
 
-                var createUserRole = new IdentityUserRole<string>
+                // Delete Role
+                var checkUserInRole = _context.UserRoles.FirstOrDefault(a => a.UserId == idUser);
+                if(checkUserInRole != null)
                 {
-                    RoleId = roleQueryId.ToString(),
-                    UserId = idUser
-                };
+                    _context.UserRoles.Remove(checkUserInRole);
+                    //await _userManager.RemoveFromRoleAsync(UserQueryName, RoleName);
+                }
 
-                _context.UserRoles.Add(createUserRole);
+                
 
+                //Add Role
+                //var createUserRole = new IdentityUserRole<string>
+                //{
+                //    RoleId = roleQueryId.ToString(),
+                //    UserId = idUser
+                //};
+                await _userManager.AddToRoleAsync(UserQueryName, RoleName);
+                //_context.UserRoles.Add(createUserRole);
                 await _context.SaveChangesAsync();
 
 

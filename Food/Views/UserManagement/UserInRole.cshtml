@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Food.Entity.AppRole>
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutAdmin/_LayoutAdmin.cshtml";;
 }
 
 <!DOCTYPE html>
@@ -51,8 +51,8 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@
 </body>
 </html>

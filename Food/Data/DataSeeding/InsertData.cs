@@ -710,7 +710,7 @@ namespace Food.Data.DataSeeding
                 new Categories()
                 {
                     cg_Id = idCategories5,
-                    cg_Name = "AnVat",
+                    cg_Name = "Snack",
                     cg_Type = "",
                     cg_Sale = ""
 
@@ -720,19 +720,6 @@ namespace Food.Data.DataSeeding
 
 
 
-            //Table ContactSystem
-
-            builder.Entity<ContactSystem>().HasData(
-                new ContactSystem()
-                {
-                    Contact_Id = 1,
-                    Contact_Address = " 123, An Lac A Ward, Binh Tan District, HCM",
-                    Contact_Phone = "0123456789",
-                    Contact_Email = "admin@gmail.com",
-                    Contact_Website = "https://shoes.com"
-
-
-                });
 
 
 
