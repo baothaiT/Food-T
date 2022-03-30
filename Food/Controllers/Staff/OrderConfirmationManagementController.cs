@@ -107,8 +107,6 @@ namespace Food.Controllers.Staff
 
         string[] ProductIdArr;
         string[] ProductNameArr;
-        string[] ProductColorArr;
-        string[] ProductSizeArr;
         string[] ProductPriceArr;
         string[] ProductQuantityArr;
 
@@ -136,14 +134,6 @@ namespace Food.Controllers.Staff
 
                 string ProductNameN = item.b.bill_ProductNamelist;
                 ProductNameArr = ProductNameN.Split('|');
-
-
-                string ProductColorN = item.b.bill_ProductColorlist;
-                ProductColorArr = ProductColorN.Split('|');
-
-
-                string ProductSizeN = item.b.bill_ProductSizelist;
-                ProductSizeArr = ProductSizeN.Split('|');
 
 
                 string ProductPriceN = item.b.bill_ProductPricelist;
@@ -174,8 +164,6 @@ namespace Food.Controllers.Staff
                 OrderC_TotalPrice = x.b.bill_PaidTotal,
                 OrderC_ProductIdList = ProductIdArr.ToList(),
                 OrderC_ProductNameList = ProductNameArr.ToList(),
-                OrderC_SizeList = ProductSizeArr.ToList(),
-                OrderC_ColorList = ProductColorArr.ToList(),
                 OrderC_PriceList = ProductPriceArr.ToList(),
                 OrderC_ProductQuantityList = ProductQuantityArr.ToList()
             });
@@ -258,13 +246,6 @@ namespace Food.Controllers.Staff
                 ProductNameArr = ProductNameN.Split('|');
 
 
-                string ProductColorN = item.b.bill_ProductColorlist;
-                ProductColorArr = ProductColorN.Split('|');
-
-
-                string ProductSizeN = item.b.bill_ProductSizelist;
-                ProductSizeArr = ProductSizeN.Split('|');
-
 
                 string ProductPriceN = item.b.bill_ProductPricelist;
                 ProductPriceArr = ProductPriceN.Split('|');
@@ -294,8 +275,6 @@ namespace Food.Controllers.Staff
                 OrderC_TotalPrice = x.b.bill_PaidTotal,
                 OrderC_ProductIdList = ProductIdArr.ToList(),
                 OrderC_ProductNameList = ProductNameArr.ToList(),
-                OrderC_SizeList = ProductSizeArr.ToList(),
-                OrderC_ColorList = ProductColorArr.ToList(),
                 OrderC_PriceList = ProductPriceArr.ToList(),
                 OrderC_ProductQuantityList = ProductQuantityArr.ToList()
             });
@@ -354,13 +333,6 @@ namespace Food.Controllers.Staff
                 ProductNameArr = ProductNameN.Split('|');
 
 
-                string ProductColorN = item.b.bill_ProductColorlist;
-                ProductColorArr = ProductColorN.Split('|');
-
-
-                string ProductSizeN = item.b.bill_ProductSizelist;
-                ProductSizeArr = ProductSizeN.Split('|');
-
 
                 string ProductPriceN = item.b.bill_ProductPricelist;
                 ProductPriceArr = ProductPriceN.Split('|');
@@ -390,8 +362,6 @@ namespace Food.Controllers.Staff
                 OrderC_TotalPrice = x.b.bill_PaidTotal,
                 OrderC_ProductIdList = ProductIdArr.ToList(),
                 OrderC_ProductNameList = ProductNameArr.ToList(),
-                OrderC_SizeList = ProductSizeArr.ToList(),
-                OrderC_ColorList = ProductColorArr.ToList(),
                 OrderC_PriceList = ProductPriceArr.ToList(),
                 OrderC_ProductQuantityList = ProductQuantityArr.ToList()
             });

@@ -1035,8 +1035,6 @@ namespace Food.Data.DataSeeding
                     bill_PaidTotal = 2000,
                     bill_ProductIdlist = "1|2|3|4",
                     bill_ProductNamelist = "product 1|product 2| product 3| product 4|",
-                    bill_ProductSizelist = "7|8|9|14|",
-                    bill_ProductColorlist = "Blue|Red|Black|Green|",
                     bill_ProductPricelist = "550|450|350|640|",
                     bill_Shipping = 10,
                     bill_Discount = 0,

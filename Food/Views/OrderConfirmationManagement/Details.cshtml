@@ -103,7 +103,7 @@
                                         <!-- foreach ($order->lineItems as $line) or some such thing here -->
                                         @foreach (var itemProduct in item.OrderC_ProductIdList)
                                         {
-                                            if (itemProduct != null)
+                                            if (itemProduct != "")
                                             {
                                                 int price = Int16.Parse(@item.OrderC_PriceList[i]);
                                                 int quantity = Int16.Parse(@item.OrderC_ProductQuantityList[i]);

@@ -47,7 +47,7 @@ namespace Food.Controllers.System
 
             try
             {
-             
+
                 var userName = User.FindFirstValue(ClaimTypes.Name);
 
                 //Query product in cart
@@ -71,7 +71,7 @@ namespace Food.Controllers.System
                 int reTotal = 0;
                 foreach (var item in cartDetail)
                 {
-                    reTotal += item.checkout_Price;
+                    reTotal += item.checkout_Price * item.checkout_Quantity;
                 }
                 ViewBag.Retotal = reTotal;
 
@@ -79,7 +79,7 @@ namespace Food.Controllers.System
                 int discount = GetDiscount();
                 ViewBag.Discount = discount;
 
-                
+
 
                 //Get and set Price of shipping
                 //Get Shipping Price
@@ -102,40 +102,6 @@ namespace Food.Controllers.System
         [HttpPost]
         public async Task<IActionResult> AddToBill()
         {
-            
-            
-            bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
-
-            if (checkLogin)
-            {
-                //logined
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var userName = User.FindFirstValue(ClaimTypes.Name);
-                AddBill(userId, checkLogin);
-            }
-            else
-            {
-                // No login
-                string email = Request.Form["Email"];
-                string firstName = Request.Form["FirstName"];
-                var user = new AppUser { UserName = firstName, Email = email, EmailConfirmed= true };
-                var result = await _UserManager.CreateAsync(user, "123@123Aa");
-
-                string mess = "Account:" + email+ " | Password: 123@123Aa";
-
-                
-                if (result.Succeeded)
-                {
-                    SendMail(email, "New account for food shop", mess);
-                    AddBill(user.Id, checkLogin);
-                }
-            }
-            return Redirect("/paymentcomplete");
-        }
-
-        public async void AddBill(string userId, bool checklogin)
-        {
-
             string namePc = Environment.MachineName;
 
             string firstName = Request.Form["FirstName"];
@@ -147,9 +113,15 @@ namespace Food.Controllers.System
             string postal = Request.Form["Postal"];
             string email = Request.Form["Email"];
             string phone = Request.Form["Phone"];
-            
-            if(checklogin)
+
+            bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+
+            if (checkLogin)
             {
+                //logined
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userName = User.FindFirstValue(ClaimTypes.Name);
+                
                 //Query Database in table -- logined
                 var query = from a in _context.Products
                             join b in _context.ProductInCart on a.pd_Id equals b.pic_ProductId
@@ -172,7 +144,7 @@ namespace Food.Controllers.System
                 int reTotal = 0;
                 foreach (var item in cartDetail)
                 {
-                    reTotal += item.checkout_Price;
+                    reTotal += item.checkout_Price * item.checkout_Quantity;
                 }
                 ViewBag.Retotal = reTotal;
 
@@ -188,10 +160,15 @@ namespace Food.Controllers.System
                 //Create list -- 2
                 string productNameList = "";
                 string productIdList = "";
+                string QuantityList = "";
+                string ProductPriceList = "";
+
                 foreach (var item in cartDetail)
                 {
-                    productNameList += "|" + item.checkout_Quantity + "|" + item.checkout_ProductName;
-                    productIdList += "|" + item.Id;
+                    productNameList += item.checkout_ProductName + "|";
+                    productIdList += item.Id + "|";
+                    QuantityList += item.checkout_Quantity + "|";
+                    ProductPriceList += item.checkout_Price + "|";
                 }
 
                 //Create bill -- 2
@@ -203,88 +180,117 @@ namespace Food.Controllers.System
                     bill_Shipping = ship,
                     bill_PaidTotal = reTotal + ship - discount,
                     bill_ProductNamelist = productNameList,
+                    bill_ProductPricelist = ProductPriceList,
+                    bill_ProductIdlist = productIdList,
+                    bill_Quantity = QuantityList,
                     bill_PaymentMethod = "Cash on Delivery"
                 };
-                
+
                 /// Add -- 2
                 _context.Bills.Add(bill);
 
                 /// Remove -- logined
                 var CartQuery = _context.Cart.FirstOrDefault(x => x.cart_UserID == userId);
                 var ProductInCartQueryDelete = _context.ProductInCart.Where(a => a.pic_CartId == CartQuery.cart_Id);
-                _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
+                if (ProductInCartQueryDelete != null)
+                {
+                    _context.ProductInCart.RemoveRange(ProductInCartQueryDelete);
+                }
+
                 await _context.SaveChangesAsync();
             }
             else
             {
-                //Query produdct in Cart
-                var query = from a in _context.Products
-                            join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
-                            join c in _context.CartsDevice on b.picd_CartId equals c.cartd_Id
-                            join d in _context.Devices on c.cartd_DeviceId equals d.deviceId
-                            select new { a, b, c, d };
-                query = query.Where(x => x.d.deviceName == namePc);
+                // No login
+                string emailCreate = Request.Form["Email"];
+                string firstNameCreate = Request.Form["FirstName"];
+                var user = new AppUser { UserName = firstNameCreate, Email = emailCreate, EmailConfirmed = true };
+                var result = await _UserManager.CreateAsync(user, "123@123Aa");
 
-                //Create checkout model -- 2
-                var cartDetail = query.Select(a => new CheckOutModel()
-                {
-                    checkout_ProductName = a.a.pd_Name,
-                    checkout_Quantity = a.b.picd_amount,
-                    checkout_Price = a.a.pd_Price,
-                    Id = a.a.pd_Id
-                });
+                string mess = "Account:" + emailCreate + " | Password: 123@123Aa";
 
-                //Read reTotal -- 2
-                int reTotal = 0;
-                foreach (var item in cartDetail)
+
+                if (result.Succeeded)
                 {
-                    reTotal += item.checkout_Price;
+                    SendMail(email, "New account for food shop", mess);
+                    //Query produdct in Cart
+                    var query = from a in _context.Products
+                                join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
+                                join c in _context.CartsDevice on b.picd_CartId equals c.cartd_Id
+                                join d in _context.Devices on c.cartd_DeviceId equals d.deviceId
+                                select new { a, b, c, d };
+                    query = query.Where(x => x.d.deviceName == namePc);
+
+                    //Create checkout model -- 2
+                    var cartDetail = query.Select(a => new CheckOutModel()
+                    {
+                        checkout_ProductName = a.a.pd_Name,
+                        checkout_Quantity = a.b.picd_amount,
+                        checkout_Price = a.a.pd_Price,
+                        Id = a.a.pd_Id
+                    });
+
+                    //Read reTotal -- 2
+                    int reTotal = 0;
+                    foreach (var item in cartDetail)
+                    {
+                        reTotal += item.checkout_Price;
+                    }
+                    ViewBag.Retotal = reTotal;
+
+                    //Read Discount -- 2
+                    int discount = GetDiscount();
+                    ViewBag.Discount = discount;
+
+                    //Read Shipping -- 2
+                    int ship = GetShippingPrice("ship");
+                    ViewBag.Ship = 0;
+                    ViewBag.Total = reTotal + ship - discount;
+
+                    //Create list -- 2
+                    string productNameList = "";
+                    string productIdList = "";
+                    foreach (var item in cartDetail)
+                    {
+                        productNameList += "|" + item.checkout_Quantity + "|" + item.checkout_ProductName;
+                        productIdList += "|" + item.Id;
+                    }
+
+                    //Create bill -- 2
+                    var bill = new Bills()
+                    {
+                        bill_Id = Guid.NewGuid().ToString(),
+                        bill_UserId = user.Id,
+                        bill_Discount = discount,
+                        bill_Shipping = ship,
+                        bill_PaidTotal = reTotal + ship - discount,
+                        bill_ProductNamelist = productNameList,
+                        bill_PaymentMethod = "Cash on Delivery"
+                    };
+
+                    /// Add -- 2
+                    _context.Bills.Add(bill);
+
+                    /// Remove -- logined
+
+                    var queryIdProduct = _context.Devices.FirstOrDefault(x => x.deviceName == namePc);
+                    var CartQuery = _context.CartsDevice.FirstOrDefault(x => x.cartd_DeviceId == queryIdProduct.deviceId);
+                    var ProductInCartQueryDelete = _context.ProductInCartDevices.Where(a => a.picd_CartId == CartQuery.cartd_Id);
+                    if (ProductInCartQueryDelete != null)
+                    {
+                        //Delete
+                        _context.ProductInCartDevices.RemoveRange(ProductInCartQueryDelete);
+                    }
+
+
+
+                    await _context.SaveChangesAsync();
                 }
-                ViewBag.Retotal = reTotal;
-
-                //Read Discount -- 2
-                int discount = GetDiscount();
-                ViewBag.Discount = discount;
-
-                //Read Shipping -- 2
-                int ship = GetShippingPrice("ship");
-                ViewBag.Ship = 0;
-                ViewBag.Total = reTotal + ship - discount;
-
-                //Create list -- 2
-                string productNameList = "";
-                string productIdList = "";
-                foreach (var item in cartDetail)
-                {
-                    productNameList += "|" + item.checkout_Quantity + "|" + item.checkout_ProductName;
-                    productIdList += "|" + item.Id;
-                }
-
-                //Create bill -- 2
-                var bill = new Bills()
-                {
-                    bill_Id = Guid.NewGuid().ToString(),
-                    bill_UserId = userId,
-                    bill_Discount = discount,
-                    bill_Shipping = ship,
-                    bill_PaidTotal = reTotal + ship - discount,
-                    bill_ProductNamelist = productNameList,
-                    bill_PaymentMethod = "Cash on Delivery"
-                };
-
-                /// Add -- 2
-                _context.Bills.Add(bill);
-
-                /// Remove -- logined
-                
-                var queryIdProduct = _context.Devices.FirstOrDefault(x => x.deviceName == namePc);
-                var CartQuery = _context.CartsDevice.FirstOrDefault(x => x.cartd_DeviceId == queryIdProduct.deviceId);
-                var ProductInCartQueryDelete = _context.ProductInCartDevices.Where(a => a.picd_CartId == CartQuery.cartd_Id);
-                _context.ProductInCartDevices.RemoveRange(ProductInCartQueryDelete);
-                await _context.SaveChangesAsync();
             }
-            
+            return Redirect("/paymentcomplete");
         }
+
+       
 
 
         public void SendMail(string Mailto, string subject, string boddy)
