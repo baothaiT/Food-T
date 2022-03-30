@@ -153,9 +153,13 @@
                                                 @{
                                                     foreach (var item in Model)
                                                     {
+                                                        @{
+                                                            int priceProduct = item.checkout_Price * item.checkout_Quantity;
+                                                        }
+
                                                         <tr>
                                                             <td>@item.checkout_ProductName <strong> x  @item.checkout_Quantity</strong></td>
-                                                            <td>$@item.checkout_Price</td>
+                                                            <td>$@priceProduct</td>
                                                         </tr>
 
                                                     }

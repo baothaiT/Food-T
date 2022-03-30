@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="invoice-title">
-                        <h2>Invoice</h2><h3 class="pull-right">Order # 12345</h3>
+                        <h2>Customer</h2><h3 class="pull-right">Order # 12345</h3>
                     </div>
                     <hr>
 
@@ -55,15 +55,6 @@
                                 </tr>
                             </table>
                         </div>
-                        @*<div class="col-xs-6 text-right">
-                            <address>
-                                <strong>Shipped To:</strong><br>
-                                Jane Smith<br>
-                                1234 Main<br>
-                                Apt. 4B<br>
-                                Springfield, ST 54321
-                            </address>
-                        </div>*@
                     </div>
                     <div class="row">
                         <div class="col-xs-6">
@@ -110,24 +101,25 @@
                                     </thead>
                                     <tbody>
                                         <!-- foreach ($order->lineItems as $line) or some such thing here -->
-
-
-
                                         @foreach (var itemProduct in item.OrderC_ProductIdList)
                                         {
-                                            int price = Int16.Parse(@item.OrderC_PriceList[i]);
-                                            int quantity = Int16.Parse(@item.OrderC_ProductQuantityList[i]);
-                                            int totalProduct = price * quantity;
-                                            total = total + totalProduct;
+                                            if (itemProduct != null)
+                                            {
+                                                int price = Int16.Parse(@item.OrderC_PriceList[i]);
+                                                int quantity = Int16.Parse(@item.OrderC_ProductQuantityList[i]);
+                                                int totalProduct = price * quantity;
+                                                total = total + totalProduct;
 
-                                            <tr>
-                                                <td>@item.OrderC_ProductNameList[i]</td>
-                                                <td class="text-center">$@item.OrderC_PriceList[i]</td>
-                                                <td class="text-center">@item.OrderC_ProductQuantityList[i]</td>
-                                                <td class="text-right">$@totalProduct</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>@item.OrderC_ProductNameList[i]</td>
+                                                    <td class="text-center">$@item.OrderC_PriceList[i]</td>
+                                                    <td class="text-center">@item.OrderC_ProductQuantityList[i]</td>
+                                                    <td class="text-right">$@totalProduct</td>
+                                                </tr>
 
-                                            i++;
+                                                i++;
+                                            }
+
                                         }
 
 
@@ -165,11 +157,13 @@
 
                                 @if (item.OrderC_Confirm)
                                 {
-                                    <a asp-action="EditConfirmed" asp-route-id="@item.OrderC_BillId" class="btn btn-danger ">Confirmed</a> //convert from confirmed to confirm
+                                    <a asp-action="EditConfirmed" asp-route-id="@item.OrderC_BillId" class="btn btn-danger ">Confirmed</a>
+                                    //convert from confirmed to confirm
                                 }
                                 else
                                 {
-                                    <a asp-action="EditConfirm" asp-route-id="@item.OrderC_BillId" class="btn btn-primary ">Confirm</a> //convert from confirm to confirmed
+                                    <a asp-action="EditConfirm" asp-route-id="@item.OrderC_BillId" class="btn btn-primary ">Confirm</a>
+                                    //convert from confirm to confirmed
                                 }
 
                             </div>
@@ -177,7 +171,7 @@
                     </div>
                 </div>
             </div>
-                                            }
+        }
 
 
     }

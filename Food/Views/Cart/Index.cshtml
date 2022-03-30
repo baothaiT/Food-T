@@ -49,7 +49,7 @@
                         @{
                             foreach(var item in Model)
                             {
-                                int totalPriceInProduct = item.Quantity + item.ProductPrice;
+                                int totalPriceInProduct = item.Quantity * item.ProductPrice;
                                 <tr>
                                     <td><a class="remove" href="/cart/remove?id=@item.ProductId"><fa class="fa fa-close"></fa></a></td>
                                     <td><a href="#"><img src="@item.ProductImg1" alt="img"></a></td>
