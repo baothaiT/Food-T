@@ -25,14 +25,6 @@ namespace Food.Controllers.Staff
         [HttpGet]
         public ActionResult Index()
         {
-
-
-            //var productDetailQuery = _context.Products.FirstOrDefault(a => a.pd_Id == id);
-
-
-
-
-
             var review = from a in _context.AppUser
                          join b in _context.Reviews on a.Id equals b.review_UserId
                          join c in _context.ReviewInproduct on b.review_id equals c.rip_ReviewId
@@ -46,21 +38,16 @@ namespace Food.Controllers.Staff
                             select new { a, b, c, d };
 
 
-            //review = review.Where(x => x.b.review_HideStatus == false);
-
             var reviewQuery = review.Select(x => new ReviewModel()
             {
                 // table Review
                 review_id = x.b.review_id,
                 review_UserId = x.a.Id,
-                
                 review_Comment = x.b.review_Comment,
                 review_UserName = x.a.UserName,
                 review_UploadTime = x.b.review_UploadTime,
                 review_HideStatus = x.b.review_HideStatus,
                 review_ReviewType = x.b.review_ReviewType,
-
-
                 review_CountSubReview = 1, //demo
 
 
@@ -71,12 +58,6 @@ namespace Food.Controllers.Staff
                 review_ProductDecription = x.d.pd_Description,
                 review_ProductPrice = x.d.pd_Price,
                 review_ProductRate = x.d.pd_Rate,
-                
-
-                //// table SubReview
-
-
-
             });
 
             //SubReview = SubReview.Where(x => x.b.subReview_HideStatus == false);
@@ -91,38 +72,10 @@ namespace Food.Controllers.Staff
                 subReview_ReviewId = x.d.review_id,
                 subReview_HideStatus = x.b.subReview_HideStatus,
                 subReview_SubReviewType = x.b.subreview_SubReviewType
-                
-                
-                
             });
 
-            List<ReviewModel> reviewAdd = new List<ReviewModel>();
 
-
-
-            //Query of Review
-            foreach (var itemReview in reviewQuery)
-            {
-
-                List<SubreviewModel> subreviewAddList = new List<SubreviewModel>();
-                //Query of SubReview
-                foreach (var itemSubReview in subReviewQuery)
-                {
-                    //If SubReview In Review
-                    if (itemReview.review_id == itemSubReview.subReview_ReviewId)
-                    {
-
-                        subreviewAddList.Add(itemSubReview);
-                    }
-                }
-
-                itemReview.review_SubreviewModelList = subreviewAddList;
-                itemReview.review_CountSubReview = subreviewAddList.Count();
-                reviewAdd.Add(itemReview);
-            }
-            var reviewQuery1 = reviewAdd.Cast<ReviewModel>().ToArray();
-
-            return View(reviewQuery1);
+            return View(reviewQuery);
         }
 
         [HttpGet("/commentsmanagement/AllowAction/{ReviewId:alpha?}/")]
@@ -143,8 +96,6 @@ namespace Food.Controllers.Staff
 
                     subreviewQuery.subReview_HideStatus = false;
                 }
-                
-
                 _context.SaveChanges();
 
 

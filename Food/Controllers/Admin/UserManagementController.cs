@@ -221,15 +221,6 @@ namespace Food.Controllers.Admin
                     _context.UserRoles.Remove(checkUserInRole);
                     //await _userManager.RemoveFromRoleAsync(UserQueryName, RoleName);
                 }
-
-                
-
-                //Add Role
-                //var createUserRole = new IdentityUserRole<string>
-                //{
-                //    RoleId = roleQueryId.ToString(),
-                //    UserId = idUser
-                //};
                 await _userManager.AddToRoleAsync(UserQueryName, RoleName);
                 //_context.UserRoles.Add(createUserRole);
                 await _context.SaveChangesAsync();
