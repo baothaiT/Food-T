@@ -99,8 +99,6 @@ namespace Food.Controllers.System
             {
                 //No login
                 //Count product in cart page
-                var queryCart = _context.CartsDevice;
-                ViewBag.CountProductInCart = queryCart.Count();
 
                 //Query produdct in Cart
                 var query = from a in _context.Products
