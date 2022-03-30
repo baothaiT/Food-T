@@ -64,7 +64,7 @@ namespace Food.Controllers.Admin
                     Description = appRole.Description,
                     Name = appRole.Name,
                     NormalizedName = appRole.NormalizedName,
-                    ConcurrencyStamp = appRole.ConcurrencyStamp
+                    ConcurrencyStamp = Guid.NewGuid().ToString()
 
                 };
 
@@ -105,7 +105,6 @@ namespace Food.Controllers.Admin
                 roleQuery.Description = appRole.Description;
                 roleQuery.Name = appRole.Name;
                 roleQuery.NormalizedName = appRole.NormalizedName;
-                roleQuery.ConcurrencyStamp = appRole.ConcurrencyStamp;
 
                 _context.SaveChanges();
 
