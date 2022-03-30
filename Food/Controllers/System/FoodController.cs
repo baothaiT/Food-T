@@ -7,6 +7,8 @@ using Food.Data;
 using Food.Models;
 using System.Security.Claims;
 using Food.StatisFile.Function;
+using Food.Service;
+using Microsoft.EntityFrameworkCore;
 
 namespace Food.Controllers.System
 {
@@ -23,7 +25,7 @@ namespace Food.Controllers.System
 
         [Route("/food")]
         [HttpGet("{categoriesName,searchName}")]
-        public IActionResult Index(string categoriesName,string searchName)
+        public IActionResult Index(string categoriesName,string searchName, string sortOrder, string currentFilter, int? pageNumber)
         {
             //Count product in cart page
             string namePc = Environment.MachineName;
@@ -47,7 +49,6 @@ namespace Food.Controllers.System
             {
                 if ((searchName == "") || (searchName == null))
                 {
-
                 }
                 else
                 {
@@ -61,15 +62,12 @@ namespace Food.Controllers.System
                 query = query.Where(x => x.c.cg_Name == categoriesName);
             }
 
-
             // Print Count Product in category
-
             var countDryFoodQuery = from a in _context.Products
                                     join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
                                     join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
                                     select new { a, c };
             countDryFoodQuery = countDryFoodQuery.Where(x => x.c.cg_Name == "Dry food");
-
 
             ViewBag.CountDryProduct = countDryFoodQuery.Count();
 
@@ -84,7 +82,9 @@ namespace Food.Controllers.System
                     pd_categoryName = x.c.cg_Name,
                     pd_ReducePrice = x.a.pd_ReducePrice
                 });
-            return View(productModelQuery);
+
+            int pageSize = 8; 
+            return View(PaginatedList<ProductModel>.Create(productModelQuery.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
 

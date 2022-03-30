@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Food.Models.ProductModel>
+﻿@model Food.Service.PaginatedList<Food.Models.ProductModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -134,23 +134,73 @@
                         </div>
                         <!-- / quick view modal -->
                     </div>
+                    @{
+                    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                }
                     <div class="aa-product-catg-pagination">
                         <nav>
                             <ul class="pagination">
                                 <li>
-                                    <a href="#" aria-label="Previous">
+                                    @*<a href="#" aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
-                                    </a>S
+                                    </a>*@
+                                                                        <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @prevDisabled">
+                                    Previous
+                                </a>
+
                                 </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
+                                 @if (Model.PageIndex == 1)
+                            {
+
+                            }
+                            else
+                            {
+                                <li class="page-item ">
+                                    <a asp-action="Index"
+                                       asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                       asp-route-pageNumber="@(Model.PageIndex - 1)"
+                                       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                       class="btn btn-default @prevDisabled">
+                                        @(Model.PageIndex -1)
                                     </a>
+                                </li>
+
+                            }
+
+                            <li class="page-item active">
+                                <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @nextDisabled">@Model.PageIndex</a>
+                            </li>
+
+                            <li class="page-item ">
+                                <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @nextDisabled">
+                                    @(Model.PageIndex +1)
+                                </a>
+                            </li>
+
+                                <li>
+                                    @*<a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>*@
+                                    <a asp-action="Index"
+                                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                   class="btn btn-default @nextDisabled">
+                                    Next
+                                </a>
                                 </li>
                             </ul>
                         </nav>
