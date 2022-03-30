@@ -44,7 +44,8 @@ namespace Food.Controllers
                 userIdString = userId.ToString();
             }
             ViewBag.CountProductInCart = CheckCart.CheckProudctCart(_context, namePc, checkLogin, userIdString);
-
+            //Mess
+            ViewBag.Mess = "";
             //Query product
 
             var productDetailQuery = _context.Products.FirstOrDefault(a => a.pd_Id == id);
@@ -140,6 +141,7 @@ namespace Food.Controllers
 
             try
             {
+                
                 string namePc = Environment.MachineName;
                 bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -235,32 +237,43 @@ namespace Food.Controllers
         {
             try
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var userName = User.FindFirstValue(ClaimTypes.Name);
-                string reviewId = Guid.NewGuid().ToString();
-
+                ViewBag.Mess = "";
                 string idproduct = Request.Form["idproduct"];
-                if (Request.Form["comment"] != "")
+                bool checkLogin = (User?.Identity.IsAuthenticated).GetValueOrDefault();
+                if(checkLogin)
                 {
-                    var reviews = new Reviews()
-                    {
-                        review_id = reviewId,
-                        review_Comment = Request.Form["comment"],
-                        review_UserId = userId,
-                        review_UploadTime = DateTime.Now,
-                        review_HideStatus = false,
-                        review_ReviewType = "Review"
-                    };
+                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    var userName = User.FindFirstValue(ClaimTypes.Name);
+                    string reviewId = Guid.NewGuid().ToString();
 
-                    _context.Reviews.Add(reviews);
-                    var reviewInProduct = new ReviewInproduct()
+                    
+                    if (Request.Form["comment"] != "")
                     {
-                        rip_ProductId = idproduct,
-                        rip_ReviewId = reviewId
-                    };
-                    _context.ReviewInproduct.Add(reviewInProduct);
-                    await _context.SaveChangesAsync();
+                        var reviews = new Reviews()
+                        {
+                            review_id = reviewId,
+                            review_Comment = Request.Form["comment"],
+                            review_UserId = userId,
+                            review_UploadTime = DateTime.Now,
+                            review_HideStatus = false,
+                            review_ReviewType = "Review"
+                        };
+
+                        _context.Reviews.Add(reviews);
+                        var reviewInProduct = new ReviewInproduct()
+                        {
+                            rip_ProductId = idproduct,
+                            rip_ReviewId = reviewId
+                        };
+                        _context.ReviewInproduct.Add(reviewInProduct);
+                        await _context.SaveChangesAsync();
+                    }
                 }
+                else
+                {
+                    ViewBag.Mess = "Need to login"; 
+                }
+                
                 return Redirect("/productdetail?id=" + idproduct);
             }
             catch
