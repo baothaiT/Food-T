@@ -20,9 +20,10 @@ namespace Food.Controllers.Admin
         private readonly UserManager<AppUser> _userManager;
 
         public UsersModel usersModel;
-        public UserManagementController(ApplicationDbContext context)
+        public UserManagementController(ApplicationDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
 
@@ -175,12 +176,21 @@ namespace Food.Controllers.Admin
         {
             var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
             var roleQuery = from a in _context.AppRole select a;
+            var checkUserInRole = _context.UserRoles.FirstOrDefault(a => a.UserId == id);
+            ViewBag.RoleName = "";
+            if (checkUserInRole != null)
+            {
+                var RoleName = _context.AppRole.FirstOrDefault(a => a.Id == checkUserInRole.RoleId);
+                ViewBag.RoleName = RoleName.Name;
+            }    
+            
 
             ViewBag.Id = id;
             ViewBag.UserName = userQuery.UserName;
             ViewBag.FirstName = userQuery.FirstName;
             ViewBag.LastName = userQuery.LastName;
             ViewBag.Email = userQuery.Email;
+            
 
             return View(roleQuery);
         }
