@@ -51,7 +51,7 @@ namespace Food.Controllers.Staff
                 query.Contact_Email = contactSystem.Contact_Email;
                 query.Contact_Description = contactSystem.Contact_Description;
 
-                _context.ContactSystem.Add(query);
+                _context.ContactSystem.Update(query);
                 _context.SaveChanges();
 
                 return RedirectToAction(nameof(Index));
