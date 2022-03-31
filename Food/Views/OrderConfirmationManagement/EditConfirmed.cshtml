@@ -55,15 +55,6 @@
                                 </tr>
                             </table>
                         </div>
-                        @*<div class="col-xs-6 text-right">
-                                <address>
-                                    <strong>Shipped To:</strong><br>
-                                    Jane Smith<br>
-                                    1234 Main<br>
-                                    Apt. 4B<br>
-                                    Springfield, ST 54321
-                                </address>
-                            </div>*@
                     </div>
                     <div class="row">
                         <div class="col-xs-6">
@@ -115,19 +106,22 @@
 
                                         @foreach (var itemProduct in item.OrderC_ProductIdList)
                                         {
-                                            int price = Int16.Parse(@item.OrderC_PriceList[i]);
-                                            int quantity = Int16.Parse(@item.OrderC_ProductQuantityList[i]);
-                                            int totalProduct = price * quantity;
-                                            total = total + totalProduct;
+                                            if (itemProduct != "")
+                                            {
+                                                int price = Int16.Parse(@item.OrderC_PriceList[i]);
+                                                int quantity = Int16.Parse(@item.OrderC_ProductQuantityList[i]);
+                                                int totalProduct = price * quantity;
+                                                total = total + totalProduct;
 
-                                            <tr>
-                                                <td>@item.OrderC_ProductNameList[i]</td>
-                                                <td class="text-center">$@item.OrderC_PriceList[i]</td>
-                                                <td class="text-center">@item.OrderC_ProductQuantityList[i]</td>
-                                                <td class="text-right">$@totalProduct</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>@item.OrderC_ProductNameList[i]</td>
+                                                    <td class="text-center">$@item.OrderC_PriceList[i]</td>
+                                                    <td class="text-center">@item.OrderC_ProductQuantityList[i]</td>
+                                                    <td class="text-right">$@totalProduct</td>
+                                                </tr>
 
-                                            i++;
+                                                i++;
+                                            }
                                         }
 
 
