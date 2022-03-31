@@ -60,19 +60,7 @@ namespace Food.Controllers.Staff
                 review_ProductRate = x.d.pd_Rate,
             });
 
-            //SubReview = SubReview.Where(x => x.b.subReview_HideStatus == false);
 
-            var subReviewQuery = SubReview.Select(x => new SubreviewModel()
-            {
-                subReview_Subid = x.b.subReview_Id,
-                subReview_SubComment = x.b.subReview_Commnet,
-                subReview_SubUserId = x.b.subReview_UserId,
-                subReview_SubUploadTime = x.b.subReview_DateCommnet,
-                subReview_UserName = x.a.UserName,
-                subReview_ReviewId = x.d.review_id,
-                subReview_HideStatus = x.b.subReview_HideStatus,
-                subReview_SubReviewType = x.b.subreview_SubReviewType
-            });
 
 
             return View(reviewQuery);
