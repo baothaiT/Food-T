@@ -498,7 +498,4 @@
     <Content Remove="wwwroot\images\Categories-home\" />
     <Content Remove="wwwroot\images\User\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\images\Categories-home\" />
-  </ItemGroup>
 </Project>
