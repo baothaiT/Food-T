@@ -82,7 +82,7 @@ namespace Food.Controllers.Staff
         {
             try
             {
-                var query = _context.Coupons.Find(id);
+                var query = _context.Coupons.Find(coupons.couponId);
                 query.couponCode = coupons.couponCode;
                 query.couponPrice = coupons.couponPrice;
 
@@ -113,7 +113,7 @@ namespace Food.Controllers.Staff
         {
             try
             {
-                var query = _context.Coupons.Find(id);
+                var query = _context.Coupons.Find(coupons.couponId);
 
                 _context.Coupons.Remove(query);
                 _context.SaveChanges();
