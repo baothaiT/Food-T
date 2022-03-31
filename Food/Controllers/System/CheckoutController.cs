@@ -183,7 +183,8 @@ namespace Food.Controllers.System
                     bill_ProductPricelist = ProductPriceList,
                     bill_ProductIdlist = productIdList,
                     bill_Quantity = QuantityList,
-                    bill_PaymentMethod = "Cash on Delivery"
+                    bill_PaymentMethod = "Cash on Delivery",
+                    bill_DatetimeOrder = DateTime.Now
                 };
 
                 /// Add -- 2
@@ -265,7 +266,8 @@ namespace Food.Controllers.System
                         bill_Shipping = ship,
                         bill_PaidTotal = reTotal + ship - discount,
                         bill_ProductNamelist = productNameList,
-                        bill_PaymentMethod = "Cash on Delivery"
+                        bill_PaymentMethod = "Cash on Delivery",
+                        bill_DatetimeOrder = DateTime.Now
                     };
 
                     /// Add -- 2
