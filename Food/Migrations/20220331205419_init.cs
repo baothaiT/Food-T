@@ -580,25 +580,25 @@ namespace Food.Migrations
                 columns: new[] { "cg_Id", "cg_Name", "cg_Sale", "cg_Type" },
                 values: new object[,]
                 {
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "Snack", "", "" },
-                    { "7b7851ec-8969-4cfe-9740-68eb0cb8fb79", "Banhmi", "", "" },
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "Dry food", "", "" },
-                    { "1a083464-aede-43ac-a40c-ea3386677a60", "Food", "", "" },
-                    { "5ca2c387-ea0e-404e-8563-a633d3f04c59", "Drink", "", "" }
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "Snack", "", "" },
+                    { "00b26f75-5363-4481-a262-8662f81d95ae", "Banhmi", "", "" },
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "Dry food", "", "" },
+                    { "5a758d90-c902-467c-8a07-42608ce261b3", "Food", "", "" },
+                    { "8ca3a963-dbc6-4e35-916f-a30d6e8c78e7", "Drink", "", "" }
                 });
 
             migrationBuilder.InsertData(
                 table: "ContactUsers",
                 columns: new[] { "cu_Id", "cu_Description", "cu_Email", "cu_FirstName", "cu_LastName", "cu_Subject" },
-                values: new object[] { "fc30046d-e5cf-4c51-9df1-9a77eaaf885e", "Description", "Email", "FirstName", "LastName", "Subject" });
+                values: new object[] { "7bbb76f3-ea48-45b9-9393-96a0244a3e6e", "Description", "Email", "FirstName", "LastName", "Subject" });
 
             migrationBuilder.InsertData(
                 table: "Coupons",
                 columns: new[] { "couponId", "couponCode", "couponPrice" },
                 values: new object[,]
                 {
-                    { "08025226-526b-405b-a7d9-deabbf213ec1", "code50", 50 },
-                    { "3c8f1ed1-05bc-4605-8c74-5e0a2013dc62", "code10", 10 }
+                    { "a654eb07-fda1-4edb-8524-b75a4197c454", "code50", 50 },
+                    { "b1e67dc1-8a3e-4b80-9829-d1379f3b561c", "code10", 10 }
                 });
 
             migrationBuilder.InsertData(
@@ -606,34 +606,34 @@ namespace Food.Migrations
                 columns: new[] { "pd_Id", "pd_Description", "pd_Img1", "pd_Img2", "pd_Img3", "pd_Img4", "pd_Name", "pd_NameImg1", "pd_NameImg2", "pd_NameImg3", "pd_NameImg4", "pd_Price", "pd_Rate", "pd_ReducePrice", "pd_ShortDescription", "pd_WaitForConfirmation" },
                 values: new object[,]
                 {
-                    { "21e8fe2a-6f1f-4f39-89af-a9eacb6766eb", "Sanfulou", "/images/item250x300/Sanfulou.png", "", "", "", "Sanfulou", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "07d38aa3-2005-4b50-b3c9-780db20a69c3", "stacbuk-cf", "/images/item250x300/stacbuk-cf.png", "", "", "", "stacbuk-cf", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "143281af-7bef-4d81-8ffa-2a245e87cd22", "goicuon", "/images/item250x300/goicuon.png", "", "", "", "goicuon", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "0397efec-0265-4043-ae8f-ef8b81d575ee", "trasuanhalam", "/images/item250x300/trasuanhalam.png", "", "", "", "trasuanhalam", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "c5e00e3c-75d7-48c1-834b-250cf443113a", "RauMaMix", "/images/item250x300/RauMaMix.png", "", "", "", "RauMaMix", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "04806b82-b6db-42ec-9cff-3c4caf5ab9a1", "quanngontrangbang", "/images/item250x300/quanngontrangbang.png", "", "", "", "quanngontrangbang", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "73eb8502-ffc9-42cb-994f-5809a0ed0213", "pizza", "/images/item250x300/pizza.png", "", "", "", "pizza", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "75ff36e6-7cae-428b-b872-987063c7ad1c", "ParisBaguete", "/images/item250x300/ParisBaguete.png", "", "", "", "ParisBaguete", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "ef69578b-1d22-417c-8bc1-5d44d832518d", "monngontrangbang", "/images/item250x300/monngontrangbang.png", "", "", "", "monngontrangbang", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "57597fdc-4bd4-4f4a-aa3c-7c7cb4f98e01", "mitronanvat", "/images/item250x300/mitronanvat.png", "", "", "", "mitronanvat", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "75c5c97c-9c01-4ac2-9f1b-f27a9968af0f", "loteria", "/images/item250x300/loteria.png", "", "", "", "loteria", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "9eb30e41-88bc-40f2-bb23-8056f3f70e72", "KimBap", "/images/item250x300/KimBap.png", "", "", "", "KimBap", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "ca0f6236-5996-431f-b38a-15efd980a764", "kfc", "/images/item250x300/kfc.png", "", "", "", "kfc", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "e1d65d5d-e346-430a-b2a3-b28a0bdc5e63", "Royaltea", "/images/item250x300/Royaltea.png", "", "", "", "Royaltea", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "f0249f97-1914-4a12-b7b2-e9a7efbb156b", "denhatthitnuong", "/images/item250x300/denhatthitnuong.png", "", "", "", "denhatthitnuong", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "d271e72e-13f0-4e2d-a397-892cb9649ae1", "Bunxaochay", "/images/item250x300/Bunxaochay.png", "", "", "", "Bunxaochay", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "e954fa0b-9eda-4d5f-9fc1-20e5161c24ff", "comga", "/images/item250x300/comga.png", "", "", "", "comga", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "7bd35169-7da8-493d-8805-515a90c9f2f2", "BanhCanhCua", "/images/item250x300/BanhCanhCua.png", "", "", "", "BanhCanhCua", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "34b6e3d3-5635-40d2-aeab-d35cedf016dc", "BanhMi", "/images/item250x300/BanhMi.png", "", "", "", "BanhMi", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "b73e6ab0-7d29-4c24-8603-51605df3b053", "comgadenhat", "/images/item250x300/comgadenhat.png", "", "", "", "comgadenhat", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "ade31785-fb10-41ba-9540-0221d10337eb", "banhuotlongdalat", "/images/item250x300/banhuotlongdalat.png", "", "", "", "banhuotlongdalat", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "ca93b4cf-9a5c-4c13-b51e-bdc0ae5f0526", "BoKho", "/images/item250x300/BoKho.png", "", "", "", "BoKho", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "2091a9bc-4f13-46ac-a812-f96173012570", "banhtrangtron", "/images/item250x300/banhtrangtron.png", "", "", "", "banhtrangtron", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "d20d07ed-8e49-4397-b032-26e6b959346d", "bundaumamtom", "/images/item250x300/bundaumamtom.png", "", "", "", "bundaumamtom", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "a0826282-e4e1-43a7-8c45-25464180a101", "Xoixeoba3beo", "/images/item250x300/Xoixeoba3beo.png", "", "", "", "Xoixeoba3beo", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "b21d4d3b-780f-4c08-9b5b-3cf17d6845b5", "cocosummer", "/images/item250x300/cocosummer.png", "", "", "", "cocosummer", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "ae7475c9-fa72-41c5-b27d-4618638569f0", "comboxao", "/images/item250x300/comboxao.png", "", "", "", "comboxao", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
-                    { "6a2abbe8-3fdc-4e92-a1ac-3583728918fa", "bunbo", "/images/item250x300/bunbo.png", "", "", "", "bunbo", "1", "2", "3", "4", 1, 5, 0, "Short Description", false }
+                    { "9ed048aa-c47f-4f58-b431-2ffa97090d57", "Sanfulou", "/images/item250x300/Sanfulou.png", "", "", "", "Sanfulou", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "003f6200-728c-48ec-84a5-fcaafcce068b", "stacbuk-cf", "/images/item250x300/stacbuk-cf.png", "", "", "", "stacbuk-cf", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "4bfa73fc-1db6-476e-873d-db0814be7374", "goicuon", "/images/item250x300/goicuon.png", "", "", "", "goicuon", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "24fba28c-ea3d-45fc-af6e-77773617ee2c", "trasuanhalam", "/images/item250x300/trasuanhalam.png", "", "", "", "trasuanhalam", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "b0234296-de8c-459c-89f5-583670ea267d", "RauMaMix", "/images/item250x300/RauMaMix.png", "", "", "", "RauMaMix", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "389995e2-5204-43a9-b7c2-aaa077ff6d0c", "quanngontrangbang", "/images/item250x300/quanngontrangbang.png", "", "", "", "quanngontrangbang", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "19f61034-e9db-48da-8c24-2e9e6253f2ce", "pizza", "/images/item250x300/pizza.png", "", "", "", "pizza", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "b691e33a-c2fa-40d7-9df2-b6bb2471f739", "ParisBaguete", "/images/item250x300/ParisBaguete.png", "", "", "", "ParisBaguete", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "87259847-1300-4ce1-85b2-c6e8f1eee2bd", "monngontrangbang", "/images/item250x300/monngontrangbang.png", "", "", "", "monngontrangbang", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "6ab79219-d352-4f5f-8af5-68c1f19e90bf", "mitronanvat", "/images/item250x300/mitronanvat.png", "", "", "", "mitronanvat", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "e3999b11-faa9-4555-92bb-475b312845cb", "loteria", "/images/item250x300/loteria.png", "", "", "", "loteria", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "2c5e5e69-bf19-4ac4-a266-969282815612", "KimBap", "/images/item250x300/KimBap.png", "", "", "", "KimBap", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "51939358-8c46-4d44-9a05-a60a79d45d01", "kfc", "/images/item250x300/kfc.png", "", "", "", "kfc", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "dd494930-73c1-4125-91d3-112da4bc94ee", "Royaltea", "/images/item250x300/Royaltea.png", "", "", "", "Royaltea", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "52bbef74-3f66-4fbc-9727-b7f2d9a97e56", "denhatthitnuong", "/images/item250x300/denhatthitnuong.png", "", "", "", "denhatthitnuong", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "1180c816-dc6b-4c5b-a9b5-f15b26dd39dd", "Bunxaochay", "/images/item250x300/Bunxaochay.png", "", "", "", "Bunxaochay", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "085ea4f0-7024-49cd-8870-da207de0e689", "comga", "/images/item250x300/comga.png", "", "", "", "comga", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "c02d53a6-06f2-4cbb-9dda-82ee30fc075a", "BanhCanhCua", "/images/item250x300/BanhCanhCua.png", "", "", "", "BanhCanhCua", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "453716fc-8d75-4755-ac1d-77fde9168531", "BanhMi", "/images/item250x300/BanhMi.png", "", "", "", "BanhMi", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "1ad6ef0c-6404-4941-9f0b-334d98a02f1b", "comgadenhat", "/images/item250x300/comgadenhat.png", "", "", "", "comgadenhat", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "e9f8b8c7-a992-496e-b2ec-4f2a1504eeab", "banhuotlongdalat", "/images/item250x300/banhuotlongdalat.png", "", "", "", "banhuotlongdalat", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "0486e418-f8eb-4dbf-ac97-f90f248eb0ba", "BoKho", "/images/item250x300/BoKho.png", "", "", "", "BoKho", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "752ab919-8d0a-4532-89fb-75e7202d72b5", "banhtrangtron", "/images/item250x300/banhtrangtron.png", "", "", "", "banhtrangtron", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "2dbc4b8e-aa6e-4429-acc5-824a79d7280f", "bundaumamtom", "/images/item250x300/bundaumamtom.png", "", "", "", "bundaumamtom", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "3c967128-6834-41ed-ba20-1d3ae4d633e5", "Xoixeoba3beo", "/images/item250x300/Xoixeoba3beo.png", "", "", "", "Xoixeoba3beo", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "abbec3ea-06d3-400e-b00c-56f7430d291c", "cocosummer", "/images/item250x300/cocosummer.png", "", "", "", "cocosummer", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "5c781810-092b-4d64-a4f7-75ca093a448c", "comboxao", "/images/item250x300/comboxao.png", "", "", "", "comboxao", "1", "2", "3", "4", 1, 5, 0, "Short Description", false },
+                    { "1feb1f6e-afe1-4be0-b3d6-3f2a1405d4e2", "bunbo", "/images/item250x300/bunbo.png", "", "", "", "bunbo", "1", "2", "3", "4", 1, 5, 0, "Short Description", false }
                 });
 
             migrationBuilder.InsertData(
@@ -641,8 +641,8 @@ namespace Food.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Discriminator", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "360E601E-92F2-4F08-832B-604A21293258", "80721165-9900-49fc-a119-e89a3ec4bd6c", "Admin", "AppRole", "Admin", "admin" },
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "7b891ac0-ab72-4c2d-82f5-5674a61f3acb", "Staff", "AppRole", "Staff", "staff" }
+                    { "360E601E-92F2-4F08-832B-604A21293258", "137778e1-0519-4fe1-bfe4-9f66e04759b2", "Admin", "AppRole", "Admin", "admin" },
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb4fd", "d72eed5c-7124-48e8-b27d-e2558f8859a7", "Staff", "AppRole", "Staff", "staff" }
                 });
 
             migrationBuilder.InsertData(
@@ -655,14 +655,14 @@ namespace Food.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "DoB", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "bill_Address1", "bill_Address2", "bill_City", "bill_CompanyName", "bill_Country", "bill_PhoneNumber", "bill_PostalCode", "bill_State" },
                 values: new object[,]
                 {
-                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "6a1d31be-f920-4f7e-924e-dfc8f14d09ea", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEC4RAhHbjSTN+sZd0abVUoQD3yVKuwI+y4OsOEePZFb9s+02SeI7O/YZlEbnjqUtpA==", null, false, "46898373-6eac-41c3-b8fe-6d292d9436a9", false, "Staff", null, null, null, null, null, null, null, null },
-                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "d23ed443-67e3-4ae2-92b7-bfa5f37527e1", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEKJ+QEMNg+xw1k06Rdz5zYMMsr19THWbabddT5++/We6rfqPCftIsXNmWScj+3BEVQ==", null, false, "e95bfe03-b633-4fcb-a0d9-dde26b7d557e", false, "Admin", null, null, null, null, null, null, null, null }
+                    { "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", 0, "ee5f0924-e4c6-4f78-91a1-735ce61785d4", "AppUser", new DateTime(2020, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "staff@gmail.com", true, "staff", "staff", false, null, "STAFF@GMAIL.COM", "STAFF@GMAIL.COM", "AQAAAAEAACcQAAAAEIJKapBxHvG5+6FIsMUqqw8ZGN/3T5sO4Ffqfvy6AOaKQSVzF39/ea5Q6j8iaqyVgQ==", null, false, "5333a4fa-a101-46e9-a6ff-ddddfb6e694f", false, "Staff", null, null, null, null, null, null, null, null },
+                    { "DE544998-A3CC-4E12-ABB4-0642E57BD222", 0, "b30abf74-7e9c-4cb4-9e9e-d68c0a291ad2", "AppUser", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "admin", "admin", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEPz7SL1lw6dZRMQTC5Kq5NCcbwFr/wmwFkiruW4RGIlt9dprJt4vl83jW1v/xdwk+A==", null, false, "4c254ba0-43ad-4305-b756-3b6f5f692b9c", false, "Admin", null, null, null, null, null, null, null, null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Bills",
                 columns: new[] { "bill_Id", "bill_Cancelled", "bill_Confirmation", "bill_DatetimeOrder", "bill_Delivered", "bill_Delivering", "bill_Discount", "bill_HideStatus", "bill_Note", "bill_PaidTotal", "bill_PaymentMethod", "bill_ProductColorlist", "bill_ProductIdlist", "bill_ProductNamelist", "bill_ProductPricelist", "bill_ProductSizelist", "bill_Quantity", "bill_Shipping", "bill_UserId", "bill_WaitForConfirmation", "bill_WaitPickup" },
-                values: new object[] { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2022, 3, 31, 0, 22, 2, 242, DateTimeKind.Local).AddTicks(7848), false, false, 0, false, "", 2000, "Check Payment", "Blue|Red|Black|Green|", "1|2|3|4", "product 1|product 2| product 3| product 4|", "550|450|350|640|", "7|8|9|14|", "1|1|2|1|", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false });
+                values: new object[] { "D269BF93-A5E2-4C4A-8146-9967DDE80D30", false, true, new DateTime(2022, 4, 1, 3, 54, 18, 601, DateTimeKind.Local).AddTicks(699), false, false, 0, false, "", 2000, "Check Payment", null, "1|2|3|4", "product 1|product 2| product 3| product 4|", "550|450|350|640|", null, "1|1|2|1|", 10, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", false, false });
 
             migrationBuilder.InsertData(
                 table: "Carts",
@@ -678,34 +678,34 @@ namespace Food.Migrations
                 columns: new[] { "pic_CategoriesId", "pic_productId" },
                 values: new object[,]
                 {
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "b73e6ab0-7d29-4c24-8603-51605df3b053" },
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "f0249f97-1914-4a12-b7b2-e9a7efbb156b" },
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "143281af-7bef-4d81-8ffa-2a245e87cd22" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "ca0f6236-5996-431f-b38a-15efd980a764" },
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "9eb30e41-88bc-40f2-bb23-8056f3f70e72" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "75c5c97c-9c01-4ac2-9f1b-f27a9968af0f" },
-                    { "7b7851ec-8969-4cfe-9740-68eb0cb8fb79", "57597fdc-4bd4-4f4a-aa3c-7c7cb4f98e01" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "75ff36e6-7cae-428b-b872-987063c7ad1c" },
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "e954fa0b-9eda-4d5f-9fc1-20e5161c24ff" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "73eb8502-ffc9-42cb-994f-5809a0ed0213" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "04806b82-b6db-42ec-9cff-3c4caf5ab9a1" },
-                    { "5ca2c387-ea0e-404e-8563-a633d3f04c59", "c5e00e3c-75d7-48c1-834b-250cf443113a" },
-                    { "5ca2c387-ea0e-404e-8563-a633d3f04c59", "e1d65d5d-e346-430a-b2a3-b28a0bdc5e63" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "21e8fe2a-6f1f-4f39-89af-a9eacb6766eb" },
-                    { "5ca2c387-ea0e-404e-8563-a633d3f04c59", "07d38aa3-2005-4b50-b3c9-780db20a69c3" },
-                    { "1a083464-aede-43ac-a40c-ea3386677a60", "ef69578b-1d22-417c-8bc1-5d44d832518d" },
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "ae7475c9-fa72-41c5-b27d-4618638569f0" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "b21d4d3b-780f-4c08-9b5b-3cf17d6845b5" },
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "d271e72e-13f0-4e2d-a397-892cb9649ae1" },
-                    { "5ca2c387-ea0e-404e-8563-a633d3f04c59", "0397efec-0265-4043-ae8f-ef8b81d575ee" },
-                    { "1a083464-aede-43ac-a40c-ea3386677a60", "7bd35169-7da8-493d-8805-515a90c9f2f2" },
-                    { "7b7851ec-8969-4cfe-9740-68eb0cb8fb79", "34b6e3d3-5635-40d2-aeab-d35cedf016dc" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "2091a9bc-4f13-46ac-a812-f96173012570" },
-                    { "193f1d0d-d521-4ee5-a06a-0ac22e26e391", "a0826282-e4e1-43a7-8c45-25464180a101" },
-                    { "1a083464-aede-43ac-a40c-ea3386677a60", "ca93b4cf-9a5c-4c13-b51e-bdc0ae5f0526" },
-                    { "1a083464-aede-43ac-a40c-ea3386677a60", "6a2abbe8-3fdc-4e92-a1ac-3583728918fa" },
-                    { "8c1b99bf-2734-449f-bc94-0fc2337dae74", "d20d07ed-8e49-4397-b032-26e6b959346d" },
-                    { "1a083464-aede-43ac-a40c-ea3386677a60", "ade31785-fb10-41ba-9540-0221d10337eb" }
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "1ad6ef0c-6404-4941-9f0b-334d98a02f1b" },
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "52bbef74-3f66-4fbc-9727-b7f2d9a97e56" },
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "4bfa73fc-1db6-476e-873d-db0814be7374" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "51939358-8c46-4d44-9a05-a60a79d45d01" },
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "2c5e5e69-bf19-4ac4-a266-969282815612" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "e3999b11-faa9-4555-92bb-475b312845cb" },
+                    { "00b26f75-5363-4481-a262-8662f81d95ae", "6ab79219-d352-4f5f-8af5-68c1f19e90bf" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "b691e33a-c2fa-40d7-9df2-b6bb2471f739" },
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "085ea4f0-7024-49cd-8870-da207de0e689" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "19f61034-e9db-48da-8c24-2e9e6253f2ce" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "389995e2-5204-43a9-b7c2-aaa077ff6d0c" },
+                    { "8ca3a963-dbc6-4e35-916f-a30d6e8c78e7", "b0234296-de8c-459c-89f5-583670ea267d" },
+                    { "8ca3a963-dbc6-4e35-916f-a30d6e8c78e7", "dd494930-73c1-4125-91d3-112da4bc94ee" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "9ed048aa-c47f-4f58-b431-2ffa97090d57" },
+                    { "8ca3a963-dbc6-4e35-916f-a30d6e8c78e7", "003f6200-728c-48ec-84a5-fcaafcce068b" },
+                    { "5a758d90-c902-467c-8a07-42608ce261b3", "87259847-1300-4ce1-85b2-c6e8f1eee2bd" },
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "5c781810-092b-4d64-a4f7-75ca093a448c" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "abbec3ea-06d3-400e-b00c-56f7430d291c" },
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "1180c816-dc6b-4c5b-a9b5-f15b26dd39dd" },
+                    { "8ca3a963-dbc6-4e35-916f-a30d6e8c78e7", "24fba28c-ea3d-45fc-af6e-77773617ee2c" },
+                    { "5a758d90-c902-467c-8a07-42608ce261b3", "c02d53a6-06f2-4cbb-9dda-82ee30fc075a" },
+                    { "00b26f75-5363-4481-a262-8662f81d95ae", "453716fc-8d75-4755-ac1d-77fde9168531" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "752ab919-8d0a-4532-89fb-75e7202d72b5" },
+                    { "0a0eb798-5f01-4c97-a232-1cd7ab2bb136", "3c967128-6834-41ed-ba20-1d3ae4d633e5" },
+                    { "5a758d90-c902-467c-8a07-42608ce261b3", "0486e418-f8eb-4dbf-ac97-f90f248eb0ba" },
+                    { "5a758d90-c902-467c-8a07-42608ce261b3", "1feb1f6e-afe1-4be0-b3d6-3f2a1405d4e2" },
+                    { "8ba538c4-5c93-4c36-b897-36f77c5265b0", "2dbc4b8e-aa6e-4429-acc5-824a79d7280f" },
+                    { "5a758d90-c902-467c-8a07-42608ce261b3", "e9f8b8c7-a992-496e-b2ec-4f2a1504eeab" }
                 });
 
             migrationBuilder.InsertData(
@@ -723,9 +723,9 @@ namespace Food.Migrations
                 columns: new[] { "subReview_Id", "subReview_Commnet", "subReview_DateCommnet", "subReview_HideStatus", "subReview_UserId", "subreview_SubReviewType" },
                 values: new object[,]
                 {
-                    { "9ab08daa-49af-49ab-a3cc-0466d4c6c0ee", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" },
-                    { "3e8a2eb7-4529-44e3-998a-693c6bc235db", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
-                    { "d4a36d07-28db-40a2-9f9d-63a50f6534af", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" }
+                    { "a2e47963-18ca-4231-8407-b48b422db085", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "f49e4348-718f-43e3-b1f6-6dc89c5Bb5ff", "SubReview" },
+                    { "33de4ff9-a947-4881-ab63-3e779f647c2c", "subreview 3", new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" },
+                    { "8d737f02-f87a-4c56-95f7-10110f9a7b6c", "subreview 1", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "DE544998-A3CC-4E12-ABB4-0642E57BD222", "SubReview" }
                 });
 
             migrationBuilder.InsertData(
@@ -742,9 +742,9 @@ namespace Food.Migrations
                 columns: new[] { "rip_ProductId", "rip_ReviewId" },
                 values: new object[,]
                 {
-                    { "7bd35169-7da8-493d-8805-515a90c9f2f2", "EEBA6608-AB75-4E83-909F-604B1A06F16C" },
-                    { "7bd35169-7da8-493d-8805-515a90c9f2f2", "C2A543C2-B1E2-4DC5-A131-9137E4673FA6" },
-                    { "7bd35169-7da8-493d-8805-515a90c9f2f2", "9EED8607-D2BB-45EE-AEE3-C59D858A7F97" }
+                    { "c02d53a6-06f2-4cbb-9dda-82ee30fc075a", "EEBA6608-AB75-4E83-909F-604B1A06F16C" },
+                    { "c02d53a6-06f2-4cbb-9dda-82ee30fc075a", "C2A543C2-B1E2-4DC5-A131-9137E4673FA6" },
+                    { "c02d53a6-06f2-4cbb-9dda-82ee30fc075a", "9EED8607-D2BB-45EE-AEE3-C59D858A7F97" }
                 });
 
             migrationBuilder.InsertData(
@@ -752,9 +752,9 @@ namespace Food.Migrations
                 columns: new[] { "SRiR_ReviewId", "SRiR_SubReviewId" },
                 values: new object[,]
                 {
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "d4a36d07-28db-40a2-9f9d-63a50f6534af" },
-                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "3e8a2eb7-4529-44e3-998a-693c6bc235db" },
-                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "9ab08daa-49af-49ab-a3cc-0466d4c6c0ee" }
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "8d737f02-f87a-4c56-95f7-10110f9a7b6c" },
+                    { "9EED8607-D2BB-45EE-AEE3-C59D858A7F97", "33de4ff9-a947-4881-ab63-3e779f647c2c" },
+                    { "EEBA6608-AB75-4E83-909F-604B1A06F16C", "a2e47963-18ca-4231-8407-b48b422db085" }
                 });
 
             migrationBuilder.CreateIndex(

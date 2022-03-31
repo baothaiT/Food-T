@@ -10,7 +10,7 @@
     <div class="aa-header-top-right">
         <ul class="aa-head-top-nav-right">
             <li class="cart">
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+                <span title="Manage">Hello @User.Identity.Name!</span>
             </li>
             <li class="cart">
                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
