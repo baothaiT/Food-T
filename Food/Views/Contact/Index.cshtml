@@ -71,10 +71,19 @@
                  <div class="aa-contact-address-right">
                    <address>
                      <h4>FoodShop</h4>
-                     <p>Prof Lord John Krebs provides a brief history of human food, from our remote ancestors 3 million years ago to the present day. By looking at the four great transitions in human food - cooking, agriculture, processing, and preservation - he considers a variety of questions, including why people like some kinds of foods and not others; how your senses contribute to flavor; the role of genetics in our likes and dislikes; and the differences in learning and culture around the world.</p>
+                     @*<p>Prof Lord John Krebs provides a brief history of human food, from our remote ancestors 3 million years ago to the present day. By looking at the four great transitions in human food - cooking, agriculture, processing, and preservation - he considers a variety of questions, including why people like some kinds of foods and not others; how your senses contribute to flavor; the role of genetics in our likes and dislikes; and the differences in learning and culture around the world.</p>
                      <p><span class="fa fa-home"></span>Huntsville, AL 35813, USA</p>
                      <p><span class="fa fa-phone"></span>+ 021.343.7575</p>
-                     <p><span class="fa fa-envelope"></span>Email: support@foodshop.com</p>
+                     <p><span class="fa fa-envelope"></span>Email: support@foodshop.com</p>*@
+                     @foreach (var item in ViewBag.Contact)
+                     {
+                         <p>@item.Contact_Description</p>
+                         <p><span class="fa fa-home"></span> @item.Contact_Address</p>
+                         <p><span class="fa fa-phone"></span>+ @item.Contact_Phone</p>
+                         <p><span class="fa fa-envelope"></span>Email:@item.Contact_Email</p>
+
+                     }
+                     
                    </address>
                  </div>
                </div>

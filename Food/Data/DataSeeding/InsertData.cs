@@ -979,12 +979,6 @@ namespace Food.Data.DataSeeding
                 });
 
 
-            //Table ProductInCategories
-
-
-
-
-
             //Table ReviewInproduct
 
 
@@ -1061,6 +1055,20 @@ namespace Food.Data.DataSeeding
                     ship_Id = shipId,
                     ship_Name ="Ship",
                     ship_Price = 5
+                });
+
+            //Table Contact System
+
+            var ContactSystemId = Guid.NewGuid().ToString();
+
+            builder.Entity<ContactSystem>().HasData(
+                new ContactSystem()
+                {
+                    Contact_Id = ContactSystemId,
+                    Contact_Address = "Huntsville, AL 35813, USA",
+                    Contact_Description = "Prof Lord John Krebs provides a brief history of human food, from our remote ancestors 3 million years ago to the present day. By looking at the four great transitions in human food - cooking, agriculture, processing, and preservation - he considers a variety of questions, including why people like some kinds of foods and not others; how your senses contribute to flavor; the role of genetics in our likes and dislikes; and the differences in learning and culture around the world.",
+                    Contact_Email = "support@foodshop.com ",
+                    Contact_Phone = "021.343.7575"
                 });
 
 

@@ -35,7 +35,9 @@ namespace Food.Controllers.System
             }
             ViewBag.CountProductInCart = CheckCart.CheckProudctCart(_context, namePc, checkLogin, userIdString);
 
-            
+            //Print contact 
+            var query = _context.ContactSystem;
+            ViewBag.Contact = query;
 
             return View();
         }
