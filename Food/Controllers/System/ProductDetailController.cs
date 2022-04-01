@@ -70,11 +70,6 @@ namespace Food.Controllers
                          join d in _context.Products on c.rip_ProductId equals d.pd_Id
                          select new { a, b, c, d };
 
-            var SubReview = from a in _context.AppUser
-                            join b in _context.SubReview on a.Id equals b.subReview_UserId
-                            join c in _context.SubReviewInReview on b.subReview_Id equals c.SRiR_SubReviewId
-                            join d in _context.Reviews on c.SRiR_ReviewId equals d.review_id
-                            select new {a,b,c,d };
 
 
             review = review.Where(x => x.d.pd_Id == id && x.b.review_HideStatus == false).OrderBy(x => x.b.review_UploadTime); ;
@@ -96,42 +91,14 @@ namespace Food.Controllers
                 
             });
 
-            SubReview = SubReview.Where(x => x.b.subReview_HideStatus == false);
-
-            var subReviewQuery = SubReview.Select(x => new SubreviewModel()
-            {
-                subReview_Subid = x.b.subReview_Id,
-                subReview_SubComment = x.b.subReview_Commnet,
-                subReview_SubUserId = x.b.subReview_UserId,
-                subReview_SubUploadTime = x.b.subReview_DateCommnet,
-                subReview_UserName = x.a.UserName,
-                subReview_ReviewId = x.d.review_id
-            });
-
-            List<ReviewModel> reviewAdd = new List<ReviewModel>();
-           
+            
 
 
-            //Query of Review
-            foreach (var itemReview in reviewQuery)
-            {
 
-                List<SubreviewModel> subreviewAddList = new List<SubreviewModel>();
-                //Query of SubReview
-                foreach (var itemSubReview in subReviewQuery)
-                {
-                    //If SubReview In Review
-                    if (itemReview.review_id == itemSubReview.subReview_ReviewId)
-                    {
-                        subreviewAddList.Add(itemSubReview);
-                    }
-                }
-                itemReview.review_SubreviewModelList = subreviewAddList;
-                itemReview.review_CountSubReview = subreviewAddList.Count();
-                reviewAdd.Add(itemReview);
-            }
-            var reviewQuery1 = reviewAdd.Cast<ReviewModel>().ToArray();
-            return View(reviewQuery1);
+
+            
+
+            return View(reviewQuery);
         }
 
         [Route("/AddToCart")]
