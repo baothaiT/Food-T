@@ -69,7 +69,7 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <input type="text" name="productid" value="@ViewBag.Id" id="productid" hidden/>
+                                            <input type="text" name="productid" value="@ViewBag.Id" id="productid" hidden />
                                         </div>
                                         <div class="aa-prod-view-bottom">
                                             <input type="submit" class="aa-add-to-cart-btn" value="Add To Cart" />
@@ -140,119 +140,29 @@
                     <div class="aa-product-related-item">
                         <h3>Related Products</h3>
                         <ul class="aa-product-catg aa-related-item-slider">
-                            <!-- start single product item -->
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="/images/item250x300/banhtrangtron.png" alt="polo shirt img"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                    <figcaption>
-                                        <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
-                                        <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                                    </figcaption>
-                                </figure>
-                                
-                                <!-- product badge -->
-                                <span class="aa-badge aa-sale" href="#">SALE!</span>
-                            </li>
-                            <!-- start single product item -->
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="/images/item250x300/banhuotlongdalat.png" alt="polo shirt img"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                    <figcaption>
-                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
-                                        <span class="aa-product-price">$45.50</span>
-                                    </figcaption>
-                                </figure>
-                                
-                                <!-- product badge -->
-                                <span class="aa-badge aa-sold-out" href="#">Sold Out!</span>
-                            </li>
-                            <!-- start single product item -->
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="/images/item250x300/bundaumamtom.png" alt="polo shirt img"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                </figure>
-                                <figcaption>
-                                    <h4 class="aa-product-title"><a href="#">T-Shirt</a></h4>
-                                    <span class="aa-product-price">$45.50</span>
-                                </figcaption>
-                                
-                                <!-- product badge -->
-                                <span class="aa-badge aa-hot" href="#">HOT!</span>
-                            </li>
-                            <!-- start single product item -->
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="/images/item250x300/comga.png" alt="polo shirt img"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                    <figcaption>
-                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
-                                        <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                                    </figcaption>
-                                </figure>
-                              
-                            </li>
-                            <!-- start single product item -->
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="/images/item250x300/denhatthitnuong.png" alt="polo shirt img"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                    <figcaption>
-                                        <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
-                                        <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                                    </figcaption>
-                                </figure>
-                               
-                            </li>
-                            <!-- start single product item -->
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="/images/item250x300/cgoicuon.png" alt="polo shirt img"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                    <figcaption>
-                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
-                                        <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                                    </figcaption>
-                                </figure>
-                                
-                                <!-- product badge -->
-                                <span class="aa-badge aa-sold-out" href="#">Sold Out!</span>
-                            </li>
-                            <!-- start single product item -->
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="images/man/polo-shirt-4.png" alt="polo shirt img"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                    <figcaption>
-                                        <h4 class="aa-product-title">
-                                            <a href="#">
-                                                Polo
+                            @{
+                                foreach (var item in ViewBag.ProductList)
+                                {
+                                    <!-- start single product item -->
+                                    <li>
+                                        <figure>
+                                            <a class="aa-product-img" href="/productdetail?id=@item.pd_Id"><img src="@item.pd_Img1" alt="polo shirt img"></a>
+                                            <a class="aa-add-card-btn" href="/productdetail?id=@item.pd_Id"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                            <figcaption>
+                                                <h4 class="aa-product-title"><a href="/productdetail?id=@item.pd_Id">@item.pd_Name</a></h4>
+                                                <span class="aa-product-price">$@item.pd_Price</span>
+                                            </figcaption>
+                                        </figure>
+                                    </li>
+                                }
+                            }
 
-                                            </a>
-                                        </h4>
-                                        <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                                    </figcaption>
-                                </figure>
-                                
-                                <!-- product badge -->
-                                <span class="aa-badge aa-hot" href="#">HOT!</span>
-                            </li>
-                            <!-- start single product item -->
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="images/women/girl-1.png" alt="polo shirt img"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                    <figcaption>
-                                        <h4 class="aa-product-title"><a href="#">This is Title</a></h4>
-                                        <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                                    </figcaption>
-                                </figure>
-                              
-                                <!-- product badge -->
-                                <span class="aa-badge aa-sale" href="#">SALE!</span>
-                            </li>
+
+
+
+
+
+
                         </ul>
                         <!-- quick view modal -->
                         <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -350,33 +260,4 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
-<script>
 
-    //var ProductColor;
-    //var ProductSize;
-
-    //function amount() {
-
-    //    var a = document.querySelector("#quantity");
-    //    return a.value;
-    //}
-
-
-    //function QuantityAdd() {
-    //    var button = document.getElementById('button-add');
-    //    var textQuantity = document.getElementById('quantity');
-    //    var value = textQuantity.value;
-
-    //    textQuantity.value = parseInt(value) + 1;
-    //}
-
-    //function QuantityMinus(){
-    //    var button = document.getElementById('button-minus');
-    //    var textQuantity = document.getElementById('quantity');
-
-    //    var value = textQuantity.value;
-    //    if (value >0) {
-    //        textQuantity.value = value - 1;
-    //    }
-    //}
-</script>

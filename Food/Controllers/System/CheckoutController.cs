@@ -86,7 +86,12 @@ namespace Food.Controllers.System
 
                 int ship = GetShippingPrice("ship");
 
-                ViewBag.Total = reTotal + ship - discount;
+                int total = reTotal + ship - discount;
+                if (total < 0)
+                {
+                    total = 0;
+                }
+                ViewBag.Total = total;
 
                 return View(cartDetail);
             }

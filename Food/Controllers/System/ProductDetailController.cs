@@ -91,12 +91,14 @@ namespace Food.Controllers
                 
             });
 
-            
+
+
+            var queryProduct = _context.Products;
+
+            ViewBag.ProductList = queryProduct;
 
 
 
-
-            
 
             return View(reviewQuery);
         }
@@ -120,6 +122,7 @@ namespace Food.Controllers
                 int quantityProduct = Int16.Parse(quantity);
                 string cartId = Guid.NewGuid().ToString();
 
+                
 
                 if (checkLogin)
                 {
@@ -150,6 +153,8 @@ namespace Food.Controllers
                         pic_amount = quantityProduct,
                     };
                     _context.ProductInCart.Add(ProductInCartCreate);
+
+
                     await _context.SaveChangesAsync();
                 }else
                 {
