@@ -155,7 +155,12 @@ namespace Food.Controllers.System
                 //Read Shipping -- 2
                 int ship = GetShippingPrice("ship");
                 ViewBag.Ship = 0;
-                ViewBag.Total = reTotal + ship - discount;
+                int total = reTotal + ship - discount;
+                if (total <0 )
+                {
+                    total = 0;
+                }
+                    ViewBag.Total = total;
 
                 //Create list -- 2
                 string productNameList = "";
@@ -246,7 +251,12 @@ namespace Food.Controllers.System
                     //Read Shipping -- 2
                     int ship = GetShippingPrice("ship");
                     ViewBag.Ship = 0;
-                    ViewBag.Total = reTotal + ship - discount;
+                    int total = reTotal + ship - discount;
+                    if (total < 0)
+                    {
+                        total = 0;
+                    }
+                    ViewBag.Total = total;
 
                     //Create list -- 2
                     string productNameList = "";

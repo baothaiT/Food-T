@@ -167,7 +167,12 @@ namespace Food.Controllers.System
         
         private int CaculateTotal(int reTotal, int ship, int discount)
         {
-            ViewBag.total = reTotal + ship - discount;
+            int total = reTotal + ship - discount;
+            if (total <0)
+            {
+                total = 0;
+            }
+            ViewBag.total = total;
             return reTotal + ship - discount;
         }
 
