@@ -177,9 +177,10 @@ namespace Food.Controllers.System
                 }
 
                 //Create bill -- 2
+                var billId = Guid.NewGuid().ToString();
                 var bill = new Bills()
                 {
-                    bill_Id = Guid.NewGuid().ToString(),
+                    bill_Id = billId,
                     bill_UserId = userId,
                     bill_Discount = discount,
                     bill_Shipping = ship,
@@ -194,6 +195,32 @@ namespace Food.Controllers.System
 
                 /// Add -- 2
                 _context.Bills.Add(bill);
+
+                // SendMail -----------------------------------------------------------------------------------
+                //Send Form Mail
+                //"+ Price + "
+                string productList = "";
+                foreach (var item in cartDetail)
+                {
+                    productList += "<tr>" +
+                        "<td>" + item.checkout_ProductName + "</td>" +
+                        "<td>" + item.checkout_Price + "</td>" +
+                        "<td>" + item.checkout_Quantity + "</td></tr>";
+                }
+
+                SendMailForm(
+                    billId,
+                    email,
+                    firstName,
+                    phone,
+                    address1,
+                    reTotal,
+                    productList,
+                    ship,
+                    discount,
+                    total);
+
+
 
                 /// Remove -- logined
                 var CartQuery = _context.Cart.FirstOrDefault(x => x.cart_UserID == userId);
@@ -272,7 +299,7 @@ namespace Food.Controllers.System
                     var billId = Guid.NewGuid().ToString();
                     var bill = new Bills()
                     {
-                        bill_Id = Guid.NewGuid().ToString(),
+                        bill_Id = billId,
                         bill_UserId = user.Id,
                         bill_Discount = discount,
                         bill_Shipping = ship,
@@ -286,57 +313,29 @@ namespace Food.Controllers.System
                     _context.Bills.Add(bill);
 
 
-
-                    // Form -----------------------------------------------------------------------------------
-                    // Save Form
-                    // query to form 
-                    var queryForm = _context.AppUser.FirstOrDefault(a => a.Id == userId);
-
-                    queryForm.FirstName = firstName;
-                    queryForm.LastName = lastName;
-                    queryForm.Email = email;
-                    queryForm.PhoneNumber = phone;
-                    queryForm.bill_Address1 = address1;
-                    queryForm.bill_Country = country;
-                    queryForm.bill_City = city;
-                    queryForm.bill_PostalCode = postal;
-
-                    // SendMail -----------------------------------------------------------------------------------
-                    //Confirm Mail
-                    string IdOrder = billId;
-                    string MailTo = email;
-                    string Subject = "Order Confirm #" + billId;
-                    string NameUser = firstName;
-                    string Phone = phone;
-                    string Address = address1;
-                    string Email = email;
-                    int Price = reTotal;
-
-
+                    //Send Form Mail
                     //"+ Price + "
                     string productList = "";
                     foreach (var item in cartDetail)
                     {
-                        productList += "<tr><td>" + item.checkout_ProductName + "</td><td>" + item.checkout_Price + "</td><td>" + item.checkout_ProductColor + "</td><td>" + item.checkout_Quantity + "</td><td>" + item.checkout_Price + "</td></tr>";
+                        productList += "<tr>" +
+                            "<td>" + item.checkout_ProductName + "</td>" +
+                            "<td>" + item.checkout_Price + "</td>" +
+                            "<td>" + item.checkout_Quantity + "</td></tr>";
                     }
+                    SendMailForm(
+                    billId,
+                    email,
+                    firstName,
+                    phone,
+                    address1,
+                    reTotal,
+                    productList,
+                    ship,
+                    discount,
+                    total);
 
 
-                    string contentOfProductList = "<div><table cellpadding=\"0\" cellspacing=\"0\" width=\"700\" align=\"left\" border=\"1\" ><thead><tr><th> Name </th><th> Size </th><th> Color </th><th> Amount </th><th> Price </th></tr></thead><tbody> " +
-                        productList +
-                        "<tr><td colspan=\"3\"></td><td>Ship:</td><td>1$</td></tr><tr>" +
-                        "<td colspan=\"3\"></td><td>Discount:</td><td>5$</td></tr><tr>" +
-                        "<td colspan=\"3\"></td><td>Sum Price:</td><td>2000$</td></tr>" +
-                        "</tbody></table></div>";
-
-
-                    string mailBody = "<div><div><center> <h2> Order confirmation " + IdOrder + "</h2> </center></div>" +
-                        "<div><table class='table'><tr><th>:</th>" +
-                        "<td>" + NameUser + "</td></tr><tr><th>Phone:</th><td>" + Phone + "</td></tr><tr><th>Address:</th><td>" + Address + "</td></tr><tr><th>Email:</th>" +
-                        "<td>" + Email + "</td></tr><tr><th>Price:</th><td>" + Price + "$ </td></tr></table></div>" +
-                         "<br />" + contentOfProductList +
-                        "</div>";
-
-                    SendMail(MailTo, Subject, mailBody);
 
                     /// Remove -- logined
 
@@ -358,7 +357,56 @@ namespace Food.Controllers.System
         }
 
        
+       
+        public void SendMailForm(string billId, string email, string firstName, string phone, string address1, int reTotal,string productList
+            , int shipping, int discount, int totalPrice)
+        {
+            // SendMail -----------------------------------------------------------------------------------
+            //Confirm Mail
+            string IdOrder = billId;
+            string MailTo = email;
+            string Subject = "Order Confirm #" + billId;
+            string NameUser = firstName;
+            string Phone = phone;
+            string Address = address1;
+            string Email = email;
+            int Price = reTotal;
 
+
+            
+
+
+            string contentOfProductList = "<div>" +
+                "<table cellpadding=\"0\" cellspacing=\"0\" width=\"700\" align=\"left\" border=\"1\" >" +
+                "<thead>" +
+                "<tr>" +
+                "<th> Name </th>" +
+                "<th> Amount </th>" +
+                "<th> Price </th>" +
+                "<th>  </th>" +
+                "<th>  </th>" +
+                "</tr>" +
+                "</thead>" +
+                "<tbody> " +
+                productList +
+                "<tr><td colspan=\"3\"></td><td>Ship:</td><td>"+ shipping + "$</td></tr><tr>" +
+                "<td colspan=\"3\"></td><td>Discount:</td><td>"+ discount + "$</td></tr><tr>" +
+                "<td colspan=\"3\"></td><td>Sum Price:</td><td>"+ totalPrice + "$</td></tr>" +
+                "</tbody></table></div>";
+
+
+            string mailBody = "<div><div><center> <h2> Order confirmation " + IdOrder + "</h2> </center></div>" +
+                "<div><table class='table'>" +
+                "<tr><th>:</th><td>" + NameUser + "</td></tr>" +
+                "<tr><th>Phone:</th><td>" + Phone + "</td></tr>" +
+                "<tr><th>Address:</th><td>" + Address + "</td></tr>" +
+                "<tr><th>Email:</th><td>" + Email + "</td></tr>" +
+                "</table></div>" +
+                 "<br />" + contentOfProductList +
+                "</div>";
+
+            SendMail(MailTo, Subject, mailBody);
+        }
 
         public void SendMail(string Mailto, string subject, string boddy)
         {
