@@ -44,6 +44,20 @@ namespace Food.Controllers.System
                         join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
                         select new { a, c };
 
+            // Insert data into model For "Top Rated Products"
+            var topRatedProductsModelQuery = query
+                .Select(x => new ProductModel()
+                {
+                    pd_Id = x.a.pd_Id,
+                    pd_Img1 = x.a.pd_Img1,
+                    pd_Name = x.a.pd_Name,
+                    pd_Price = x.a.pd_Price,
+                    pd_categoryName = x.c.cg_Name,
+                    pd_ReducePrice = x.a.pd_ReducePrice
+                });
+
+            ViewBag.topRatedProductsModelQuery = topRatedProductsModelQuery.ToList();
+
             //Search form
             if ((categoriesName == "")|| (categoriesName == null))
             {
