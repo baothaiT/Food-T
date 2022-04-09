@@ -62,14 +62,9 @@ namespace Food.Controllers.System
                 query = query.Where(x => x.c.cg_Name == categoriesName);
             }
 
-            // Print Count Product in category
-            var countDryFoodQuery = from a in _context.Products
-                                    join b in _context.ProductsInCategories on a.pd_Id equals b.pic_productId
-                                    join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
-                                    select new { a, c };
-            countDryFoodQuery = countDryFoodQuery.Where(x => x.c.cg_Name == "Dry food");
-
-            ViewBag.CountDryProduct = countDryFoodQuery.Count();
+            //Query Categories Name 
+            var queryCategories = _context.Categories.ToList();
+            ViewBag.Categories = queryCategories;
 
             // Insert data into model
             var productModelQuery = query
