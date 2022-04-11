@@ -129,6 +129,8 @@ namespace Food.Controllers.Admin
         {
             try
             {
+                
+
                 var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
                 _context.AppRole.Remove(roleQuery);
                 _context.SaveChanges();
@@ -140,7 +142,28 @@ namespace Food.Controllers.Admin
             }
         }
 
+        // POST: RoleManagementController/Delete/5
+        [HttpPost("/rolemanagement/hidden/{id:guid}")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Hidden(string id, AppRole appRole)
+        {
+            try
+            {
 
+
+                var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
+                roleQuery.isDelete = true;
+
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        
 
     }
 }

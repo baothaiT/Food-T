@@ -173,6 +173,7 @@ namespace Food.Controllers.Admin
         {
             var userQuery = _context.AppUser.FirstOrDefault(a => a.Id == id);
             var roleQuery = from a in _context.AppRole select a;
+            roleQuery = roleQuery.Where(x => x.isDelete == false);
             var checkUserInRole = _context.UserRoles.FirstOrDefault(a => a.UserId == id);
             ViewBag.RoleName = "";
             if (checkUserInRole != null)
@@ -230,6 +231,33 @@ namespace Food.Controllers.Admin
 
                 return View();
             }
+
+
+            
+        }
+        public IActionResult BlockAndUnblock(AppUser appUser)
+        {
+            try
+            {
+                var queryUser = _context.AppUser.FirstOrDefault(a => a.Id == appUser.Id);
+
+                if(queryUser.EmailConfirmed == true)
+                {
+                    queryUser.EmailConfirmed = false;
+                }
+                else
+                {
+                    queryUser.EmailConfirmed = true;
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction(nameof(Index));
+            }
+
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Food.Entity
     {
         public string Description { set; get; }
 
-        
+        public bool isDelete { set; get; }
 
     }
 }
