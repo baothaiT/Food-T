@@ -28,6 +28,8 @@ namespace Food.Controllers.Admin
         {
             //Query Role
             var roleQuery = from a in _context.AppRole select a;
+            //Contiditoin for role 
+            roleQuery = roleQuery.Where(a => a.isDelete == false);
             return View(roleQuery);
         }
 
@@ -143,8 +145,7 @@ namespace Food.Controllers.Admin
         }
 
         // POST: RoleManagementController/Delete/5
-        [HttpPost("/rolemanagement/hidden/{id:guid}")]
-        [ValidateAntiForgeryToken]
+        [HttpGet("/rolemanagement/hidden/{id:guid}")]
         public ActionResult Hidden(string id, AppRole appRole)
         {
             try
@@ -159,7 +160,7 @@ namespace Food.Controllers.Admin
             }
             catch
             {
-                return View();
+                return RedirectToAction(nameof(Index));
             }
         }
 

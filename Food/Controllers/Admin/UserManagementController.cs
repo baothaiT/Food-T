@@ -241,8 +241,11 @@ namespace Food.Controllers.Admin
         {
             try
             {
+                //Query User
                 var queryUser = _context.AppUser.FirstOrDefault(a => a.Id == appUser.Id);
 
+
+                //Block User
                 if(queryUser.EmailConfirmed == true)
                 {
                     queryUser.EmailConfirmed = false;
