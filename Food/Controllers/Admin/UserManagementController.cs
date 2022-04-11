@@ -235,6 +235,8 @@ namespace Food.Controllers.Admin
 
             
         }
+        [Route("admin/user/block")]
+        [HttpGet]
         public IActionResult BlockAndUnblock(AppUser appUser)
         {
             try
@@ -249,6 +251,7 @@ namespace Food.Controllers.Admin
                 {
                     queryUser.EmailConfirmed = true;
                 }
+                _context.SaveChanges();
 
                 return RedirectToAction(nameof(Index));
             }
