@@ -16,13 +16,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.cg_Name)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.cg_Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.cg_Sale)
-            </th>
-@*            <th></th>*@
         </tr>
     </thead>
     <tbody>
@@ -31,17 +24,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.cg_Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cg_Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cg_Sale)
-            </td>
-@*            <td>
-                <a asp-action="Edit" asp-route-id="@item.cg_Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.cg_Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.cg_Id">Delete</a>
-            </td>*@
         </tr>
 }
     </tbody>

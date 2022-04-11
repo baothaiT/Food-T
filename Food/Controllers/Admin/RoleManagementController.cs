@@ -10,13 +10,12 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Food.Controllers.Admin
 {
+    //Authorize
     [Authorize(Roles = "Admin")]
     public class RoleManagementController : Controller
     {
 
         private readonly ApplicationDbContext _context;
-
-
         public RoleManagementController(ApplicationDbContext context)
         {
             _context = context;
@@ -27,7 +26,7 @@ namespace Food.Controllers.Admin
         [HttpGet]
         public ActionResult Index()
         {
-
+            //Query Role
             var roleQuery = from a in _context.AppRole select a;
             return View(roleQuery);
         }
@@ -38,6 +37,7 @@ namespace Food.Controllers.Admin
         [HttpGet]
         public ActionResult Details(string id)
         {
+            //Query Role
             var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
             return View(roleQuery);
         }
@@ -58,22 +58,20 @@ namespace Food.Controllers.Admin
         {
             try
             {
+                //Create Data
                 appRole = new AppRole()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Description = appRole.Description,
                     Name = appRole.Name,
-                    NormalizedName = appRole.NormalizedName,
+                    NormalizedName = appRole.Name.ToUpper(),
                     ConcurrencyStamp = Guid.NewGuid().ToString()
 
                 };
 
-
+                // Insert Data
                 _context.AppRole.Add(appRole);
-
                 await _context.SaveChangesAsync();
-
-
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -99,9 +97,8 @@ namespace Food.Controllers.Admin
         {
             try
             {
+
                 var roleQuery = _context.AppRole.FirstOrDefault(a => a.Id == id);
-
-
                 roleQuery.Description = appRole.Description;
                 roleQuery.Name = appRole.Name;
                 roleQuery.NormalizedName = appRole.NormalizedName;

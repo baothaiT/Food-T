@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Food.Entity;
+using System.Security.Claims;
+using Food.StatisFile.Function;
 
 namespace Food.Areas.Identity.Pages.Account
 {
@@ -57,7 +59,8 @@ namespace Food.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-          
+
+            
 
             if (!string.IsNullOrEmpty(ErrorMessage))
             {

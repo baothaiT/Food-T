@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Food.Controllers.Admin
 {
+    //Authorize 
     [Authorize(Roles = "Admin,Staff")]
     public class AdminPageController : Controller
     {
@@ -21,6 +22,7 @@ namespace Food.Controllers.Admin
         [Route("admin")]
         public IActionResult Index()
         {
+            //Create Chart 
             var queryBill = _context.Bills;
             ChartForBill chartForBill = new ChartForBill();
 
@@ -37,6 +39,8 @@ namespace Food.Controllers.Admin
             chartForBill.PriceForNovember = 0;
             chartForBill.PriceForDecember = 0;
 
+
+            // Pass data into feild
             foreach (var item in queryBill)
             {
                 switch (item.bill_DatetimeOrder.Month)
@@ -95,6 +99,7 @@ namespace Food.Controllers.Admin
                 }
             }
 
+            //Send Data
             sendData(
                 chartForBill.PriceForJanuary,
                 chartForBill.PriceForFebruary,

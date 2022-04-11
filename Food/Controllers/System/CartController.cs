@@ -77,7 +77,11 @@ namespace Food.Controllers.System
                 int discount = GetDiscount();
 
                 // Ship
-                int ship = GetShippingPrice("ship");
+                int ship = GetShippingPrice(productInCartModelQuery.Count(), "ship");
+                if (productInCartModelQuery.Count() == 0)
+                {
+                    ship = 0;
+                }
 
                 // SubTotal
                 int reTotal = 0;
@@ -85,6 +89,8 @@ namespace Food.Controllers.System
                 {
                     reTotal += item.Quantity * item.ProductPrice;
                 }
+
+                ViewBag.Subtotal = 0;
                 if (reTotal != 0)
                 {
                     ViewBag.Subtotal = reTotal;
@@ -99,7 +105,6 @@ namespace Food.Controllers.System
             {
                 //No login
                 //Count product in cart page
-
                 //Query produdct in Cart
                 var query = from a in _context.Products
                             join b in _context.ProductInCartDevices on a.pd_Id equals b.picd_ProductId
@@ -127,7 +132,8 @@ namespace Food.Controllers.System
                 int discount = GetDiscount();
 
                 // Ship
-                int ship = GetShippingPrice("ship");
+                int ship = GetShippingPrice(productInCartModelQuery.Count(), "ship");
+                
 
                 // SubTotal
                 int reTotal = 0;
@@ -135,6 +141,8 @@ namespace Food.Controllers.System
                 {
                     reTotal += item.Quantity * item.ProductPrice;
                 }
+
+                ViewBag.Subtotal = 0;
                 if (reTotal != 0)
                 {
                     ViewBag.Subtotal = reTotal;
@@ -143,25 +151,34 @@ namespace Food.Controllers.System
                 // Total
                 CaculateTotal(reTotal, ship, discount);
 
-
                 return View(productInCartModelQuery);
             }
         }
 
-        private int GetShippingPrice(string NameShip)
+        private int GetShippingPrice(int countProduct,string NameShip)
         {
             var shipingQuery = _context.Shipping.FirstOrDefault(a => a.ship_Name == NameShip);
             int ship;
-            if (shipingQuery != null)
+            if (countProduct == 0)
             {
-                ship = shipingQuery.ship_Price;
-                ViewBag.Ship = shipingQuery.ship_Price;
-            }
-            else
-            {
+
                 ship = 0;
                 ViewBag.Ship = 0;
             }
+            else
+            {
+                if (shipingQuery != null)
+                {
+                    ship = shipingQuery.ship_Price;
+                    ViewBag.Ship = shipingQuery.ship_Price;
+                }
+                else
+                {
+                    ship = 0;
+                    ViewBag.Ship = 0;
+                }
+            }
+            
             return ship;
         }
         

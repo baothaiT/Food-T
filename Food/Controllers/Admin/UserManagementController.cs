@@ -146,16 +146,13 @@ namespace Food.Controllers.Admin
         // POST: UserManagementController/Delete/5
         [HttpPost("/usermanagement/delete/{id:guid}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(string id, IFormCollection collection)
+        public ActionResult Delete(string id, AppUser appUser)
         {
             try
             {
-
+                //Delete User
                 var userQuery = _context.AppUser.FirstOrDefault(x => x.Id == id);
-
-                string aa = userQuery.LastName;
-
-
+                
                 _context.AppUser.Remove(userQuery);
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));

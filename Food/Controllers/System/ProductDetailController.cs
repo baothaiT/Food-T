@@ -245,7 +245,6 @@ namespace Food.Controllers
                 {
                     ViewBag.Mess = "Need to login"; 
                 }
-                
                 return Redirect("/productdetail?id=" + idproduct);
             }
             catch
