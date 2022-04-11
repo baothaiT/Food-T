@@ -49,8 +49,8 @@ namespace Food.Entity
 
 
         public bool pd_WaitForConfirmation { set; get; }
-        
 
+        public bool isDelete { set; get; }
 
         public List<ProductsInCategories> ProductsInCategoriesP { get; set; }
         public List<ProductInCart> ProductInCartP { get; set; }

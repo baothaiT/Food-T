@@ -32,9 +32,11 @@ namespace Food.Controllers.Staff
         {
             try
             {
-
+                //Query Product
                 var productListTest1 = from a in _context.Products select a;
 
+                //Contidition
+                productListTest1 = productListTest1.Where(a => a.isDelete == false);
                 return View(productListTest1);
             }
             catch
@@ -210,5 +212,26 @@ namespace Food.Controllers.Staff
                 return View();
             }
         }
+
+        // POST: RoleManagementController/Delete/5
+        [HttpGet("/productmanagement/hidden/{id:guid}")]
+        public ActionResult Hidden(string id, Products products)
+        {
+            try
+            {
+
+
+                var productQuery = _context.Products.FirstOrDefault(a => a.pd_Id == id);
+                productQuery.isDelete = true;
+
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
     }
 }

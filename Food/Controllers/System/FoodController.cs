@@ -44,6 +44,8 @@ namespace Food.Controllers.System
                         join c in _context.Categories on b.pic_CategoriesId equals c.cg_Id
                         select new { a, c };
 
+            query = query.Where(a => a.a.isDelete == false);
+
             // Insert data into model For "Top Rated Products"
             var topRatedProductsModelQuery = query
                 .Select(x => new ProductModel()
