@@ -104,6 +104,7 @@ namespace Food.Controllers.Admin
                 chartForBill.PriceForJanuary,
                 chartForBill.PriceForFebruary,
                 chartForBill.PriceForMarch,
+                chartForBill.PriceForApril,
                 chartForBill.PriceForMay,
                 chartForBill.PriceForJune,
                 chartForBill.PriceForJuly,
